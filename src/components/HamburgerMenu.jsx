@@ -7,7 +7,7 @@ export default function HamburgerMenu() {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="relative w-6 h-6 flex flex-col gap-1.5 items-center cursor-pointer"
+      className="relative w-6 h-6 flex flex-col gap-1 items-center cursor-pointer"
     >
       <span
         className={`block w-6 h-0.5 rounded transition-all duration-300 ${
