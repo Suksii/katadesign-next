@@ -4,10 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
+import { usePathname } from "next/navigation";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const [open, setOpen] = useState(false);
   const setIsOpen = useMenuStore((state) => state.setIsOpen);
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   useEffect(() => {
     setIsOpen(open);
@@ -69,27 +73,26 @@ export default function HamburgerMenu({ variant = "light" }) {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="relative w-6 h-6 flex flex-col gap-1 items-center cursor-pointer z-50"
+        className="relative w-6 h-6 cursor-pointer z-50"
       >
         <span
-          className={`block w-6 h-0.5 rounded transition-all duration-300 ${
+          className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
             open
-              ? `rotate-45 translate-y-2 ${burgerOpenColor}`
-              : burgerClosedColor
+              ? `rotate-45 ${burgerOpenColor}`
+              : `-translate-y-2 ${burgerClosedColor}`
           }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 rounded transition-all duration-300 ${
-            open
-              ? `opacity-0 ${burgerOpenColor}`
-              : `opacity-100 ${burgerClosedColor}`
+          className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
+            open ? `opacity-0 ${burgerOpenColor}` : `${burgerClosedColor}`
           }`}
+          style={{ transform: open ? "" : "translateY(-50%)" }}
         ></span>
         <span
-          className={`block w-6 h-0.5 rounded transition-all duration-300 ${
+          className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
             open
-              ? `-rotate-45 -translate-y-2 ${burgerOpenColor}`
-              : burgerClosedColor
+              ? `-rotate-45 ${burgerOpenColor}`
+              : `translate-y-2 ${burgerClosedColor}`
           }`}
         ></span>
       </button>
@@ -106,25 +109,27 @@ export default function HamburgerMenu({ variant = "light" }) {
               animate="visible"
               exit="exit"
             >
-              {navMenu.map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={linkVariants}
-                  whileHover={{ scale: 1.1, color: "#3b82f6" }}
-                >
-                  <Link
-                    href={item.link}
-                    onClick={() => setOpen(false)}
-                    className="text-4xl font-semibold"
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
+              <div className="flex flex-col items-start gap-8">
+                {navMenu.map((item, index) => (
+                  <motion.div key={index} variants={linkVariants}>
+                    <Link
+                      href={item.link}
+                      onClick={() => setOpen(false)}
+                      className={`text-4xl font-semibold pl-4 hover:border-l-2 hover:border-gray-300 ${
+                        pathname === item.link
+                          ? "border-l-2 border-gray-300"
+                          : ""
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
-              className="fixed bottom-10 left-0 right-0 flex flex-col items-center gap-4 text-center text-gray-600 z-50"
+              className="fixed bottom-10 left-0 right-0 flex flex-col items-center gap-4 text-gray-600 z-50"
               variants={footerContainerVariants}
               initial="hidden"
               animate="visible"
