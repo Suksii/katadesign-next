@@ -1,7 +1,6 @@
 import "../globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import TextWrapper from "@/components/wrappers/TextWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +23,10 @@ export default function LightLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        <TextWrapper>
-          <Navbar />
-        </TextWrapper>
-        {children}
+        <div className="w-[80%] mx-auto pt-12">
+          <Navbar variant="light" />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

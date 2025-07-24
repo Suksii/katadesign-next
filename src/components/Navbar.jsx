@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const Navbar = ({ variant = "light" }) => {
   const logoSrc =
@@ -9,9 +10,7 @@ const Navbar = ({ variant = "light" }) => {
 
   return (
     <nav className="flex justify-between items-center">
-      <Link href="/" className="flex-shrink-0">
-        <Image src={logoSrc} width={150} height={47} alt="Kata logo" />
-      </Link>
+      <Logo variant={variant} />
       <div className="flex gap-14 items-center">
         <Link href="/work" className="font-semibold">
           Work
@@ -20,7 +19,7 @@ const Navbar = ({ variant = "light" }) => {
           About
         </Link>
         <div>
-          <HamburgerMenu />
+          <HamburgerMenu variant={variant} />
         </div>
       </div>
     </nav>
