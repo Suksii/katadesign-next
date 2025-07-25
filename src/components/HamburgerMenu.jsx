@@ -1,21 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
 import { usePathname } from "next/navigation";
 
 export default function HamburgerMenu({ variant = "light" }) {
-  const [open, setOpen] = useState(false);
-  const setIsOpen = useMenuStore((state) => state.setIsOpen);
+  const { isOpen, setIsOpen } = useMenuStore();
   const pathname = usePathname();
 
   console.log(pathname);
-
-  useEffect(() => {
-    setIsOpen(open);
-  }, [open, setIsOpen]);
 
   const navMenu = [
     { name: "Work", link: "/work" },
@@ -66,62 +60,63 @@ export default function HamburgerMenu({ variant = "light" }) {
   };
 
   const isLight = variant === "light";
-  const burgerClosedColor = isLight ? "bg-black" : "bg-white";
-  const burgerOpenColor = isLight ? "bg-white" : "bg-black";
+  const burgerColor = isOpen ? "bg-black" : isLight ? "bg-black" : "bg-white";
 
   return (
     <>
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => setIsOpen(!isOpen)}
         className="relative w-6 h-6 cursor-pointer z-50"
       >
         <span
           className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
-            open
-              ? `rotate-45 ${burgerOpenColor}`
-              : `-translate-y-2 ${burgerClosedColor}`
+            isOpen
+              ? `rotate-45 ${burgerColor}`
+              : `-translate-y-2 ${burgerColor}`
           }`}
         ></span>
         <span
           className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
-            open ? `opacity-0 ${burgerOpenColor}` : `${burgerClosedColor}`
+            isOpen ? `opacity-0 ${burgerColor}` : `${burgerColor}`
           }`}
-          style={{ transform: open ? "" : "translateY(-50%)" }}
+          style={{ transform: isOpen ? "" : "translateY(-50%)" }}
         ></span>
         <span
           className={`absolute left-0 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${
-            open
-              ? `-rotate-45 ${burgerOpenColor}`
-              : `translate-y-2 ${burgerClosedColor}`
+            isOpen
+              ? `-rotate-45 ${burgerColor}`
+              : `translate-y-2 ${burgerColor}`
           }`}
         ></span>
       </button>
 
       <AnimatePresence>
-        {open && (
+        {isOpen && (
           <>
             <motion.div
-              className={`fixed inset-0 ${
-                isLight ? "bg-black text-white" : "bg-white text-black"
-              }  flex flex-col items-center justify-center gap-8 z-40`}
+              className="fixed inset-0 bg-white text-black flex flex-col items-center justify-center gap-12 z-40"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <div className="flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-10">
                 {navMenu.map((item, index) => (
                   <motion.div key={index} variants={linkVariants}>
                     <Link
                       href={item.link}
-                      onClick={() => setOpen(false)}
-                      className={`text-4xl font-semibold pl-4 hover:border-l-2 hover:border-gray-300 ${
-                        pathname === item.link
-                          ? "border-l-2 border-gray-300"
-                          : ""
-                      }`}
+                      onClick={() => setIsOpen(false)}
+                      className="group relative block text-3xl md:text-5xl font-light uppercase tracking-wider transition-all duration-300"
                     >
-                      {item.name}
+                      <span
+                        className={`absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 ${
+                          isLight ? "bg-white" : "bg-black"
+                        }`}
+                      ></span>
+
+                      <span className="pl-6 block transition-transform duration-300 group-hover:translate-x-2 group-hover:font-semibold">
+                        {item.name}
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
@@ -129,16 +124,16 @@ export default function HamburgerMenu({ variant = "light" }) {
             </motion.div>
 
             <motion.div
-              className="fixed bottom-10 left-0 right-0 flex flex-col items-center gap-4 text-gray-600 z-50"
+              className="w-[80%] mx-auto fixed bottom-10 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row items-center gap-4 text-gray-600 z-50"
               variants={footerContainerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <p className="text-sm tracking-wider">
-                {new Date().toDateString()}
+              <p className="tracking-wider font-medium flex-1 pt-12 md:pt-0">
+                {new Date().getFullYear()}
               </p>
-              <div className="flex gap-6">
+              <div className="flex-1 flex gap-24">
                 {socialMediaList.map((social) => (
                   <motion.a
                     key={social.name}

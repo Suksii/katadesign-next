@@ -9,9 +9,7 @@ const Logo = ({ variant = "light" }) => {
   const isOpen = useMenuStore((state) => state.isOpen);
 
   const logoSrc = isOpen
-    ? variant === "light"
-      ? "/logo_w_140.png"
-      : "/logo_b_140-01.png"
+    ? "/logo_b_140-01.png"
     : variant === "light"
     ? "/logo_b_140-01.png"
     : "/logo_w_140.png";
