@@ -23,7 +23,7 @@ export default function LightLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        <div className="w-[90%] mx-auto pt-12">
+        <div className="w-[80%] mx-auto pt-12">
           <Navbar variant="light" />
           <main className="py-24">{children}</main>
         </div>

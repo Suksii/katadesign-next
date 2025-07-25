@@ -10,7 +10,7 @@ export default function DarkLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-black text-white antialiased">
-        <div className="w-[90%] mx-auto pt-12">
+        <div className="w-[80%] mx-auto pt-12">
           <Navbar variant="black" />
           <main className="py-24">{children}</main>
         </div>
