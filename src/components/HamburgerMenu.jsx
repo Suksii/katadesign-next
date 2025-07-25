@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
@@ -62,10 +63,22 @@ export default function HamburgerMenu({ variant = "light" }) {
   const isLight = variant === "light";
   const burgerColor = isOpen ? "bg-black" : isLight ? "bg-black" : "bg-white";
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [isOpen]);
+
   return (
     <>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleMenu}
         className="relative w-6 h-6 cursor-pointer z-50"
       >
         <span
@@ -106,7 +119,7 @@ export default function HamburgerMenu({ variant = "light" }) {
                     <Link
                       href={item.link}
                       onClick={() => setIsOpen(false)}
-                      className="group relative block text-3xl md:text-5xl font-light uppercase tracking-wider transition-all duration-300"
+                      className="group relative block text-3xl md:text-5xl uppercase tracking-wider transition-all duration-300"
                     >
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 
@@ -126,10 +139,10 @@ export default function HamburgerMenu({ variant = "light" }) {
               animate="visible"
               exit="exit"
             >
-              <p className="tracking-wider font-medium flex-1 pt-12 md:pt-0">
+              <p className="tracking-wider font-medium flex-1 pt-4 md:pt-0">
                 {new Date().getFullYear()}
               </p>
-              <div className="flex-1 flex gap-24">
+              <div className="flex-1 flex gap-12 md:gap-24 pt-12 md:pt-0">
                 {socialMediaList.map((social) => (
                   <motion.a
                     key={social.name}

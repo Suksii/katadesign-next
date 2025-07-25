@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 h1 {
-  @apply border-l border-black text-xl pl-4 leading-12;
+  @apply border-l border-gray-500 text-xl pl-4 leading-12;
 }
 
 h2 {
