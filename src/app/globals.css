@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+h1 {
+  @apply border-l border-black text-xl pl-4 leading-12;
+}
+
+h2 {
+  @apply text-3xl font-medium tracking-wide pb-8;
+}

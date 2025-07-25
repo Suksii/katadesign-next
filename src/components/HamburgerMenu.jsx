@@ -108,11 +108,7 @@ export default function HamburgerMenu({ variant = "light" }) {
                       onClick={() => setIsOpen(false)}
                       className="group relative block text-3xl md:text-5xl font-light uppercase tracking-wider transition-all duration-300"
                     >
-                      <span
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 ${
-                          isLight ? "bg-white" : "bg-black"
-                        }`}
-                      ></span>
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 
                       <span className="pl-6 block transition-transform duration-300 group-hover:translate-x-2 group-hover:font-semibold">
                         {item.name}
