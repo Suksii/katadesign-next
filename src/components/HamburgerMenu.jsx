@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { socialMediaList } from "./utils/constants";
+import { openLink } from "./utils/helpers";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
@@ -18,11 +20,6 @@ export default function HamburgerMenu({ variant = "light" }) {
     { name: "Services", link: "/services" },
     { name: "Contact", link: "/contact" },
     { name: "Careers", link: "/careers" },
-  ];
-  const socialMediaList = [
-    { name: "Instagram", icon: "" },
-    { name: "Vimeo", icon: "" },
-    { name: "Linkedin", icon: "" },
   ];
 
   const containerVariants = {
@@ -144,15 +141,15 @@ export default function HamburgerMenu({ variant = "light" }) {
               </p>
               <div className="flex-1 flex gap-12 md:gap-24 pt-12 md:pt-0">
                 {socialMediaList.map((social) => (
-                  <motion.a
+                  <motion.p
                     key={social.name}
                     variants={footerLinkVariants}
-                    href="#"
-                    className="text-lg hover:text-black transition-colors duration-200"
+                    onClick={() => openLink(social.link)}
+                    className="text-lg hover:text-black cursor-pointer transition-colors duration-200"
                     whileHover={{ scale: 1.1, color: "#3b82f6" }}
                   >
                     {social.name}
-                  </motion.a>
+                  </motion.p>
                 ))}
               </div>
             </motion.div>
