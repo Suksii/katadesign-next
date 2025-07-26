@@ -1,7 +1,4 @@
-"use client";
-
-import { socialMediaList } from "@/components/utils/constants";
-import { openLink } from "@/components/utils/helpers";
+import SocialLinks from "@/components/SocialLinks";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import React from "react";
 
@@ -15,19 +12,10 @@ const ContactPage = () => {
           <div className="flex justify-between md:w-[80%]">
             <div className="flex flex-col gap-4">
               <p className="uppercase font-medium">Find us</p>
-              <div className="flex justify-between gap-12">
-                {socialMediaList.map((social) => {
-                  return (
-                    <p
-                      key={social.name}
-                      onClick={() => openLink(social.link)}
-                      className="text-gray-600 font-medium uppercase"
-                    >
-                      {social.twoLettersName}
-                    </p>
-                  );
-                })}
-              </div>
+              <SocialLinks
+                containerClassName="flex justify-between gap-12"
+                linkClassName="text-gray-600 font-medium uppercase cursor-pointer"
+              />
             </div>
             <div className="flex flex-col gap-2">
               <p className="font-medium">Montenegro, Europe</p>

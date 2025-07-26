@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { socialMediaList } from "./utils/constants";
 import { openLink } from "./utils/helpers";
+import SocialLinks from "./SocialLinks";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
@@ -145,13 +146,19 @@ export default function HamburgerMenu({ variant = "light" }) {
                     key={social.name}
                     variants={footerLinkVariants}
                     onClick={() => openLink(social.link)}
-                    className="text-lg hover:text-black cursor-pointer transition-colors duration-200"
+                    className="text-lg cursor-pointer transition-colors duration-200"
                     whileHover={{ scale: 1.1, color: "#3b82f6" }}
                   >
                     {social.name}
                   </motion.p>
                 ))}
               </div>
+              {/* <SocialLinks
+                containerClassName="flex-1 flex gap-12 md:gap-24 pt-12 md:pt-0"
+                linkClassName="text-lg cursor-pointer transition-all duration-200 hover:scale-110 hover:text-[#3b82f6]"
+                isFullName={true}
+                variants={footerLinkVariants}
+              /> */}
             </motion.div>
           </>
         )}
