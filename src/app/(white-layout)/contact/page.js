@@ -13,7 +13,7 @@ const ContactPage = () => {
             <div className="flex flex-col gap-4">
               <p className="uppercase font-medium">Find us</p>
               <SocialLinks
-                containerClassName="flex justify-between gap-12"
+                containerClassName="flex justify-between gap-8 lg:gap-12"
                 linkClassName="text-gray-600 font-medium uppercase cursor-pointer"
               />
             </div>

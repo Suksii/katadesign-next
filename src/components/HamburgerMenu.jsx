@@ -117,7 +117,7 @@ export default function HamburgerMenu({ variant = "light" }) {
                     <Link
                       href={item.link}
                       onClick={() => setIsOpen(false)}
-                      className="group relative block text-3xl md:text-5xl uppercase tracking-wider transition-all duration-300"
+                      className="group relative block text-3xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[200px] mx-auto"
                     >
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 
@@ -153,12 +153,6 @@ export default function HamburgerMenu({ variant = "light" }) {
                   </motion.p>
                 ))}
               </div>
-              {/* <SocialLinks
-                containerClassName="flex-1 flex gap-12 md:gap-24 pt-12 md:pt-0"
-                linkClassName="text-lg cursor-pointer transition-all duration-200 hover:scale-110 hover:text-[#3b82f6]"
-                isFullName={true}
-                variants={footerLinkVariants}
-              /> */}
             </motion.div>
           </>
         )}
