@@ -6,12 +6,16 @@ function HomePage() {
     <div className="min-h-[calc(100vh-291.06px)] flex flex-col md:justify-end relative pb-12">
       <h1 className="mb-12 md:mb-32">Who we are</h1>
       <div className="flex flex-col md:flex-row justify-between w-full">
-        <p className="flex-1 text-7xl uppercase font-bold tracking-widest leading-20">
-          GLOBAL
-          <br />
-          DESIGN
-          <br />
-          AGENCY
+        <p className="flex-1 flex flex-col text-6xl md:text-[130px] uppercase font-bold tracking-widest font-mono">
+          <span className="typewriter-line text-gray-200 animate-typewriter1">
+            GLOBAL
+          </span>
+          <span className="typewriter-line text-gray-300 animate-typewriter2">
+            DESIGN
+          </span>
+          <span className="typewriter-line text-gray-400 animate-typewriter3">
+            AGENCY
+          </span>
         </p>
         <p className="flex-1 flex justify-end pt-16 md:pt-0 md:text-lg">
           Branding & Creative Direction / Product and Packaging,

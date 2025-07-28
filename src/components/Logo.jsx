@@ -16,7 +16,7 @@ const Logo = ({ variant = "light" }) => {
 
   return (
     <Link href="/" className="flex-shrink-0 z-50">
-      <Image src={logoSrc} width={150} height={47} alt="Kata logo" />
+      <Image src={logoSrc} width={140} height={47} alt="Kata logo" />
     </Link>
   );
 };
