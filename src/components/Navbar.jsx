@@ -8,10 +8,10 @@ const Navbar = ({ variant = "light" }) => {
     <nav className="flex justify-between items-center">
       <Logo variant={variant} />
       <div className="flex gap-14 items-center">
-        <Link href="/work" className="font-semibold hidden md:block">
+        <Link href="/work" className="font-semibold hidden md:block z-10">
           Work
         </Link>
-        <Link href="/about" className="font-semibold hidden md:block">
+        <Link href="/about" className="font-semibold hidden md:block z-10">
           About
         </Link>
         <div>
