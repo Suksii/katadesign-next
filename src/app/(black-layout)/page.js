@@ -4,7 +4,7 @@ import React from "react";
 function HomePage() {
   return (
     <div className="min-h-[calc(100vh-291.06px)] flex flex-col md:justify-end relative pb-12">
-      <div className="absolute top-0 right-0 -translate-y-[35%] translate-x-[30%] sm:-translate-y-[40%] sm:translate-x-[40%] md:-translate-y-[50%] md:translate-x-[50%] lg:-translate-y-[60%] lg:translate-x-[60%] inset-0 z-0">
+      <div className="fixed top-0 right-0 -translate-y-[8%] translate-x-[40%] sm:-translate-y-[15%] md:-translate-y-[15%] lg:-translate-y-[35%] inset-0 z-0">
         <Image
           src="/3s_logo_crveni.png"
           alt="3s_logo_crveni"
