@@ -7,7 +7,7 @@ const ContactPage = () => {
     <PagesWrapper
       title="Contact"
       titleClassName="!text-5xl"
-      layoutClassName="!max-w-full"
+      layoutClassName="max-w-full"
     >
       <div className="flex gap-12 flex-col md:flex-row">
         <div className="flex-1 flex flex-col justify-between gap-6">
