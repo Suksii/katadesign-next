@@ -1,53 +1,9 @@
 @import "tailwindcss";
 
 h1 {
-  @apply border-l border-gray-500 text-xl pl-4 leading-12;
+  @apply border-l border-gray-500 text-xl pl-8 leading-12;
 }
 
 h2 {
   @apply text-3xl font-medium tracking-wide pb-8;
-}
-
-@layer utilities {
-  @keyframes typewriter {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-
-  .typewriter-line {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid black;
-    width: 0;
-  }
-
-  .animate-typewriter1 {
-    animation: typewriter 2s steps(10, end) forwards,
-      blink 0.7s step-end infinite;
-  }
-
-  .animate-typewriter2 {
-    animation: typewriter 2s steps(10, end) forwards,
-      blink 0.7s step-end infinite;
-    animation-delay: 2.2s;
-    animation-fill-mode: forwards;
-  }
-
-  .animate-typewriter3 {
-    animation: typewriter 2s steps(10, end) forwards,
-      blink 0.7s step-end infinite;
-    animation-delay: 4.4s;
-    animation-fill-mode: forwards;
-  }
 }

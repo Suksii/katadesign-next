@@ -1,11 +1,25 @@
-import React from "react";
+"use client";
 
-const PagesWrapper = ({ children, title }) => {
+import React from "react";
+import { motion } from "framer-motion";
+
+const PagesWrapper = ({
+  children,
+  title,
+  layoutClassName = "",
+  titleClassName = "",
+}) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <div className="max-w-6xl mx-auto pt-12 md:pt-20">{children}</div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+    >
+      <h1 className={titleClassName}>{title}</h1>
+      <div className={`${layoutClassName} max-w-6xl mx-auto pt-12 md:pt-20`}>
+        {children}
+      </div>
+    </motion.div>
   );
 };
 

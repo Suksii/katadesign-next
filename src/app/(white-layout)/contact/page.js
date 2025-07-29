@@ -4,11 +4,14 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <PagesWrapper title="Contact">
+    <PagesWrapper
+      title="Contact"
+      titleClassName="!text-5xl"
+      layoutClassName="!max-w-full"
+    >
       <div className="flex gap-12 flex-col md:flex-row">
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col justify-between gap-6">
           <p>email@kata.design</p>
-          <p className="bg-green-200 w-full md:max-w-[368px] h-54"></p>
           <div className="flex justify-between md:w-[80%]">
             <div className="flex flex-col gap-4">
               <p className="uppercase font-medium">Find us</p>
@@ -23,9 +26,9 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-6 w-full">
-          <p className="text-lg">Say hello</p>
+        <div className="flex-1 w-full">
           <form className="w-full lg:w-[80%] mx-auto">
+            <p className="text-lg pb-6">Say hello</p>
             <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
               <div className="flex flex-col gap-0.5 w-full">
                 <label className="uppercase font-medium">Name</label>

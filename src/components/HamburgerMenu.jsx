@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { socialMediaList } from "./utils/constants";
 import { openLink } from "./utils/helpers";
-import SocialLinks from "./SocialLinks";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
@@ -111,13 +110,13 @@ export default function HamburgerMenu({ variant = "light" }) {
               animate="visible"
               exit="exit"
             >
-              <div className="flex flex-col items-start gap-10">
+              <div className="flex flex-col items-start gap-10 md:pl-40">
                 {navMenu.map((item, index) => (
                   <motion.div key={index} variants={linkVariants}>
                     <Link
                       href={item.link}
                       onClick={() => setIsOpen(false)}
-                      className="group relative block text-3xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[200px] mx-auto"
+                      className="group relative block text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[200px] mx-auto"
                     >
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 
