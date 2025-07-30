@@ -1,7 +1,15 @@
 {
+   "HamburgerMenu": {
+        "nas_rad": "Naš rad",
+        "o_nama": "O nama",
+        "usluge": "Usluge",
+        "kontakt": "Kontakt",
+        "karijera": "Karijera"
+   },
+   "Navbar": {
     "nas_rad": "Naš rad",
-    "o_nama": "O nama",
-    "usluge": "Usluge",
-    "kontakt": "Kontakt",
-    "karijera": "Karijera"
+    "o_nama": "O nama"
+   }
+   
+
 }

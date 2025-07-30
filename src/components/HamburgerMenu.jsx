@@ -7,19 +7,21 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { socialMediaList } from "./utils/constants";
 import { openLink } from "./utils/helpers";
+import { useTranslations } from "next-intl";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
   const pathname = usePathname();
+  const t = useTranslations("HamburgerMenu");
 
   console.log(pathname);
 
   const navMenu = [
-    { name: "Work", link: "/work" },
-    { name: "About", link: "/about" },
-    { name: "Services", link: "/services" },
-    { name: "Contact", link: "/contact" },
-    { name: "Careers", link: "/careers" },
+    { name: t("nas_rad"), link: "/work" },
+    { name: t("o_nama"), link: "/about" },
+    { name: t("usluge"), link: "/services" },
+    { name: t("kontakt"), link: "/contact" },
+    { name: t("karijera"), link: "/careers" },
   ];
 
   const containerVariants = {
@@ -116,7 +118,7 @@ export default function HamburgerMenu({ variant = "light" }) {
                     <Link
                       href={item.link}
                       onClick={() => setIsOpen(false)}
-                      className="group relative block text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[200px] mx-auto"
+                      className="group relative block text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[10ch] mx-auto"
                     >
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 

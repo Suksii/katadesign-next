@@ -1,7 +1,13 @@
 {
+    "HamburgerMenu": {
+        "nas_rad": "Work",
+        "o_nama": "About",
+        "usluge": "Services",
+        "kontakt": "Contact",
+        "karijera": "Careers"
+    },
+   "Navbar": {
     "nas_rad": "Work",
-    "o_nama": "About",
-    "usluge": "Services",
-    "kontakt": "Contact",
-    "karijera": "Careers"
+    "o_nama": "About"
+   }
 }
