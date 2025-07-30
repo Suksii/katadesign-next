@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
 import { usePathname } from "next/navigation";

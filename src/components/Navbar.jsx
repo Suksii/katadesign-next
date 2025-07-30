@@ -1,6 +1,6 @@
 import React from "react";
 import HamburgerMenu from "./HamburgerMenu";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Logo from "./Logo";
 
 const Navbar = ({ variant = "light" }) => {
