@@ -1,13 +1,13 @@
 {
   "HamburgerMenu": {
-    "nas_rad": "Naš rad",
+    "nas_rad": "Projekti",
     "o_nama": "O nama",
     "usluge": "Usluge",
     "kontakt": "Kontakt",
     "karijera": "Karijera"
   },
   "Navbar": {
-    "nas_rad": "Naš rad",
+    "nas_rad": "Projekti",
     "o_nama": "O nama"
   },
   "ServicesPage": {
@@ -64,5 +64,17 @@
       "title": "Događaji i iskustveni dizajn",
       "description": "Konceptualizujemo, dizajniramo i produkcijski realizujemo događaje koji komuniciraju vrijednosti kroz atmosferu, naraciju i pažljivo osmišljeno korisničko iskustvo."
     }
+  },
+  "AboutPage": {
+    "o_nama": "O nama",
+    "o_nama_naslov": "Kreiramo brendove, oblikujemo vizuelne sisteme i gradimo digitalna iskustva koja ostavljaju trag.",
+    "o_nama_paragrafi": [
+      "Kata studio je savremeni dizajn studio koji razvija vizuelne identitete, digitalne proizvode i prostorne sisteme za brendove, autore, institucije i kulturni sektor širom svijeta.",
+      "Naš pristup zasnovan je na funkcionalnom dizajnu i preciznom razumijevanju ekosistema u kojima brendovi i projekti pronalaze svoje mjesto.",
+      "Vjerujemo da promišljen i upečatljiv dizajn gradi povjerenje, izaziva emocije i povezuje ljude s idejom.",
+      "Povezujući strategiju, narativ i tehnologiju, razvijamo fleksibilne i promišljene dizajnerske sisteme koji funkcionišu kroz različite formate, kanale i kontekste i čine osnovu našeg vizuelnog izraza.",
+      "Kao tim posvećen oblikovanju i realizaciji ideja, razvijamo digitalna iskustva koja povezuju potrebe klijenata sa savremenim tokovima u dizajnu i inovacijama, stvarajući rješenja koja su estetski relevantna i funkcionalno održiva.",
+      "Kroz svaki projekat stvaramo komunikaciju koja se pamti."
+    ]
   }
 }

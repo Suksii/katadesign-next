@@ -1,13 +1,13 @@
 {
   "HamburgerMenu": {
-    "nas_rad": "Work",
+    "nas_rad": "Projects",
     "o_nama": "About",
     "usluge": "Services",
     "kontakt": "Contact",
     "karijera": "Careers"
   },
   "Navbar": {
-    "nas_rad": "Work",
+    "nas_rad": "Projects",
     "o_nama": "About"
   },
   "ServicesPage": {
@@ -64,5 +64,16 @@
       "title": "Experiential & Event Design",
       "description": "We conceptualize and produce events that communicate brand values through atmosphere, narrative, and intentional user journeys. Every detail is curated to deliver a cohesive, memorable experience."
     }
+  },
+  "AboutPage": {
+    "o_nama": "About us",
+    "o_nama_naslov": "We craft brands, design experiences, and build digital presence.",
+    "o_nama_paragrafi": [
+      "Kata is a global design studio shaping brand identities, digital products, and spatial systems for brands, creators, institutions, and the cultural sector worldwide.",
+      "At Kata studio we craft design-driven identities, products, and spaces that tell compellin stories and shape meaningful visual experiences.",
+      "Leveraging market-leading capabilities, we develop cross-disciplinary design systems that seamlessly integrate strategy, narrative, and technology. Our approach fuses functional design with contextual insight, ensuring every brand and project is precisely positioned within its ecosystem.",
+      "Combining strategy, design, and production into a unified creative process, we collaborate with individuals and institutions through bold and strategic communication.",
+      "Together, we create impact."
+    ]
   }
 }

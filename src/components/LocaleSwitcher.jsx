@@ -30,7 +30,7 @@ const LocaleSwitcher = () => {
     <button
       disabled={isPending}
       onClick={toggleLocale}
-      className="z-10 uppercase font-medium cursor-pointer"
+      className="z-10 uppercase font-medium cursor-pointer min-w-20"
     >
       {locale}
     </button>

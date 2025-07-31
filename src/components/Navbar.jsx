@@ -13,10 +13,16 @@ const Navbar = ({ variant = "light" }) => {
       <Logo variant={variant} />
       <div className="flex gap-14 items-center">
         <LocaleSwitcher />
-        <Link href="/work" className="font-semibold hidden md:block z-10">
+        <Link
+          href="/work"
+          className="font-semibold hidden md:block z-10 min-w-20"
+        >
           {t("nas_rad")}
         </Link>
-        <Link href="/about" className="font-semibold hidden md:block z-10">
+        <Link
+          href="/about"
+          className="font-semibold hidden md:block z-10 min-w-20"
+        >
           {t("o_nama")}
         </Link>
         <div>
