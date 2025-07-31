@@ -1,15 +1,68 @@
 {
-   "HamburgerMenu": {
-        "nas_rad": "Naš rad",
-        "o_nama": "O nama",
-        "usluge": "Usluge",
-        "kontakt": "Kontakt",
-        "karijera": "Karijera"
-   },
-   "Navbar": {
+  "HamburgerMenu": {
+    "nas_rad": "Naš rad",
+    "o_nama": "O nama",
+    "usluge": "Usluge",
+    "kontakt": "Kontakt",
+    "karijera": "Karijera"
+  },
+  "Navbar": {
     "nas_rad": "Naš rad",
     "o_nama": "O nama"
-   }
-   
-
+  },
+  "ServicesPage": {
+    "uslugeNaslov": "Kata studio razvija kompletna vizuelna rješenja od ideje do realizacije, sa fokusom na:",
+    "kreativni_koncepti_i_umjetnička_direkcija": {
+      "title": "Kreativni koncepti i umjetnička direkcija",
+      "description": "Definišemo kreativni pravac, razvijamo narativ i vodimo vizuelni ton projekta – od strategije do art direkcije, bilo da je riječ o brendu, kampanji, izložbi ili filmu."
+    },
+    "brending_i_stratesko_pozicioniranje": {
+      "title": "Brending i strateško pozicioniranje",
+      "description": "Razvijamo dugoročne strategije brenda koje definišu njegovu suštinu, vrijednosti i način komunikacije. Pomažemo brendovima da izgrade autentičan identitet i relevantnu poziciju na tržištu, kroz istraživanja, analize i kreativne smjernice."
+    },
+    "vizuelni_identitet_i_dizajn_sistemi": {
+      "title": "Vizuelni identitet i dizajn sistemi",
+      "description": "Kreiramo autentične i dosljedne vizuelne identitete: logotipe, tipografske sisteme, boje, layout pravila i sve komponente koje brendu daju profesionalan i prepoznatljiv vizuelni jezik."
+    },
+    "naming_i_komunikacijska_arhitektura": {
+      "title": "Naming i komunikacijska arhitektura",
+      "description": "Osmišljavamo imena koja funkcionišu – strateški, fonetski i semantički. Uz to, oblikujemo komunikacijsku logiku koja artikuliše poruku jasno i uvjerljivo."
+    },
+    "produkt_i_dizajn_ambalaze": {
+      "title": "Produkt i dizajn ambalaže",
+      "description": "Radimo dizajn proizvoda i pakovanja. Svaki detalj dizajna oblikuje jedinstven vizuelni jezik koji ostavlja snažan utisak i stvara emotivnu povezanost sa potrošačem."
+    },
+    "editorial_i_dizajn_publikacija": {
+      "title": "Editorial i dizajn publikacija",
+      "description": "Dizajniramo knjige, časopise, kataloge i publikacije sa pažljivo oblikovanim ritmom, tipografijom i vizuelnom naracijom, uz pažljivo podešen balans između sadržaja i forme."
+    },
+    "prostorni_i_ambijentalni_dizajn": {
+      "title": "Prostorni i ambijentalni dizajn",
+      "description": "Razvijamo i realizujemo prostorne projekte – od izložbi, događaja, enterijera, do umjetničkih intervencija u javnom prostoru. Dizajniramo prostor koji komunicira i povezuje ideje."
+    },
+    "primijenjena_umjetnost": {
+      "title": "Primijenjena umjetnost",
+      "description": "Uspostavljamo dijalog između umjetnosti i funkcije. Kreiramo unikatne objekte, kombinujući slikarstvo, skulpturu i instalacije koje proširuju narativ kroz materijalnost i oblik."
+    },
+    "digitalni_dizajn_i_razvoj": {
+      "title": "Digitalni dizajn i razvoj",
+      "description": "Naše web stranice spajaju funkcionalnost i estetiku. Intuitivan UX/UI dizajn i precizan front-end razvoj stvaraju digitalna rješenja koja su jednostavna za korišćenje i vizuelno upečatljiva."
+    },
+    "fotografija_i_video_produkcija": {
+      "title": "Fotografija i video produkcija",
+      "description": "Nudimo autorski pristup fotografiji i videu: od koncepta do postprodukcije. Kreiramo sadržaj koji dokumentuje, komunicira i inspiriše."
+    },
+    "animacija_i_pokretna_grafika": {
+      "title": "Animacija i pokretna grafika",
+      "description": "Poseban fokus stavljamo na 3D animaciju – od modelovanja i teksturisanja do animiranja kompleksnih scena. Motion design koristimo za jačanje narativa, digitalnih kampanja i prezentacija – oblikujemo pokretne vizuale koji zadržavaju pažnju i dinamično prenose poruku."
+    },
+    "imerzivna_iskustva": {
+      "title": "Imerzivna iskustva: VR / AR / XR",
+      "description": "Kombinujemo prostor, tehnologiju i interakciju kako bismo kreirali nove formate prezentacije – od virtuelnih izložbi do augmentovanih narativa."
+    },
+    "dogadjaji_i_iskustveni_dizajn": {
+      "title": "Događaji i iskustveni dizajn",
+      "description": "Konceptualizujemo, dizajniramo i produkcijski realizujemo događaje koji komuniciraju vrijednosti kroz atmosferu, naraciju i pažljivo osmišljeno korisničko iskustvo."
+    }
+  }
 }

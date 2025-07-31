@@ -1,13 +1,68 @@
 {
-    "HamburgerMenu": {
-        "nas_rad": "Work",
-        "o_nama": "About",
-        "usluge": "Services",
-        "kontakt": "Contact",
-        "karijera": "Careers"
-    },
-   "Navbar": {
+  "HamburgerMenu": {
+    "nas_rad": "Work",
+    "o_nama": "About",
+    "usluge": "Services",
+    "kontakt": "Contact",
+    "karijera": "Careers"
+  },
+  "Navbar": {
     "nas_rad": "Work",
     "o_nama": "About"
-   }
+  },
+  "ServicesPage": {
+    "uslugeNaslov": "Kata Studio develops comprehensive visual solutions — from concept to execution — with a focus on:",
+    "kreativni_koncepti_i_umjetnička_direkcija": {
+      "title": "Creative Concepts & Art Direction",
+      "description": "We define creative direction, shape narratives, and establish the visual tone of each project—from strategic inception to final art direction. Whether we’re working on a brand, campaign, exhibition, or film, we build visual worlds that are both intentional and immersive."
+    },
+    "brending_i_stratesko_pozicioniranje": {
+      "title": "Brand Strategy & Positioning",
+      "description": "We develop long-term brand strategies that articulate a brand’s core values, voice, and purpose. Through research, insight, and creative direction, we help brands define authentic identities and build meaningful, enduring relevance."
+    },
+    "vizuelni_identitet_i_dizajn_sistemi": {
+      "title": "Visual Identity & Design Systems",
+      "description": "We create distinct and coherent visual identities—logos, typography, color palettes, layout principles, and beyond. Each identity is built as a functional, scalable system that ensures consistency and creative flexibility across platforms."
+    },
+    "naming_i_komunikacijska_arhitektura": {
+      "title": "Naming & Communication Architecture",
+      "description": "Osmišljavamo imena koja funkcionišu – strateški, fonetski i semantički. Uz to, oblikujemo komunikacijsku logiku koja artikuliše poruku jasno i uvjerljivo."
+    },
+    "produkt_i_dizajn_ambalaze": {
+      "title": "Product & Packaging Design",
+      "description": "We design products and packaging that extend the brand experience through form and tactility. Every detail is a deliberate gesture that builds emotional connection, communicates value, and stands out through visual impact."
+    },
+    "editorial_i_dizajn_publikacija": {
+      "title": "Editorial & Publication Design",
+      "description": "We design books, catalogs, and editorial formats with refined rhythm, typography, and narrative structure. Our work balances content with form—creating publications that are both engaging and deeply considered."
+    },
+    "prostorni_i_ambijentalni_dizajn": {
+      "title": "Spatial & Environmental Design",
+      "description": "From exhibitions and installations to interiors and interventions in public space, we design environments that embody ideas. We shape spatial experiences that inform, inspire, and connect."
+    },
+    "primijenjena_umjetnost": {
+      "title": "Applied Arts",
+      "description": "We explore the intersection of artistic expression and practical form—creating unique, hand-crafted objects that blend painting, sculpture, and installation. Our applied arts extend visual narratives through material, texture, and shape."
+    },
+    "digitalni_dizajn_i_razvoj": {
+      "title": "Digital Design & Development",
+      "description": "We design and develop websites where function and aesthetics converge. Through intuitive UX/UI and precise front-end execution, we deliver digital experiences that are visually refined, accessible, and purpose-driven."
+    },
+    "fotografija_i_video_produkcija": {
+      "title": "Photography & Video Production",
+      "description": "We offer a full-spectrum creative approach to photography and video—from concept to post-production. Our work communicates with clarity and visual intent, documenting stories that resonate and inspire."
+    },
+    "animacija_i_pokretna_grafika": {
+      "title": "Animation & Motion Design",
+      "description": "We place special emphasis on 3D animation—from modeling and texturing to animating complex sequences. Motion design becomes a storytelling tool, enhancing digital narratives, campaigns, and presentations with rhythm, clarity, and movement."
+    },
+    "imerzivna_iskustva": {
+      "title": "Immersive Experiences: VR / AR / XR",
+      "description": "We create immersive formats that blend space, technology, and interaction. Whether virtual exhibitions or augmented narratives, we craft new forms of engagement that expand storytelling into experiential dimensions."
+    },
+    "dogadjaji_i_iskustveni_dizajn": {
+      "title": "Experiential & Event Design",
+      "description": "We conceptualize and produce events that communicate brand values through atmosphere, narrative, and intentional user journeys. Every detail is curated to deliver a cohesive, memorable experience."
+    }
+  }
 }
