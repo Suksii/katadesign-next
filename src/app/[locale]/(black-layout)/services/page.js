@@ -6,7 +6,7 @@ import React from "react";
 const ServicesPage = () => {
   const t = useTranslations("ServicesPage");
   return (
-    <PagesWrapper title="Services">
+    <PagesWrapper title={t("usluge")}>
       <h2>{t("uslugeNaslov")}</h2>
       <div>
         <Services />

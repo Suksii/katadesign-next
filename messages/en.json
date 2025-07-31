@@ -11,6 +11,7 @@
     "o_nama": "About"
   },
   "ServicesPage": {
+    "usluge": "Services",
     "uslugeNaslov": "Kata Studio develops comprehensive visual solutions — from concept to execution — with a focus on:",
     "kreativni_koncepti_i_umjetnička_direkcija": {
       "title": "Creative Concepts & Art Direction",
@@ -75,5 +76,22 @@
       "Combining strategy, design, and production into a unified creative process, we collaborate with individuals and institutions through bold and strategic communication.",
       "Together, we create impact."
     ]
+  },
+  "ContactPage": {
+    "kontakt": "Contact",
+    "pronadjite_nas": "Find us",
+    "ime": "Fullname",
+    "ime_placeholder": "Your fullname",
+    "preduzece": "Company",
+    "preduzece_placeholder": "Your company",
+    "tema": "Subject",
+    "tema_placeholder": "Choose subject",
+    "mail": "Mail",
+    "mail_placeholder": "E-mail address",
+    "poruka": "Message",
+    "pisite_ovdje": "Start typing here...",
+    "crna_gora_evropa": "Crna Gora, Evropa",
+    "pozdravi_nas": "Say hello",
+    "posalji": "Submit"
   }
 }

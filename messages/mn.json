@@ -11,6 +11,7 @@
     "o_nama": "O nama"
   },
   "ServicesPage": {
+    "usluge": "Usluge",
     "uslugeNaslov": "Kata studio razvija kompletna vizuelna rješenja od ideje do realizacije, sa fokusom na:",
     "kreativni_koncepti_i_umjetnička_direkcija": {
       "title": "Kreativni koncepti i umjetnička direkcija",
@@ -76,5 +77,22 @@
       "Kao tim posvećen oblikovanju i realizaciji ideja, razvijamo digitalna iskustva koja povezuju potrebe klijenata sa savremenim tokovima u dizajnu i inovacijama, stvarajući rješenja koja su estetski relevantna i funkcionalno održiva.",
       "Kroz svaki projekat stvaramo komunikaciju koja se pamti."
     ]
+  },
+  "ContactPage": {
+    "kontakt": "Kontakt",
+    "pronadjite_nas": "Pronađite nas",
+    "ime": "Ime i prezime",
+    "ime_placeholder": "Vaše ime i prezime",
+    "preduzece": "Preduzeće",
+    "preduzece_placeholder": "Vaše preduzeće",
+    "tema": "Tema",
+    "tema_placeholder": "Odaberite temu",
+    "mail": "E-mail",
+    "mail_placeholder": "E-mail adresa",
+    "poruka": "Poruka",
+    "pisite_ovdje": "Počni da kucaš ovdje...",
+    "crna_gora_evropa": "Crna Gora, Evropa",
+    "pozdravi_nas": "Pozdravi nas",
+    "posalji": "Pošalji"
   }
 }
