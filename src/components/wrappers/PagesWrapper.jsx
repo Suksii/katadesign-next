@@ -17,7 +17,9 @@ const PagesWrapper = ({
       transition={{ duration: 2 }}
     >
       <h1 className={titleClassName}>{title}</h1>
-      <div className={twMerge("max-w-6xl mx-auto pt-12 md:pt-20", layoutClassName)}>
+      <div
+        className={twMerge("max-w-6xl mx-auto pt-12 md:pt-20", layoutClassName)}
+      >
         {children}
       </div>
     </motion.div>

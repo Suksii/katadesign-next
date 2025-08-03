@@ -14,7 +14,7 @@ const Navbar = ({ variant = "light" }) => {
       <div className="flex gap-14 items-center">
         <LocaleSwitcher />
         <Link
-          href="/work"
+          href="/projects"
           className="font-semibold hidden md:block z-10 min-w-20"
         >
           {t("nas_rad")}
