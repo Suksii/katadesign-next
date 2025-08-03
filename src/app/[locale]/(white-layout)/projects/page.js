@@ -1,11 +1,11 @@
-import GaleryHover from "@/components/GaleryHover";
+import GalleryHover from "@/components/GalleryHover";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import React from "react";
 
 const ProjectsPage = () => {
   return (
     <PagesWrapper title="Projects">
-      <GaleryHover />
+      <GalleryHover />
     </PagesWrapper>
   );
 };
