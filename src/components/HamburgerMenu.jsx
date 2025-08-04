@@ -17,7 +17,7 @@ export default function HamburgerMenu({ variant = "light" }) {
   console.log(pathname);
 
   const navMenu = [
-    { name: t("nas_rad"), link: "/work" },
+    { name: t("nas_rad"), link: "/projects" },
     { name: t("o_nama"), link: "/about" },
     { name: t("usluge"), link: "/services" },
     { name: t("kontakt"), link: "/contact" },
