@@ -13,18 +13,38 @@ const ContactSection = () => {
     topic: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSuccess = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    setLoading(true);
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      setFormData({
+        fullName: "",
+        email: "",
+        company: "",
+        topic: "",
+        message: "",
+      });
+      console.log("Poruka uspjesno poslata");
+      setLoading(false);
+    } else {
+      console.log("Greska pri slanju poruke");
+    }
   };
 
   return (
-    <form className="w-full lg:w-[80%] mx-auto" onSubmit={handleSuccess}>
+    <form className="w-full lg:w-[80%] mx-auto" onSubmit={handleSubmit}>
       <p className="text-lg pb-6">{t("pozdravi_nas")}</p>
       <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
         <div className="flex flex-col gap-0.5 w-full">
@@ -77,12 +97,15 @@ const ContactSection = () => {
           placeholder={t("pisite_ovdje")}
           name="message"
           value={formData.message}
-          className="min-h-36 max-h-96 bg-gray-100 p-2"
+          className="min-h-36 max-h-96 focus:outline-none bg-gray-100 p-2"
           onChange={handleChange}
         />
       </div>
-      <button className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200">
-        {t("posalji")}
+      <button
+        disabled={loading}
+        className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
+      >
+        {loading ? "Loading..." : t("posalji")}
       </button>
     </form>
   );
