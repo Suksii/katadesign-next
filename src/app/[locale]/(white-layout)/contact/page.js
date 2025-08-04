@@ -1,3 +1,4 @@
+import ContactSection from "@/components/ContactSection";
 import SocialLinks from "@/components/SocialLinks";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { useTranslations } from "next-intl";
@@ -30,54 +31,7 @@ const ContactPage = () => {
           </div>
         </div>
         <div className="flex-1 w-full">
-          <form className="w-full lg:w-[80%] mx-auto">
-            <p className="text-lg pb-6">{t("pozdravi_nas")}</p>
-            <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
-              <div className="flex flex-col gap-0.5 w-full">
-                <label className="uppercase font-medium">{t("ime")}</label>
-                <input
-                  placeholder={t("ime_placeholder")}
-                  className="focus:outline-none py-1"
-                />
-              </div>
-              <div className="flex flex-col gap-0.5 w-full">
-                <label className="uppercase font-medium">{t("tema")}</label>
-                <input
-                  placeholder={t("tema_placeholder")}
-                  className="focus:outline-none py-1"
-                />
-              </div>
-            </div>
-            <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
-              <div className="flex flex-col gap-0.5 w-full">
-                <label className="uppercase font-medium">
-                  {t("preduzece")}
-                </label>
-                <input
-                  placeholder={t("preduzece_placeholder")}
-                  className="focus:outline-none py-1"
-                />
-              </div>
-              <div className="flex flex-col gap-0.5 w-full">
-                <label className="uppercase font-medium">{t("mail")}</label>
-                <input
-                  placeholder={t("mail_placeholder")}
-                  className="focus:outline-none py-1"
-                />
-              </div>
-            </div>
-            <hr className="my-6 h-0.5 bg-black" />
-            <div className="flex flex-col gap-1">
-              <label className="uppercase font-medium">{t("poruka")}</label>
-              <textarea
-                placeholder={t("pisite_ovdje")}
-                className="min-h-36 max-h-96 bg-gray-100 p-2"
-              />
-            </div>
-            <button className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200">
-              {t("posalji")}
-            </button>
-          </form>
+          <ContactSection />
         </div>
       </div>
     </PagesWrapper>
