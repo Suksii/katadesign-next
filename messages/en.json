@@ -92,7 +92,13 @@
     "pisite_ovdje": "Start typing here...",
     "crna_gora_evropa": "Crna Gora, Evropa",
     "pozdravi_nas": "Say hello",
-    "posalji": "Submit"
+    "posalji": "Submit",
+    "notifications": {
+      "success_poruka": "Your message has been successfully sent. We will get back to you soon!",
+      "error_poruka": "Something went wrong while sending your message. Please try again later.",
+      "slanje": "Sending...",
+      "server_error": "A technical error occurred on the server. Please try again later or contact us directly."
+    }
   },
   "ProjectPage": {
     "projekti": "Projects"

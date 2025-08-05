@@ -1,6 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
+  const t = await getTranslations("ContactPage");
   const data = await request.json();
   const { fullName, email, company, subject, message } = data;
   try {
@@ -27,7 +29,7 @@ export async function POST(request) {
     });
 
     return new Response(
-      JSON.stringify({ message: "Poruka uspjesno poslata" }),
+      JSON.stringify({ message: t("notifications.success_poruka") }),
       {
         status: 200,
         headers: { "Content-Type": "application/json" },
@@ -35,7 +37,7 @@ export async function POST(request) {
     );
   } catch (error) {
     return new Response(
-      JSON.stringify({ error: "Greska pri slanju poruke", error }),
+      JSON.stringify({ error: t("notifications.error_poruka"), error }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },

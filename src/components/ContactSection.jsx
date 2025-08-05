@@ -43,17 +43,17 @@ const ContactSection = () => {
           message: "",
         });
         setStatus({
-          message: data.message || "Poruka je poslata",
+          message: data.message || t("notifications.success_poruka"),
           type: "success",
         });
       } else {
         setStatus({
-          message: data.error || "Greška pri slanju poruke",
+          message: data.error || t("notifications.error_poruka"),
           type: "error",
         });
       }
     } catch (err) {
-      setStatus({ message: "Greška u konekciji sa serverom", type: "error" });
+      setStatus({ message: t("notifications.server_error"), type: "error" });
     } finally {
       setIsOpened(true);
       setLoading(false);
@@ -129,7 +129,7 @@ const ContactSection = () => {
         disabled={loading}
         className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
       >
-        {loading ? "Sending..." : t("posalji")}
+        {loading ? t("notifications.slanje") : t("posalji")}
       </button>
     </form>
   );

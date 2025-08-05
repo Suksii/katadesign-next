@@ -93,7 +93,13 @@
     "pisite_ovdje": "Počni da kucaš ovdje...",
     "crna_gora_evropa": "Crna Gora, Evropa",
     "pozdravi_nas": "Pozdravi nas",
-    "posalji": "Pošalji"
+    "posalji": "Pošalji",
+    "notifications": {
+      "success_poruka": "Vaša poruka je uspješno poslata. Javićemo Vam se uskoro!",
+      "error_poruka": "Došlo je do greške prilikom slanja poruke. Pokušajte ponovo kasnije.",
+      "slanje": "Slanje...",
+      "server_error": "Došlo je do tehničke greške na serveru. Pokušajte ponovo kasnije ili nas kontaktirajte direktno."
+    }
   },
   "ProjectPage": {
     "projekti": "Projekti"
