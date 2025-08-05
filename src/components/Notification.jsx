@@ -1,6 +1,6 @@
 import React from "react";
 
-const Notification = ({ type, setIsOpened }) => {
+const Notification = ({ type = "", setIsOpened, message = "" }) => {
   return (
     <div
       className={`${
@@ -9,7 +9,7 @@ const Notification = ({ type, setIsOpened }) => {
           : "border border-red-600 bg-red-300 text-red-700"
       } p-4 my-2 w-full text-sm relative`}
     >
-      <p>{type === "success" ? "Success" : ""}</p>
+      <p>{message}</p>
       <div
         className="absolute right-0 top-0 p-1 cursor-pointer"
         onClick={() => setIsOpened(false)}

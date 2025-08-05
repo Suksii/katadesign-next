@@ -14,8 +14,9 @@ const ContactSection = () => {
     topic: "",
     message: "",
   });
+  const [status, setStatus] = useState({ message: "", type: "" });
+  const [isOpened, setIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,23 +25,38 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
-      setFormData({
-        fullName: "",
-        email: "",
-        company: "",
-        topic: "",
-        message: "",
+    setStatus({ message: "", type: "" });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      console.log("Poruka uspjesno poslata");
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormData({
+          fullName: "",
+          email: "",
+          company: "",
+          topic: "",
+          message: "",
+        });
+        setStatus({
+          message: data.message || "Poruka je poslata",
+          type: "success",
+        });
+      } else {
+        setStatus({
+          message: data.error || "Greška pri slanju poruke",
+          type: "error",
+        });
+      }
+    } catch (err) {
+      setStatus({ message: "Greška u konekciji sa serverom", type: "error" });
+    } finally {
+      setIsOpened(true);
       setLoading(false);
-    } else {
-      console.log("Greska pri slanju poruke");
     }
   };
 
@@ -102,11 +118,18 @@ const ContactSection = () => {
           onChange={handleChange}
         />
       </div>
+      {isOpened && (
+        <Notification
+          type={status.type}
+          message={status.message}
+          setIsOpened={setIsOpened}
+        />
+      )}
       <button
         disabled={loading}
         className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
       >
-        {loading ? "Loading..." : t("posalji")}
+        {loading ? "Sending..." : t("posalji")}
       </button>
     </form>
   );
