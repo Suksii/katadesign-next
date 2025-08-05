@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import Notification from "./Notification";
 
 const ContactSection = () => {
   const t = useTranslations("ContactPage");
@@ -14,6 +15,7 @@ const ContactSection = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +23,6 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     setLoading(true);
     const response = await fetch("/api/contact", {
       method: "POST",

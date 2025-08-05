@@ -12,9 +12,7 @@ const LocaleSwitcher = () => {
   const router = useRouter();
   const locale = useLocale();
 
-  console.log("Current locale:", locale);
   const nextLocale = locale === "mn" ? "en" : "mn";
-  console.log("Next locale:", nextLocale);
   const toggleLocale = () => {
     startTransition(() => {
       router.replace(

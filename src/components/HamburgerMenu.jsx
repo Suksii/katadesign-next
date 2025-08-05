@@ -11,10 +11,7 @@ import { useTranslations } from "next-intl";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
-  const pathname = usePathname();
   const t = useTranslations("HamburgerMenu");
-
-  console.log(pathname);
 
   const navMenu = [
     { name: t("nas_rad"), link: "/projects" },

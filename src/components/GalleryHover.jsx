@@ -1,11 +1,5 @@
 "use client";
 
-import Image1 from "../assets/pexels-1.jpg";
-import Image2 from "../assets/pexels-2.jpg";
-import Image3 from "../assets/pexels-3.jpg";
-import Image4 from "../assets/pexels-4.jpg";
-import Image5 from "../assets/pexels-5.jpg";
-import Image6 from "../assets/pexels-6.jpg";
 import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,32 +7,32 @@ import { AnimatePresence, motion } from "framer-motion";
 const GalleryHover = () => {
   const images = [
     {
-      src: Image1,
+      src: "/pexels-1.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     },
     {
-      src: Image2,
+      src: "/pexels-2.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      src: Image3,
+      src: "/pexels-3.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
-      src: Image4,
+      src: "/pexels-4.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
     },
     {
-      src: Image5,
+      src: "/pexels-5.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ",
     },
     {
-      src: Image6,
+      src: "/pexels-6.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
     },
