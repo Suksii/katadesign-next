@@ -1,5 +1,3 @@
-import React from "react";
-
 const Notification = ({ type = "", setIsOpened, message = "" }) => {
   return (
     <div
@@ -7,7 +5,7 @@ const Notification = ({ type = "", setIsOpened, message = "" }) => {
         type === "success"
           ? "border border-green-600 bg-green-300 text-green-700"
           : "border border-red-600 bg-red-300 text-red-700"
-      } p-4 my-2 w-full text-sm relative`}
+      } p-4 mb-2 w-full text-sm relative`}
     >
       <p>{message}</p>
       <div

@@ -108,7 +108,7 @@ const ContactSection = () => {
         </div>
       </div>
       <hr className="my-6 h-0.5 bg-black" />
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 mb-2">
         <label className="uppercase font-medium">{t("poruka")}</label>
         <textarea
           placeholder={t("pisite_ovdje")}
@@ -127,7 +127,7 @@ const ContactSection = () => {
       )}
       <button
         disabled={loading}
-        className="my-4 border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
+        className="border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
       >
         {loading ? t("notifications.slanje") : t("posalji")}
       </button>
