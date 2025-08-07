@@ -99,6 +99,14 @@
       "error_poruka": "Došlo je do greške prilikom slanja poruke. Pokušajte ponovo kasnije.",
       "slanje": "Slanje...",
       "server_error": "Došlo je do tehničke greške na serveru. Pokušajte ponovo kasnije ili nas kontaktirajte direktno."
+    },
+    "errors": {
+      "ime": "Molimo unesite ime.",
+      "tema": "Molimo unesite temu.",
+      "preduzece": "Molimo unesite naziv preduzeća.",
+      "mail_prazan": "Molimo unesite e-mail adresu.",
+      "mail_format": "E-mail adresa nije ispravna.",
+      "poruka": "Molimo unesite poruku."
     }
   },
   "ProjectPage": {

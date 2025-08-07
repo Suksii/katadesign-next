@@ -98,6 +98,14 @@
       "error_poruka": "Something went wrong while sending your message. Please try again later.",
       "slanje": "Sending...",
       "server_error": "A technical error occurred on the server. Please try again later or contact us directly."
+    },
+    "errors": {
+      "ime": "Please enter your name.",
+      "tema": "Please enter a topic.",
+      "preduzece": "Please enter your company name.",
+      "mail_prazan": "Please enter your email address.",
+      "mail_format": "The email address is not valid.",
+      "poruka": "Please enter your message."
     }
   },
   "ProjectPage": {

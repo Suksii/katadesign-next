@@ -15,6 +15,7 @@ const ContactSection = () => {
     message: "",
   });
   const [status, setStatus] = useState({ message: "", type: "" });
+  const [errors, setErrors] = useState({});
   const [isOpened, setIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -22,10 +23,33 @@ const ContactSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.fullName.trim()) newErrors.fullName = t("errors.ime");
+    if (!formData.email.trim()) {
+      newErrors.email = t("errors.mail_prazan");
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = t("errors.mail_format");
+    }
+    if (!formData.message.trim()) newErrors.message = t("errors.poruka");
+
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ message: "", type: "" });
+
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setLoading(false);
+      return;
+    }
+
+    setErrors({});
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -73,6 +97,9 @@ const ContactSection = () => {
             className="focus:outline-none py-1"
             onChange={handleChange}
           />
+          {errors.fullName && (
+            <span className="text-red-500 text-sm">{errors.fullName}</span>
+          )}
         </div>
         <div className="flex flex-col gap-0.5 w-full">
           <label className="uppercase font-medium">{t("tema")}</label>
@@ -83,6 +110,9 @@ const ContactSection = () => {
             className="focus:outline-none py-1"
             onChange={handleChange}
           />
+          {errors.topic && (
+            <span className="text-red-500 text-sm">{errors.topic}</span>
+          )}
         </div>
       </div>
       <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
@@ -105,6 +135,9 @@ const ContactSection = () => {
             className="focus:outline-none py-1"
             onChange={handleChange}
           />
+          {errors.email && (
+            <span className="text-red-500 text-sm">{errors.email}</span>
+          )}
         </div>
       </div>
       <hr className="my-6 h-0.5 bg-black" />
@@ -117,6 +150,10 @@ const ContactSection = () => {
           className="min-h-36 max-h-96 focus:outline-none bg-gray-100 p-2"
           onChange={handleChange}
         />
+
+        {errors.message && (
+          <span className="text-red-500 text-sm">{errors.message}</span>
+        )}
       </div>
       {isOpened && (
         <Notification
@@ -127,7 +164,7 @@ const ContactSection = () => {
       )}
       <button
         disabled={loading}
-        className="border border-black py-1.5 min-w-28 cursor-pointer hover:bg-black hover:text-white transition-all ease-linear duration-200"
+        className="border border-black py-1.5 min-w-28 cursor-pointer font-medium tracking-wide hover:bg-black hover:text-white transition-all ease-linear duration-200"
       >
         {loading ? t("notifications.slanje") : t("posalji")}
       </button>
