@@ -1,6 +1,15 @@
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import React from "react";
+
+export async function generateMetadata() {
+  const t = await getTranslations("AboutPage");
+  return {
+    title: t("o_nama"),
+    description: "",
+  };
+}
 
 const AboutPage = () => {
   const t = useTranslations("AboutPage");
