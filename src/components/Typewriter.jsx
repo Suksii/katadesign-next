@@ -41,7 +41,7 @@ const TypewriterText = ({
       {lines.map((line, index) => (
         <span
           key={index}
-          className={`inline-block w-[10ch] font-bold  text-6xl md:text-[130px] uppercase tracking-widest font-mono leading-none relative ${
+          className={`inline-block w-[10ch] font-bold  text-6xl md:text-[130px] uppercase tracking-widest leading-none relative ${
             colors[index] || ""
           }`}
         >
