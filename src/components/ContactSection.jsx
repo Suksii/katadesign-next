@@ -85,9 +85,9 @@ const ContactSection = () => {
   };
 
   return (
-    <form className="w-full lg:w-[80%] mx-auto" onSubmit={handleSubmit}>
-      <p className="text-lg pb-6">{t("pozdravi_nas")}</p>
-      <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
+    <form className="w-full lg:w-[80%] mx-auto flex flex-col gap-2" onSubmit={handleSubmit}>
+      <p className="text-lg pb-4">{t("pozdravi_nas")}</p>
+      <div className="flex flex-col lg:flex-row items-center gap-2 w-full">
         <div className="flex flex-col gap-0.5 w-full">
           <label className="uppercase font-medium">{t("ime")}</label>
           <input
@@ -115,7 +115,7 @@ const ContactSection = () => {
           )}
         </div>
       </div>
-      <div className="flex md:flex-col lg:flex-row items-center gap-2 w-full">
+      <div className="flex flex-col lg:flex-row items-center gap-2 w-full">
         <div className="flex flex-col gap-0.5 w-full">
           <label className="uppercase font-medium">{t("preduzece")}</label>
           <input
