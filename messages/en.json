@@ -10,6 +10,10 @@
     "nas_rad": "Projects",
     "o_nama": "About"
   },
+  "HomePage": {
+    "ko_smo_mi": "Who we are",
+    "sta_radimo": "What we do"
+  },
   "ServicesPage": {
     "usluge": "Services",
     "uslugeNaslov": "Kata Studio develops comprehensive visual solutions — from concept to execution — with a focus on:",

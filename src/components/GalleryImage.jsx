@@ -13,12 +13,12 @@ const GalleryImageComponent = ({
   return (
     <div
       className={`group flex-1 flex flex-col overflow-hidden transition-all duration-500 relative ${
-        isHovered ? "flex-[3]" : ""
+        isHovered ? "flex-[8] md:flex-[12]" : ""
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="overflow-hidden h-[400px] w-full relative">
+      <div className="overflow-hidden h-[500px] w-full relative">
         <Image
           src={src}
           alt={alt}

@@ -164,7 +164,7 @@ const ContactSection = () => {
       )}
       <button
         disabled={loading}
-        className="border border-black py-1.5 min-w-28 cursor-pointer font-medium tracking-wide hover:bg-black hover:text-white transition-all ease-linear duration-200"
+        className="border border-black py-1.5 min-w-28 w-fit cursor-pointer font-medium tracking-wide hover:bg-black hover:text-white transition-all ease-linear duration-200"
       >
         {loading ? t("notifications.slanje") : t("posalji")}
       </button>

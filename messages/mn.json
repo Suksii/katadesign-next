@@ -10,6 +10,10 @@
     "nas_rad": "Projekti",
     "o_nama": "O nama"
   },
+  "HomePage": {
+    "ko_smo_mi": "Ko smo mi",
+    "sta_radimo": "Šta radimo"
+  },
   "ServicesPage": {
     "usluge": "Usluge",
     "uslugeNaslov": "Kata studio razvija kompletna vizuelna rješenja od ideje do realizacije, sa fokusom na:",

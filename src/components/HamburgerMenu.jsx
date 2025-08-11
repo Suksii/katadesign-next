@@ -129,7 +129,7 @@ export default function HamburgerMenu({ variant = "light" }) {
             </motion.div>
 
             <motion.div
-              className="w-[80%] mx-auto fixed bottom-10 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row items-center gap-4 text-gray-600 z-50"
+              className="w-[80%] mx-auto fixed bottom-6 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row items-center gap-4 text-gray-600 z-50"
               variants={footerContainerVariants}
               initial="hidden"
               animate="visible"

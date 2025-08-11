@@ -19,7 +19,7 @@ const AboutPage = () => {
     <PagesWrapper title={t("o_nama")}>
       <div>
         <h2>{t("o_nama_naslov")}</h2>
-        <div className="tracking-wide text-lg leading-8">
+        <div className="tracking-wide text-xl leading-8 flex flex-col gap-4">
           {paragraphs.map((text, index) => (
             <p key={index}>{text}</p>
           ))}
