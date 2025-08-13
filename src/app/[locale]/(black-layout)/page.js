@@ -10,14 +10,14 @@ function HomePage() {
 
   return (
     <div className="min-h-[calc(100vh-288px)] flex flex-col md:justify-end relative pb-12">
-      {/* <div className="fixed top-0 right-0 -translate-y-[8%] translate-x-[40%] sm:-translate-y-[15%] md:-translate-y-[15%] lg:-translate-y-[42%] inset-0 z-0">
+      <div className="fixed top-0 right-0 -translate-y-[8%] translate-x-[40%] sm:-translate-y-[15%] md:-translate-y-[15%] lg:-translate-y-[42%] inset-0 z-0">
         <Image
           src="/3s_logo_crveni.png"
           alt="3s_logo_crveni"
           width={3543}
           height={1341}
         />
-      </div> */}
+      </div>
       <motion.h1
         initial={{ opacity: 0, x: -150 }}
         animate={{ opacity: 1, x: 0 }}
