@@ -34,18 +34,24 @@ function HomePage() {
             "inline-block w-[10ch] font-bold  text-6xl md:text-[130px] uppercase tracking-widest leading-none relative"
           }
         />
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between sm:py-0 md:py-12 xl:py-0">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3, delay: 3.5 }}
-            className="flex-1 flex justify-end pt-16 md:pt-0 md:text-lg"
+            className="flex-1 flex flex-col gap-1 pt-16 md:pt-0 md:text-lg"
           >
-            Branding & Creative Direction / Product and Packaging,
-            <br />
-            Editorial & Photography / Digital Media & Animation /
-            <br />
-            Spatial Design & Experiential
+            <span className="flex flex-col md:flex-row gap-1 md:gap-2">
+              <span>Branding & Creative Direction</span>
+              <span className="hidden md:block">/</span>
+              <span>Product and Packaging</span>
+            </span>
+            <span className="flex flex-col md:flex-row gap-1 md:gap-2">
+              <span>Editorial & Photography</span>
+              <span className="hidden md:block">/</span>
+              <span>Digital Media & Animation</span>
+            </span>
+            <span>Spatial Design & Experiential</span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0, x: 150 }}

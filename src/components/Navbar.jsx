@@ -11,7 +11,7 @@ const Navbar = ({ variant = "light" }) => {
   return (
     <nav className="flex justify-between items-center">
       <Logo variant={variant} />
-      <div className="flex gap-14 items-center">
+      <div className="flex gap-1 md:gap-14 items-center">
         <LocaleSwitcher />
         <Link
           href="/projects"

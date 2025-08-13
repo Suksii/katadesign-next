@@ -103,13 +103,13 @@ export default function HamburgerMenu({ variant = "light" }) {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-white text-black flex flex-col items-center justify-center gap-12 z-40"
+              className="fixed inset-0 bg-white text-black flex flex-col md:items-center md:justify-center pl-4 pt-42 md:pt-12 gap-12 z-40"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <div className="flex flex-col items-start gap-10 md:pl-40">
+              <div className="flex flex-col items-start gap-4 md:gap-10 md:pl-40">
                 {navMenu.map((item, index) => (
                   <motion.div key={index} variants={linkVariants}>
                     <Link
@@ -129,16 +129,16 @@ export default function HamburgerMenu({ variant = "light" }) {
             </motion.div>
 
             <motion.div
-              className="w-[80%] mx-auto fixed bottom-6 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row items-center gap-4 text-gray-600 z-50"
+              className="w-[80%] mx-auto fixed bottom-6 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row md:items-center gap-4 text-gray-600 z-50"
               variants={footerContainerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <p className="tracking-wider font-medium flex-1 pt-4 md:pt-0">
+              <p className="tracking-wider font-medium flex-1 pt-4 pr-4 md:pt-0">
                 {new Date().getFullYear()}
               </p>
-              <div className="flex-1 flex gap-12 md:gap-24 pt-12 md:pt-0">
+              <div className="md:flex-1 flex flex-col md:flex-row gap-2 md:gap-24 pt-12 pr-10 md:pr-18 md:pt-0">
                 {socialMediaList.map((social) => (
                   <motion.p
                     key={social.name}
