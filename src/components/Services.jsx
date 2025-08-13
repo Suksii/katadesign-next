@@ -95,7 +95,7 @@ const Services = () => {
             }`}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-xl tracking-wide py-4 pr-4">
+              <h3 className="text-2xl tracking-wide py-4 pr-4">
                 {service.name}
               </h3>
               {service.description && (
@@ -113,7 +113,7 @@ const Services = () => {
               )}
             </div>
             <p
-              className={`overflow-hidden transition-all duration-300 text-sm text-gray-300 pr-12 ${
+              className={`overflow-hidden transition-all duration-300 text-lg text-gray-300 pr-12 ${
                 openedItemId === service.id ? "max-h-40" : "max-h-0"
               }`}
             >
