@@ -41,39 +41,63 @@ const GalleryHover = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div onMouseLeave={() => setHoveredIndex(null)}>
-      <div className="flex overflow-hidden h-auto relative">
-        {images.map((image, index) => (
-          <GalleryImage
-            key={index}
-            src={image.src}
-            alt={`Image ${index + 1}`}
-            isHovered={hoveredIndex === index}
-            onMouseEnter={() => setHoveredIndex(index)}
-          />
-        ))}
+    <>
+      {/* Desktop View */}
+      <div onMouseLeave={() => setHoveredIndex(null)}>
+        <div className="hidden md:flex overflow-hidden h-auto relative">
+          {images.map((image, index) => (
+            <GalleryImage
+              key={index}
+              src={image.src}
+              alt={`Image ${index + 1}`}
+              isHovered={hoveredIndex === index}
+              onMouseEnter={() => setHoveredIndex(index)}
+            />
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          {hoveredIndex !== null && (
+            <motion.div
+              key={hoveredIndex}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.1 }}
+              className="flex justify-between gap-8 min-h-[100px] py-4 bg-white"
+            >
+              <p className="w-3/4 line-clamp-2">
+                {images[hoveredIndex].description}
+              </p>
+              <button className="text-nowrap self-end cursor-pointer">
+                Read more
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      <AnimatePresence mode="wait">
-        {hoveredIndex !== null && (
+      {/* Mobile View */}
+      <div className="flex flex-col gap-6 divide-y divide-gray-300">
+        {images.map((image, index) => (
           <motion.div
-            key={hoveredIndex}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 0.1 }}
-            className="flex justify-between gap-8 min-h-[100px] py-4 bg-white"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            className="flex flex-col"
           >
-            <p className="w-3/4 line-clamp-2">
-              {images[hoveredIndex].description}
-            </p>
-            <button className="text-nowrap self-end cursor-pointer">
-              Read more
-            </button>
+            <GalleryImage
+              key={index}
+              src={image.src}
+              alt={`Image ${index + 1}`}
+            />
+            <div className="py-6">
+              <p className=" line-clamp-3">{image.description}</p>
+            </div>
           </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
