@@ -8,6 +8,12 @@ import { useEffect } from "react";
 import { socialMediaList } from "./utils/constants";
 import { openLink } from "./utils/helpers";
 import { useTranslations } from "next-intl";
+import {
+  containerVariants,
+  footerContainerVariants,
+  footerLinkVariants,
+  linkVariants,
+} from "./utils/motions";
 
 export default function HamburgerMenu({ variant = "light" }) {
   const { isOpen, setIsOpen } = useMenuStore();
@@ -20,41 +26,6 @@ export default function HamburgerMenu({ variant = "light" }) {
     { name: t("kontakt"), link: "/contact" },
     { name: t("karijera"), link: "/careers" },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: "-100%" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        when: "beforeChildren",
-        staggerChildren: 0.15,
-      },
-    },
-    exit: { opacity: 0, y: "-100%", transition: { duration: 0.4 } },
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    exit: { opacity: 0, y: 30, transition: { duration: 0.2 } },
-  };
-
-  const footerContainerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { delay: 0.3, when: "beforeChildren", staggerChildren: 0.15 },
-    },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.3 } },
-  };
-
-  const footerLinkVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-  };
 
   const isLight = variant === "light";
   const burgerColor = isOpen ? "bg-black" : isLight ? "bg-black" : "bg-white";
@@ -115,7 +86,7 @@ export default function HamburgerMenu({ variant = "light" }) {
                     <Link
                       href={item.link}
                       onClick={() => setIsOpen(false)}
-                      className="group relative block text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider transition-all duration-300 w-[10ch] mx-auto"
+                      className="group relative block text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-wider transition-all duration-300 w-[10ch] mx-auto"
                     >
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-0 group-hover:h-full transition-all duration-300 bg-black"></span>
 
@@ -129,16 +100,16 @@ export default function HamburgerMenu({ variant = "light" }) {
             </motion.div>
 
             <motion.div
-              className="w-[80%] mx-auto fixed bottom-6 md:bottom-20 left-0 right-0 flex flex-col-reverse md:flex-row md:items-center gap-4 text-gray-600 z-50"
+              className="w-[80%] mx-auto fixed bottom-6 md:bottom-20 left-0 right-3 flex flex-col-reverse md:flex-row md:items-center gap-4 text-gray-600 z-50"
               variants={footerContainerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <p className="tracking-wider font-medium flex-1 pt-4 pr-4 md:pt-0">
+              <p className="tracking-wider font-medium flex-1 pt-4 md:pt-0">
                 {new Date().getFullYear()}
               </p>
-              <div className="md:flex-1 flex flex-col md:flex-row gap-2 md:gap-24 pt-12 pr-10 md:pr-18 md:pt-0">
+              <div className="md:flex-1 flex flex-col md:flex-row gap-2 md:gap-24 pt-12 md:pr-28 md:pt-0">
                 {socialMediaList.map((social) => (
                   <motion.p
                     key={social.name}

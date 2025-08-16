@@ -10,42 +10,77 @@ const GalleryHover = () => {
       src: "/pexels-1.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      alt: "Slika1",
+      category: "3D",
     },
     {
       src: "/pexels-2.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      alt: "Slika2",
+      category: "2D",
     },
     {
       src: "/pexels-3.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      alt: "Slika3",
+      category: "Branding",
     },
     {
       src: "/pexels-4.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
+      alt: "Slika4",
+      category: "Live Action",
     },
     {
       src: "/pexels-5.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ",
+      alt: "Slika5",
+      category: "2D",
     },
     {
       src: "/pexels-6.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
+      alt: "Slika1",
+      category: "Live Action",
     },
   ];
 
+  const categories = [
+    "Everything",
+    ...new Set(images.map((img) => img.category)),
+  ];
+
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("Everything");
+
+  const filteredImages =
+    selectedCategory === "Everything"
+      ? images
+      : images.filter((img) => img.category === selectedCategory);
 
   return (
     <>
+      <div className="flex flex-wrap gap-x-16 gap-y-8 pb-8 md:w-1/2">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className="relative cursor-pointer overflow-hidden text-nowrap text-xl group"
+          >
+            <span className="relative z-10">{category}</span>
+            <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+          </button>
+        ))}
+      </div>
       {/* Desktop View */}
       <div onMouseLeave={() => setHoveredIndex(null)}>
         <div className="hidden md:flex overflow-hidden h-auto relative">
-          {images.map((image, index) => (
+          {filteredImages.map((image, index) => (
             <GalleryImage
               key={index}
               src={image.src}
@@ -78,9 +113,10 @@ const GalleryHover = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="flex flex-col gap-6 divide-y divide-gray-300">
-        {images.map((image, index) => (
+      <div className="flex md:hidden flex-col gap-6 divide-y divide-gray-300">
+        {filteredImages.map((image, index) => (
           <motion.div
+            key={`Image-${index}`}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
