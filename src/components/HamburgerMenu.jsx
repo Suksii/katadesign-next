@@ -25,6 +25,7 @@ export default function HamburgerMenu({ variant = "light" }) {
     { name: t("usluge"), link: "/services" },
     { name: t("kontakt"), link: "/contact" },
     { name: t("karijera"), link: "/careers" },
+    { name: t("novosti"), link: "/news" },
   ];
 
   const isLight = variant === "light";
@@ -74,13 +75,13 @@ export default function HamburgerMenu({ variant = "light" }) {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-white text-black flex flex-col md:items-center md:justify-center pl-4 pt-42 md:pt-12 gap-12 z-40"
+              className="fixed inset-0 bg-white text-black flex flex-col md:items-center md:justify-center pl-4 pt-42 md:pt-0 gap-12 z-40"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <div className="flex flex-col items-start gap-4 md:gap-10 md:pl-40">
+              <div className="flex flex-col items-start gap-4 md:gap-8 md:pl-40">
                 {navMenu.map((item, index) => (
                   <motion.div key={index} variants={linkVariants}>
                     <Link

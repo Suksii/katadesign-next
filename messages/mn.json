@@ -4,7 +4,8 @@
     "o_nama": "O nama",
     "usluge": "Usluge",
     "kontakt": "Kontakt",
-    "karijera": "Karijera"
+    "karijera": "Karijera",
+    "novosti": "Novosti"
   },
   "Navbar": {
     "nas_rad": "Projekti",
@@ -115,5 +116,8 @@
   },
   "ProjectPage": {
     "projekti": "Projekti"
+  },
+  "NewsPage": {
+    "novosti": "Novosti"
   }
 }

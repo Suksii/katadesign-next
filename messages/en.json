@@ -4,7 +4,8 @@
     "o_nama": "About",
     "usluge": "Services",
     "kontakt": "Contact",
-    "karijera": "Careers"
+    "karijera": "Careers",
+    "novosti": "News"
   },
   "Navbar": {
     "nas_rad": "Projects",
@@ -114,5 +115,8 @@
   },
   "ProjectPage": {
     "projekti": "Projects"
+  },
+  "NewsPage": {
+    "novosti": "News"
   }
 }

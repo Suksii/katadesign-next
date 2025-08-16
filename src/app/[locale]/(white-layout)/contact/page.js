@@ -22,9 +22,9 @@ const ContactPage = () => {
       titleClassName="!text-5xl"
       layoutClassName="max-w-full"
     >
-      <div className="flex gap-12 flex-col md:flex-row pt-12">
+      <div className="flex gap-12 flex-col md:flex-row md:pt-12">
         <div className="flex-1 flex flex-col justify-between gap-6">
-          <p>email@kata.design</p>
+          <p className="pb-8 md:pb-0">email@kata.design</p>
           <div className="flex justify-between md:w-[80%]">
             <div className="flex flex-col gap-4">
               <p className="uppercase font-medium">{t("pronadjite_nas")}</p>
