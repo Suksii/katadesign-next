@@ -4,17 +4,19 @@ import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
 
-  const images = [
+  const projects = [
     {
-      src: "/pexels-1.jpg",
+      src: "/explore_mne-06-19-60.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       alt: "Slika1",
       category: t("kategorije.digital"),
+      slug: "explore-montenegro",
     },
     {
       src: "/pexels-2.jpg",
@@ -22,6 +24,7 @@ const GalleryHover = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       alt: "Slika2",
       category: t("kategorije.komunikacije"),
+      slug: "",
     },
     {
       src: "/pexels-3.jpg",
@@ -29,6 +32,7 @@ const GalleryHover = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       alt: "Slika3",
       category: t("kategorije.film_mediji"),
+      slug: "",
     },
     {
       src: "/pexels-4.jpg",
@@ -36,6 +40,7 @@ const GalleryHover = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
       alt: "Slika4",
       category: t("kategorije.prostori"),
+      slug: "",
     },
     {
       src: "/pexels-5.jpg",
@@ -43,6 +48,7 @@ const GalleryHover = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ",
       alt: "Slika5",
       category: t("kategorije.identitet"),
+      slug: "",
     },
     {
       src: "/pexels-6.jpg",
@@ -50,6 +56,7 @@ const GalleryHover = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
       alt: "Slika1",
       category: t("kategorije.produkti"),
+      slug: "",
     },
   ];
 
@@ -71,10 +78,10 @@ const GalleryHover = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
-  const filteredImages =
+  const filteredProjects =
     selectedCategory === t("kategorije.sve")
-      ? images
-      : images.filter((img) => img.category === selectedCategory);
+      ? projects
+      : projects.filter((img) => img.category === selectedCategory);
 
   return (
     <>
@@ -93,11 +100,12 @@ const GalleryHover = () => {
       {/* Desktop View */}
       <div onMouseLeave={() => setHoveredIndex(null)}>
         <div className="hidden md:flex overflow-hidden h-auto relative">
-          {filteredImages.map((image, index) => (
+          {filteredProjects.map((project, index) => (
             <GalleryImage
               key={index}
-              src={image.src}
+              src={project.src}
               alt={`Image ${index + 1}`}
+              slug={project.slug}
               isHovered={hoveredIndex === index}
               onMouseEnter={() => setHoveredIndex(index)}
             />
@@ -114,7 +122,9 @@ const GalleryHover = () => {
               transition={{ duration: 0.1 }}
               className=" py-4 bg-white"
             >
-              <p className="line-clamp-2">{images[hoveredIndex].description}</p>
+              <p className="line-clamp-2">
+                {projects[hoveredIndex].description}
+              </p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -122,7 +132,7 @@ const GalleryHover = () => {
 
       {/* Mobile View */}
       <div className="flex md:hidden flex-col gap-6 divide-y divide-gray-300">
-        {filteredImages.map((image, index) => (
+        {filteredProjects.map((project, index) => (
           <motion.div
             key={`Image-${index}`}
             initial={{ opacity: 0, y: 60 }}
@@ -132,11 +142,12 @@ const GalleryHover = () => {
           >
             <GalleryImage
               key={index}
-              src={image.src}
+              src={project.src}
+              slug={project.slug}
               alt={`Image ${index + 1}`}
             />
             <div className="py-6">
-              <p className=" line-clamp-3">{image.description}</p>
+              <p className=" line-clamp-3">{project.description}</p>
             </div>
           </motion.div>
         ))}

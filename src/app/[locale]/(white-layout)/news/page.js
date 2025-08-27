@@ -11,6 +11,8 @@ const newsData = [
     date: "16.08.2025",
     description:
       "Grad Podgorica započinje novi infrastrukturni projekat koji će poboljšati promet u centru grada.",
+
+      
     mainImage: "/pexels-1.jpg",
   },
   {

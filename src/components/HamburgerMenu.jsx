@@ -3,7 +3,6 @@
 import { Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenuStore } from "@/store/menuStore";
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { socialMediaList } from "./utils/constants";
 import { openLink } from "./utils/helpers";

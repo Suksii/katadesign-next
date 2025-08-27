@@ -115,6 +115,7 @@
   },
   "ProjectPage": {
     "projekti": "Projects",
+    "projekti_slug": "projects",
     "kategorije": {
       "sve": "Everything",
       "identitet": "Identity",

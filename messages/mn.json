@@ -116,6 +116,7 @@
   },
   "ProjectPage": {
     "projekti": "Projekti",
+    "projekti_slug": "projekti",
     "kategorije": {
       "sve": "Sve",
       "identitet": "Identitet",
@@ -124,7 +125,7 @@
       "prostori": "Prostori",
       "produkti": "Produkti",
       "film_mediji": "Film & Mediji"
-    } 
+    }
   },
   "NewsPage": {
     "novosti": "Novosti"
