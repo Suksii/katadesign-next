@@ -6,8 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const GalleryHover = () => {
-
-  const t = useTranslations('ProjectPage')
+  const t = useTranslations("ProjectPage");
 
   const images = [
     {
@@ -15,61 +14,71 @@ const GalleryHover = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       alt: "Slika1",
-      category: t('kategorije.digital'),
+      category: t("kategorije.digital"),
     },
     {
       src: "/pexels-2.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       alt: "Slika2",
-      category: t('kategorije.komunikacije'),
+      category: t("kategorije.komunikacije"),
     },
     {
       src: "/pexels-3.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       alt: "Slika3",
-      category: t('kategorije.film_mediji'),
+      category: t("kategorije.film_mediji"),
     },
     {
       src: "/pexels-4.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
       alt: "Slika4",
-      category: t('kategorije.prostori'),
+      category: t("kategorije.prostori"),
     },
     {
       src: "/pexels-5.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ",
       alt: "Slika5",
-      category: t('kategorije.identitet'),
+      category: t("kategorije.identitet"),
     },
     {
       src: "/pexels-6.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
       alt: "Slika1",
-      category: t('kategorije.produkti'),
+      category: t("kategorije.produkti"),
     },
   ];
 
   const categories = [
-    t('kategorije.sve'),
-    ...new Set(images.map((img) => img.category)),
+    t("kategorije.sve"),
+    t("kategorije.identitet"),
+    t("kategorije.komunikacije"),
+    t("kategorije.digital"),
+    t("kategorije.film_mediji"),
+    t("kategorije.produkti"),
+    t("kategorije.prostori"),
   ];
 
+  // const categories = [
+  //   t("kategorije.sve"),
+  //   ...new Set(images.map((img) => img.category)),
+  // ];
+
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(t('kategorije.sve'));
+  const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
   const filteredImages =
-    selectedCategory === t('kategorije.sve')
+    selectedCategory === t("kategorije.sve")
       ? images
       : images.filter((img) => img.category === selectedCategory);
 
   return (
     <>
-      <div className="flex flex-wrap gap-x-16 gap-y-8 pb-8 md:w-1/2">
+      <div className="flex flex-wrap gap-x-16 gap-y-8 pb-8 md:w-2/3">
         {categories.map((category) => (
           <button
             key={category}
@@ -103,14 +112,9 @@ const GalleryHover = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.1 }}
-              className="flex justify-between gap-8 min-h-[100px] py-4 bg-white"
+              className=" py-4 bg-white"
             >
-              <p className="w-3/4 line-clamp-2">
-                {images[hoveredIndex].description}
-              </p>
-              <button className="text-nowrap self-end cursor-pointer">
-                Read more
-              </button>
+              <p className="line-clamp-2">{images[hoveredIndex].description}</p>
             </motion.div>
           )}
         </AnimatePresence>
