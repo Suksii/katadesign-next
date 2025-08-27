@@ -3,63 +3,67 @@
 import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const GalleryHover = () => {
+
+  const t = useTranslations('ProjectPage')
+
   const images = [
     {
       src: "/pexels-1.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       alt: "Slika1",
-      category: "3D",
+      category: t('kategorije.digital'),
     },
     {
       src: "/pexels-2.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       alt: "Slika2",
-      category: "2D",
+      category: t('kategorije.komunikacije'),
     },
     {
       src: "/pexels-3.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       alt: "Slika3",
-      category: "Branding",
+      category: t('kategorije.film_mediji'),
     },
     {
       src: "/pexels-4.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
       alt: "Slika4",
-      category: "Live Action",
+      category: t('kategorije.prostori'),
     },
     {
       src: "/pexels-5.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ",
       alt: "Slika5",
-      category: "2D",
+      category: t('kategorije.identitet'),
     },
     {
       src: "/pexels-6.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
       alt: "Slika1",
-      category: "Live Action",
+      category: t('kategorije.produkti'),
     },
   ];
 
   const categories = [
-    "Everything",
+    t('kategorije.sve'),
     ...new Set(images.map((img) => img.category)),
   ];
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("Everything");
+  const [selectedCategory, setSelectedCategory] = useState(t('kategorije.sve'));
 
   const filteredImages =
-    selectedCategory === "Everything"
+    selectedCategory === t('kategorije.sve')
       ? images
       : images.filter((img) => img.category === selectedCategory);
 

@@ -115,7 +115,16 @@
     }
   },
   "ProjectPage": {
-    "projekti": "Projekti"
+    "projekti": "Projekti",
+    "kategorije": {
+      "sve": "Sve",
+      "identitet": "Identitet",
+      "komunikacije": "Komunikacije",
+      "digital": "Digital",
+      "prostori": "Prostori",
+      "produkti": "Produkti",
+      "film_mediji": "Film & Mediji"
+    } 
   },
   "NewsPage": {
     "novosti": "Novosti"
