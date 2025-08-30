@@ -81,6 +81,7 @@ const SingleProject = ({ params }) => {
         src: "/1.jpg",
         alt: "Slika1",
       },
+      galery_row_images: [],
       galery_images: [
         {
           src: "/1.jpg",
@@ -314,7 +315,8 @@ const SingleProject = ({ params }) => {
             </div>
           </div>
         )}
-        {project.galery_row_images[2] &&
+        {project.galery_row_images &&
+          project.galery_row_images[2] &&
           project.galery_row_images[3] &&
           project.galery_row_images[1] &&
           project.galery_row_images[0] && (
