@@ -13,7 +13,7 @@ const GoBackButton = () => {
       onClick={() => router.back()}
     >
       <ArrowLeft />
-      <p>Nazad na sve</p>
+      <p className="text-sm sm:text-base text-nowrap">Nazad na sve</p>
     </button>
   );
 };

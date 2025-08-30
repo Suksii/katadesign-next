@@ -244,20 +244,20 @@ const SingleProject = ({ params }) => {
             >
               <div className="flex gap-2 items-center z-50">
                 <h4
-                  className={`text-xl transition-colors duration-300 z-50 ${
+                  className={`text-sm sm:text-base text-nowrap transition-colors duration-300 z-50 ${
                     isProjectOpened ? "text-white" : "text-black"
                   }`}
                 >
                   {isProjectOpened ? project.title : "Projects informations"}
                 </h4>
-                <span className="relative w-8 h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
+                <span className="relative w-4 sm:w-8 h-4 sm:h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
                   <span
-                    className={`absolute w-6 h-[2px] transition-transform duration-300 ${
+                    className={`absolute w-4 sm:w-6 h-[2px] transition-transform duration-300 ${
                       isProjectOpened ? "bg-white" : "bg-black"
                     }`}
                   ></span>
                   <span
-                    className={`absolute w-[2px] h-6 transition-transform duration-300 ${
+                    className={`absolute w-[2px] h-4 sm:h-6 transition-transform duration-300 ${
                       isProjectOpened ? "scale-y-0" : "scale-y-100 bg-black"
                     }`}
                   ></span>
@@ -278,9 +278,9 @@ const SingleProject = ({ params }) => {
             />
           </div>
         </section>
-        <section className="section pb-8 h-screen flex items-center bg-white">
+        <section className="section pb-8 sm:h-screen flex items-center bg-white">
           {project.project_desc && project.list && (
-            <div className="py-32 flex flex-col md:flex-row w-full lg:w-3/4">
+            <div className="sm:py-32 flex flex-col md:flex-row w-full lg:w-3/4">
               <div className="flex-1 flex flex-col gap-2 pb-8">
                 <h3 className="font-semibold uppercase tracking-wide">
                   Uradili smo
