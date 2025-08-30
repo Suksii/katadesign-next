@@ -41,8 +41,15 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      sub_title: "Priroda. Kultura. Igra.",
+      description: (
+        <span>
+          <u>Explore Montenegro </u>
+          spaja igru i estetiku, otkrivajući prirodna i kulturna bogatstva Crne
+          Gore. Od koncepta i imena, preko vizuelnog identiteta, do pakovanja i
+          komunikacije – svaki detalj priča priču o ovoj jedinstvenoj zemlji.
+        </span>
+      ),
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: [
@@ -93,8 +100,9 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
+      sub_title: "Baština u novom svjetlu",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "Projekat Fort Kosmač približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.",
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "fort-kosmac",
@@ -176,6 +184,7 @@ const GalleryHover = () => {
               transition={{ duration: 0.1 }}
               className=" py-4 bg-white"
             >
+              <h3 className="font-bold">{projects[hoveredIndex].sub_title}</h3>
               <p className="line-clamp-2">
                 {projects[hoveredIndex].description}
               </p>
@@ -196,11 +205,12 @@ const GalleryHover = () => {
           >
             <GalleryImage
               key={index}
-              src={project.src}
+              src={project.main_project_img.src}
               slug={project.slug}
               alt={`Image ${index + 1}`}
             />
-            <div className="py-6">
+            <div className="py-4">
+              <h3 className="font-bold">{project.sub_title}</h3>
               <p className=" line-clamp-3">{project.description}</p>
             </div>
           </motion.div>

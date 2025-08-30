@@ -24,7 +24,7 @@ const SingleProject = ({ params }) => {
         src: "/explore_mne-06-19-60.jpg",
         alt: "Slika1",
       },
-      galery_images: [
+      galery_row_images: [
         {
           src: "/explore_mne-06-19-123.jpg",
           alt: "1",
@@ -50,6 +50,7 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
+      galery_images: [],
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       category: t("kategorije.produkti"),
@@ -82,26 +83,128 @@ const SingleProject = ({ params }) => {
       },
       galery_images: [
         {
-          src: "/explore_mne-06-19-123.jpg",
+          src: "/1.jpg",
           alt: "1",
           width: 1500,
           height: 800,
         },
         {
-          src: "/explore_mne-06-19-96.jpg",
-          alt: "4",
+          src: "/2.jpg",
+          alt: "2",
           width: 1200,
           height: 800,
         },
         {
-          src: "/1.jpg",
+          src: "/3.jpg",
           alt: "3",
           width: 1200,
           height: 800,
         },
         {
-          src: "/explore_mne-06-19-71.jpg",
-          alt: "2",
+          src: "/4.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/5.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/6.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/7.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/8.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/9.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/10.jpg",
+          alt: "10",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/11.jpg",
+          alt: "11",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/12.jpg",
+          alt: "12",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/13.jpg",
+          alt: "13",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/14.jpg",
+          alt: "14",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/15.jpg",
+          alt: "15",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/16.jpg",
+          alt: "16",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/17.jpg",
+          alt: "17",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/18.jpg",
+          alt: "18",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/19.jpg",
+          alt: "19",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/20.jpg",
+          alt: "20",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/21.jpg",
+          alt: "21",
           width: 1200,
           height: 800,
         },
@@ -199,21 +302,128 @@ const SingleProject = ({ params }) => {
             </div>
           )}
         </section>
-        <section className="section h-screen pb-8">
-          {project.galery_images[2] && (
+        {project.galery_images[0] && (
+          <div className="section h-screen pb-2">
             <div className="relative w-full h-full">
               <Image
-                src={project.galery_images[2].src}
+                src={project.galery_images[0].src}
                 alt=""
                 fill
                 className="object-cover"
               />
             </div>
+          </div>
+        )}
+        {project.galery_row_images[2] &&
+          project.galery_row_images[3] &&
+          project.galery_row_images[1] &&
+          project.galery_row_images[0] && (
+            <section className="pb-2">
+              <CustomGallery
+                gallery={project.galery_row_images}
+                layout="two"
+                index1={0}
+                index2={3}
+                index3={2}
+                index4={1}
+              />
+            </section>
           )}
-        </section>
-        <section className="section pb-8">
-          <CustomGallery gallery={project.galery_images} type={1} />
-        </section>
+        {project.galery_images[2] &&
+          project.galery_images[3] &&
+          project.galery_images[1] && (
+            <section className="pb-[300px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                type={"reverse"}
+                index1={2}
+                index2={3}
+                index3={1}
+              />
+            </section>
+          )}
+        {project.galery_images[4] &&
+          project.galery_images[5] &&
+          project.galery_images[6] && (
+            <section className="pb-[300px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                flexNum={2}
+                index1={4}
+                index2={5}
+                index3={6}
+              />
+            </section>
+          )}
+        {project.galery_images[7] && project.galery_images[8] && (
+          <section className="pb-[300px]">
+            <CustomGallery
+              gallery={project.galery_images}
+              flexNum={2}
+              index1={7}
+              index3={8}
+            />
+          </section>
+        )}
+        {project.galery_images[9] && project.galery_images[10] && (
+          <section className="pb-[500px]">
+            <CustomGallery
+              gallery={project.galery_images}
+              flexNum={2}
+              type="reverse"
+              index2={10}
+              index3={9}
+            />
+          </section>
+        )}
+        {project.galery_images[11] &&
+          project.galery_images[12] &&
+          project.galery_images[13] && (
+            <section className="pb-2">
+              <CustomGallery
+                gallery={project.galery_images}
+                flexNum={2}
+                index1={11}
+                index2={12}
+                index3={13}
+              />
+            </section>
+          )}
+        {project.galery_images[11] &&
+          project.galery_images[16] &&
+          project.galery_images[14] && (
+            <section className="pb-[300px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                type="reverse"
+                flexNum={2}
+                index1={11}
+                index2={16}
+                index3={14}
+              />
+            </section>
+          )}
+        {project.galery_images[17] && project.galery_images[18] && (
+          <section className="pb-2">
+            <CustomGallery
+              gallery={project.galery_images}
+              flexNum={2}
+              index2={17}
+              index3={18}
+            />
+          </section>
+        )}
+        {project.galery_images[19] && project.galery_images[20] && (
+          <section className="pb-[500px]">
+            <CustomGallery
+              gallery={project.galery_images}
+              type="reverse"
+              flexNum={2}
+              index1={20}
+              index3={19}
+            />
+          </section>
+        )}
       </div>
     </div>
   );

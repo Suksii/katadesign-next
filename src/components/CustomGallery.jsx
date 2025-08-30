@@ -1,7 +1,16 @@
 import Image from "next/image";
 import React from "react";
 
-const CustomGallery = ({ gallery, layout = "two", type = "normal" }) => {
+const CustomGallery = ({
+  gallery,
+  layout = "one",
+  type = "normal",
+  flexNum = 1,
+  index1,
+  index2,
+  index3,
+  index4,
+}) => {
   return (
     <>
       {layout === "one" && (
@@ -12,27 +21,31 @@ const CustomGallery = ({ gallery, layout = "two", type = "normal" }) => {
         >
           <div className="flex-1 flex flex-col gap-2">
             <div className="relative w-full h-[300px] md:h-1/2">
-              <Image
-                src={gallery[0].src}
-                alt={gallery[0].alt}
-                fill
-                className="object-cover"
-              />
+              {index1 && (
+                <Image
+                  src={gallery[index1]?.src}
+                  alt={gallery[index1]?.alt}
+                  fill
+                  className="object-cover"
+                />
+              )}
             </div>
             <div className="relative w-full h-[300px] md:h-1/2">
-              <Image
-                src={gallery[1].src}
-                alt={gallery[1].alt}
-                fill
-                className="object-cover"
-              />
+              {index2 && (
+                <Image
+                  src={gallery[index2]?.src}
+                  alt={gallery[index2]?.alt}
+                  fill
+                  className="object-cover"
+                />
+              )}
             </div>
           </div>
-          <div className="flex-2">
+          <div className={`flex-${flexNum}`}>
             <div className="relative w-full h-[300px] md:h-full">
               <Image
-                src={gallery[2].src}
-                alt={gallery[2].alt}
+                src={gallery[index3]?.src}
+                alt={gallery[index3]?.alt}
                 fill
                 className="object-cover"
               />
@@ -45,20 +58,20 @@ const CustomGallery = ({ gallery, layout = "two", type = "normal" }) => {
         <div className="flex flex-col gap-2 h-auto md:h-[800px] w-full">
           <div className="flex flex-col md:flex-row gap-2 h-auto md:h-1/2">
             <div className="flex-2">
-              <div className="relative w-full h-[300px] md:h-full">
+              <div className="relative w-full h-[400px] md:h-full">
                 <Image
-                  src={gallery[0].src}
-                  alt={gallery[0].alt}
+                  src={gallery[index1]?.src}
+                  alt={gallery[index1]?.alt}
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
             <div className="flex-1">
-              <div className="relative w-full h-[300px] md:h-full">
+              <div className="relative w-full h-[400px] md:h-full">
                 <Image
-                  src={gallery[1].src}
-                  alt={gallery[1].alt}
+                  src={gallery[index2]?.src}
+                  alt={gallery[index2]?.alt}
                   fill
                   className="object-cover"
                 />
@@ -67,20 +80,20 @@ const CustomGallery = ({ gallery, layout = "two", type = "normal" }) => {
           </div>
           <div className="flex flex-col md:flex-row gap-2 h-auto md:h-1/2">
             <div className="flex-1">
-              <div className="relative w-full h-[300px] md:h-full">
+              <div className="relative w-full h-[400px] md:h-full">
                 <Image
-                  src={gallery[2].src}
-                  alt={gallery[2].alt}
+                  src={gallery[index3]?.src}
+                  alt={gallery[index3]?.alt}
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
             <div className="flex-2">
-              <div className="relative w-full h-[300px] md:h-full">
+              <div className="relative w-full h-[400px] md:h-full">
                 <Image
-                  src={gallery[3].src}
-                  alt={gallery[3].alt}
+                  src={gallery[index4]?.src}
+                  alt={gallery[index4]?.alt}
                   fill
                   className="object-cover"
                 />
