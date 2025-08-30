@@ -4,7 +4,6 @@ import CustomGallery from "@/components/CustomGallery";
 import GoBackButton from "@/components/GoBackButton";
 import ProjectInfo from "@/components/ProjectInfo";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import useSectionScroll from "@/hooks/useSectionScroll";
 import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -233,11 +232,10 @@ const SingleProject = ({ params }) => {
 
   const slug = params.slug;
   const project = projects.find((p) => p.slug === slug);
-  const containerRef = useSectionScroll();
   return (
     <div>
       <ScrollToTopButton />
-      <div ref={containerRef}>
+      <div>
         <section className="section pb-8">
           <div className="flex justify-between">
             <button
