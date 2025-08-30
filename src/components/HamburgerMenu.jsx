@@ -75,7 +75,7 @@ export default function HamburgerMenu({ variant = "light" }) {
           <>
             <motion.div
               className="fixed inset-0 bg-white text-black flex flex-col md:items-center md:justify-center pl-4 pt-42 md:pt-0 gap-12 z-40"
-              variants={containerVariants}
+              variants={containerVariants("-", "-")}
               initial="hidden"
               animate="visible"
               exit="exit"

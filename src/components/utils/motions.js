@@ -16,19 +16,19 @@ export const fadeIn = (duration = 1, delay = 0) => ({
   transition: { duration, delay },
 });
 
-export const containerVariants = {
-  hidden: { opacity: 0, y: "-100%" },
+export const containerVariants = (operandIn = "-", operandOut = "-", durationIn = 0.5, durationOut = 0.4) => ({
+  hidden: { opacity: 0, y: `${operandIn}100%` },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: durationIn,
       when: "beforeChildren",
       staggerChildren: 0.15,
     },
   },
-  exit: { opacity: 0, y: "-100%", transition: { duration: 0.4 } },
-};
+  exit: { opacity: 0, y: `${operandOut}100%`, transition: { duration: durationOut } },
+});
 
 export const linkVariants = {
   hidden: { opacity: 0, y: 30 },

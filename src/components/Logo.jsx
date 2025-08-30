@@ -1,16 +1,18 @@
 "use client";
 
 import { useMenuStore } from "@/store/menuStore";
+import { useProjectStore } from "@/store/projectStore";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Logo = ({ variant = "light" }) => {
   const isOpen = useMenuStore((state) => state.isOpen);
+  const isProjectOpened = useProjectStore((state) => state.isProjectOpened);
 
   const logoSrc = isOpen
     ? "/logo_b_140-01.png"
-    : variant === "light"
+    : variant === "light" && !isProjectOpened
     ? "/logo_b_140-01.png"
     : "/logo_w_140.png";
 
