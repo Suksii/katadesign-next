@@ -194,7 +194,7 @@ const SingleProject = ({ params }) => {
             </div>
           )}
         </section>
-        {/* <section className="section h-screen pb-8">
+        <section className="section h-screen pb-8">
           {project.galery_images[2] && (
             <div className="relative w-full h-full">
               <Image
@@ -205,7 +205,7 @@ const SingleProject = ({ params }) => {
               />
             </div>
           )}
-        </section> */}
+        </section>
         <section className="section pb-8">
           <CustomGallery gallery={project.galery_images} type={1} />
         </section>

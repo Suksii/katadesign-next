@@ -2,8 +2,6 @@ import Image from "next/image";
 import React from "react";
 
 const CustomGallery = ({ gallery, layout = "two", type = "normal" }) => {
-  if (!gallery || gallery.length < 3) return null;
-
   return (
     <>
       {layout === "one" && (
