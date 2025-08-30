@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Logo from "../Logo";
-import { Link } from "@/i18n/navigation";
-import { usePathname } from "next/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 const sidebarMenu = [
   {
@@ -60,6 +59,7 @@ const sidebarMenu = [
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState(null);
 
   const toggleMenu = (id) => {
@@ -79,7 +79,11 @@ const Sidebar = () => {
           return (
             <div key={item.id} className="flex flex-col">
               <button
-                onClick={() => (item.options ? toggleMenu(item.id) : null)}
+                onClick={() =>
+                  item.options
+                    ? toggleMenu(item.id)
+                    : router.push(`/admin/${item.link}`)
+                }
                 className={`flex items-center justify-between w-full px-4 py-3 rounded-xl transition-colors duration-200 cursor-pointer ${
                   isActive
                     ? "bg-gray-800 text-white"

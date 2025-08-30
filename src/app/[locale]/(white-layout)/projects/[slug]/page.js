@@ -1,7 +1,9 @@
 "use client";
 
 import CustomGallery from "@/components/CustomGallery";
+import GoBackButton from "@/components/GoBackButton";
 import ProjectInfo from "@/components/ProjectInfo";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import useSectionScroll from "@/hooks/useSectionScroll";
 import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
@@ -19,7 +21,7 @@ const SingleProject = ({ params }) => {
         alt: "Slika1",
       },
       main_banner_img: {
-        src: "/1.jpg",
+        src: "/explore_mne-06-19-60.jpg",
         alt: "Slika1",
       },
       galery_images: [
@@ -128,38 +130,41 @@ const SingleProject = ({ params }) => {
   const slug = params.slug;
   const project = projects.find((p) => p.slug === slug);
   const containerRef = useSectionScroll();
-
-  console.log("Project:", project);
   return (
     <div>
+      <ScrollToTopButton />
       <div ref={containerRef}>
         <section className="section pb-8">
-          <button
-            className="cursor-pointer z-50"
-            onClick={() => setIsProjectOpened(!isProjectOpened)}
-          >
-            <div className="flex gap-2 items-center z-50">
-              <h4
-                className={`text-xl transition-colors duration-300 z-50 ${
-                  isProjectOpened ? "text-white" : "text-black"
-                }`}
-              >
-                {isProjectOpened ? project.title : "Projects informations"}
-              </h4>
-              <span className="relative w-8 h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
-                <span
-                  className={`absolute w-6 h-[2px] transition-transform duration-300 ${
-                    isProjectOpened ? "bg-white" : "bg-black"
+          <div className="flex justify-between">
+            <button
+              className="cursor-pointer z-50"
+              onClick={() => setIsProjectOpened(!isProjectOpened)}
+            >
+              <div className="flex gap-2 items-center z-50">
+                <h4
+                  className={`text-xl transition-colors duration-300 z-50 ${
+                    isProjectOpened ? "text-white" : "text-black"
                   }`}
-                ></span>
-                <span
-                  className={`absolute w-[2px] h-6 transition-transform duration-300 ${
-                    isProjectOpened ? "scale-y-0" : "scale-y-100 bg-black"
-                  }`}
-                ></span>
-              </span>
-            </div>
-          </button>
+                >
+                  {isProjectOpened ? project.title : "Projects informations"}
+                </h4>
+                <span className="relative w-8 h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
+                  <span
+                    className={`absolute w-6 h-[2px] transition-transform duration-300 ${
+                      isProjectOpened ? "bg-white" : "bg-black"
+                    }`}
+                  ></span>
+                  <span
+                    className={`absolute w-[2px] h-6 transition-transform duration-300 ${
+                      isProjectOpened ? "scale-y-0" : "scale-y-100 bg-black"
+                    }`}
+                  ></span>
+                </span>
+              </div>
+            </button>
+            <GoBackButton />
+          </div>
+
           <ProjectInfo isOpen={isProjectOpened} project={project} />
           <div className="w-full mt-2">
             <Image
