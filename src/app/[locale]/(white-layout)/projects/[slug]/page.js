@@ -4,6 +4,7 @@ import CustomGallery from "@/components/CustomGallery";
 import GoBackButton from "@/components/GoBackButton";
 import ProjectInfo from "@/components/ProjectInfo";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Slider from "@/components/Slider";
 import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -50,6 +51,194 @@ const SingleProject = ({ params }) => {
         },
       ],
       galery_images: [],
+      slider_images: [
+        {
+          src: "/explore_mne/explore_mne-06-19-16.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-17.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-18.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-19.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-20.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-21.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-22.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-23.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-24.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-25.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-26.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-27.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-28.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-29.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-30.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-31.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-32.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-33.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-34.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-35.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-36.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-37.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-38.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-39.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-40.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-41.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-42.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-43.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-44.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-45.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+        {
+          src: "/explore_mne/explore_mne-06-19-46.jpg",
+          alt: "",
+          width: 400,
+          height: 800,
+        },
+      ],
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       category: t("kategorije.produkti"),
@@ -422,6 +611,11 @@ const SingleProject = ({ params }) => {
               index1={20}
               index3={19}
             />
+          </section>
+        )}
+        {project.slider_images && (
+          <section className="pt-[150px] md:pt-[300px]">
+            <Slider images={project?.slider_images} />
           </section>
         )}
       </div>
