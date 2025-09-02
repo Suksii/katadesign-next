@@ -15,8 +15,8 @@ const CustomGallery = ({
     <>
       {layout === "one" && (
         <div
-          className={`flex flex-col md:${
-            type === "reverse" ? "flex-row-reverse" : "flex-row"
+          className={`flex flex-col ${
+            type === "reverse" ? "md:flex-row-reverse" : "md:flex-row"
           } gap-2 h-auto md:h-screen w-full`}
         >
           <div className="flex-1 flex flex-col gap-2">

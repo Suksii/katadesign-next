@@ -101,8 +101,14 @@ const GalleryHover = () => {
         },
       ],
       sub_title: "Baština u novom svjetlu",
+<<<<<<< HEAD
       description:
         <span><u>Projekat Fort Kosmač </u>približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.</span>,
+=======
+      description: 
+      <span><u>Projekat Fort Kosmač </u>približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.
+      </span>,
+>>>>>>> bfb0022513ee4f254989e9195a52a7ab4414b538
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "fort-kosmac",
