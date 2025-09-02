@@ -17,19 +17,21 @@ const ProjectInfo = ({ isOpen, project }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black text-white z-40 min-h-[calc(100vh-288px)] overflow-y-auto"
+          className="fixed inset-0 bg-black text-white z-40 pt-12 flex items-end pb-12"
           variants={containerVariants("+", "+", 0.3, 0.3)}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
-          <div className="max-w-3xl mx-auto my-80">
-            <div className="flex flex-col gap-6 justify-center px-8">
-              {project.paragraphs.map((p, index) => (
-                <p key={index} className="text-xl">
-                  {p}
-                </p>
-              ))}
+          <div className="w-[90%] max-w-4xl mx-auto h-3/4 overflow-y-auto custom-scroll">
+            <div className="w-[90%] mx-auto">
+              <div className="flex flex-col gap-6 justify-center">
+                {project.paragraphs.map((p, index) => (
+                  <p key={index} className="text-xl">
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

@@ -55,7 +55,7 @@ const CustomGallery = ({
       )}
 
       {layout === "two" && (
-        <div className="flex flex-col gap-2 h-auto md:h-[800px] w-full">
+        <div className="flex flex-col gap-2 h-auto md:h-screen w-full">
           <div className="flex flex-col md:flex-row gap-2 h-auto md:h-1/2">
             <div className="flex-2">
               <div className="relative w-full h-[400px] md:h-full">

@@ -102,7 +102,7 @@ const GalleryHover = () => {
       ],
       sub_title: "Baština u novom svjetlu",
       description:
-        "Projekat Fort Kosmač približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.",
+        <span><u>Projekat Fort Kosmač </u>približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.</span>,
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "fort-kosmac",
@@ -147,7 +147,7 @@ const GalleryHover = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-x-16 gap-y-8 pb-8 md:w-2/3">
+      <div className="flex flex-wrap gap-x-10 gap-y-4 md:gap-x-16 md:gap-y-8 pb-8 md:w-2/3">
         {categories.map((category) => (
           <button
             key={category}
