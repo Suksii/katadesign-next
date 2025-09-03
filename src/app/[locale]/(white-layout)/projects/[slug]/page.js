@@ -50,7 +50,32 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      galery_images: [],
+      galery_images: [
+        {
+          src: "/explore_mne-06-19-123.jpg",
+          alt: "1",
+          width: 1500,
+          height: 800,
+        },
+        {
+          src: "/explore_mne-06-19-96.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/explore_mne-06-19-79.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/explore_mne-06-19-71.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+      ],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
@@ -239,6 +264,7 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
+      sub_title: t("explore_mne_podnaslov"),
       description: t.rich("explore_mne_teaser", {
         highlight: (chunks) => (
           <span className="underline decoration-2 underline-offset-4">
@@ -398,6 +424,7 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
+      sub_title: t("fort_kosmac_podnaslov"),
       description: t.rich("fort_kosmac_teaser", {
         highlight: (chunks) => (
           <span className="underline decoration-2 underline-offset-4">
