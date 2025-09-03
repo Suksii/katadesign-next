@@ -1,27 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function CenteredSlider({ images }) {
+export default function Slider({ images }) {
+  const containerRef = useRef(null); // ✅ bez TS tipova
   const [currentIndex, setCurrentIndex] = useState(2);
   const [slidesToShow, setSlidesToShow] = useState(5);
 
   useEffect(() => {
-    const handleResize = () => {
-      const w = window.innerWidth;
-      if (w < 650) {
-        setSlidesToShow(1);
-      } else if (w >= 650 && w < 1400) {
-        setSlidesToShow(3);
-      } else {
-        setSlidesToShow(5);
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        const w = entry.contentRect.width;
+
+        if (w < 650) {
+          setSlidesToShow(1);
+        } else if (w >= 650 && w < 1400) {
+          setSlidesToShow(3);
+        } else {
+          setSlidesToShow(5);
+        }
       }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    });
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
   }, []);
 
   const handlePrev = () => {
@@ -33,7 +41,10 @@ export default function CenteredSlider({ images }) {
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div
+      ref={containerRef}
+      className="relative w-full flex items-center justify-center"
+    >
       <button
         onClick={handlePrev}
         className="absolute left-0 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
@@ -52,9 +63,7 @@ export default function CenteredSlider({ images }) {
         >
           {images.map((src, index) => {
             const isActive = index === currentIndex;
-            const containerWidth = isActive
-              ? `${100 / slidesToShow}%`
-              : `${100 / slidesToShow}%`;
+            const containerWidth = `${100 / slidesToShow}%`;
 
             return (
               <div
