@@ -519,7 +519,7 @@ const SingleProject = ({ params }) => {
             </div>
           )}
         </section>
-        {project.galery_images[0] && (
+        {/* {project.galery_images[0] && (
           <div className="section h-screen pb-2">
             <div className="relative w-full h-full">
               <Image
@@ -530,7 +530,10 @@ const SingleProject = ({ params }) => {
               />
             </div>
           </div>
-        )}
+        )} */}
+        <section className="pb-2">
+          <CustomGallery gallery={project.galery_images} index3={0} />
+        </section>
         {project.galery_row_images &&
           project.galery_row_images[2] &&
           project.galery_row_images[3] &&
@@ -550,7 +553,7 @@ const SingleProject = ({ params }) => {
         {project.galery_images[2] &&
           project.galery_images[3] &&
           project.galery_images[1] && (
-            <section className="pb-[300px]">
+            <section className="pb-2 lg:pb-[300px]">
               <CustomGallery
                 gallery={project.galery_images}
                 type={"reverse"}
@@ -563,7 +566,7 @@ const SingleProject = ({ params }) => {
         {project.galery_images[4] &&
           project.galery_images[5] &&
           project.galery_images[6] && (
-            <section className="pb-[300px]">
+            <section className="pb-2 lg:pb-[300px]">
               <CustomGallery
                 gallery={project.galery_images}
                 flexNum={2}
@@ -574,7 +577,7 @@ const SingleProject = ({ params }) => {
             </section>
           )}
         {project.galery_images[7] && project.galery_images[8] && (
-          <section className="pb-[300px]">
+          <section className="pb-2 lg:pb-[300px]">
             <CustomGallery
               gallery={project.galery_images}
               flexNum={2}
@@ -584,7 +587,7 @@ const SingleProject = ({ params }) => {
           </section>
         )}
         {project.galery_images[9] && project.galery_images[10] && (
-          <section className="pb-[500px]">
+          <section className="pb-2 lg:pb-[500px]">
             <CustomGallery
               gallery={project.galery_images}
               flexNum={2}
@@ -610,7 +613,7 @@ const SingleProject = ({ params }) => {
         {project.galery_images[11] &&
           project.galery_images[16] &&
           project.galery_images[14] && (
-            <section className="pb-[300px]">
+            <section className="pb-2 lg:pb-[300px]">
               <CustomGallery
                 gallery={project.galery_images}
                 type="reverse"
@@ -632,7 +635,7 @@ const SingleProject = ({ params }) => {
           </section>
         )}
         {project.galery_images[19] && project.galery_images[20] && (
-          <section className="pb-[500px]">
+          <section className="pb-2 lg:pb-[500px]">
             <CustomGallery
               gallery={project.galery_images}
               type="reverse"
@@ -643,7 +646,7 @@ const SingleProject = ({ params }) => {
           </section>
         )}
         {project.slider_images && (
-          <section className="pt-[150px] md:pt-[300px]">
+          <section className="pt-2 lg:pt-[300px]">
             <Slider images={project?.slider_images} />
           </section>
         )}
