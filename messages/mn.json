@@ -125,6 +125,39 @@
       "prostori": "Prostori",
       "produkti": "Produkti",
       "film_mediji": "Film & Mediji"
+    },
+    "informacije_o_projektu": "Informacije o projektu",
+    "nazad_na_sve": "Nazad na sve",
+    "sta_smo_uradili": "Uradili smo",
+    "explore_mne_lista": {
+      "koncept": "Koncept",
+      "naming": "Naming",
+      "kopirajting": "Kopirajting",
+      "logo_brending": "Logo & Brending",
+      "dizajn_ambalaze": "Dizajn ambalaže",
+      "strategija_komunikacije": "Strategija komunikacije"
+    },
+    "explore_mne_paragrafi": [
+      "Dio po dio, kamen po kamen, puzlu po puzlu – otkrivamo Crnu Goru. Zemlju u kojoj najviši mauzolej na svijetu stražari nad valovitim Lovćenom i budno motri na mirne obale Boke.Tu su nacionalni parkovi, jezera i rijeke, duboki kanjoni i zavodljive obale Jadrana. Barska maslina, starija od Hrista, i krajolici u kojima se miješaju mirisi mora i planine.",
+      "Sve to bilježi objektiv Duška Miljanića, jednog od najistaknutijih crnogorskih fotografa, u serijalu koji otkriva prirodno bogatstvo ove, gotovo jedinstvene zemlje.Serija puzli Explore Montenegro namijenjena je djeci srednjeg uzrasta – i svima koji su zadržali radoznalost djeteta u sebi.",
+      "Suvenir i ukras, mali bijeg u pejzaže koji vrijede vječnosti."
+    ],
+    "explore_mne_teaser": "<highlight>Explore Montenegro</highlight> spaja igru i estetiku, otkrivajući prirodna i kulturna bogatstva Crne Gore. Od koncepta i imena, preko vizuelnog identiteta, do pakovanja i komunikacije – svaki detalj priča priču o ovoj jedinstvenoj zemlji.",
+    "explore_mne_opis": "Za Explore Montenegro razvili smo cjelokupan koncept brenda i proizvoda – od imena i narativa do vizuelnog identiteta, pakovanja i komunikacione strategije. Dizajn pakovanja zamišljen je kao spoj funkcionalnosti i suvenirskog karaktera, dok je sam proizvod oblikovan tako da bude istovremeno edukativan i atraktivan. Serija puzli, sa fotografijama Duška Miljanića, otkriva prirodna i kulturna bogatstva Crne Gore, kombinujući igru, estetiku i priču o ovoj jedinstvenoj zemlji.",
+    "explore_mne_podnaslov": "Priroda. Kultura. Igra.",
+    "fort_kosmac_teaser": "Projekat <highlight>Fort Kosmač</highlight> približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.",
+    "fort_kosmac_opis": "Za projekat valorizacije austrougarskih tvrđava razvili smo cjelokupan koncept – od uređivanja sadržaja i oblikovanja narativa do vizuelnog identiteta, info table i izložbene promocije. Knjiga i interaktivna tabla na lokalitetu Kosmača osmišljene su da istovremeno edukuju i privuku posjetioce, dok izložbeni materijali i plakati povezuju istraživački rad sa savremenom prezentacijom kulturne baštine Crne Gore.",
+    "fort_kosmac_podnaslov": "Monument u dizajnu",
+    "fort_kosmac_paragrafi": [
+      "Na 330 strana je predstavljena studija objavljena na Tehničkom univerzitetu u Beču o mogućnostima valorizacije austrougarskih fortifikacija u Crnoj Gori, sa posebnim fokusom na tvrđavu Fort Kosmač. Fortifikacije koje vjekovima oblikuju obalu i zaleđe Boke, iako monumentalne i istorijski neprocjenjive, danas pretežno stoje u ruševinama, skrivene od pogleda i kolektivnog sjećanja. Upravo zato, rad na njihovoj interpretaciji i predstavljanju javnosti nameće se kao kulturna i društvena obaveza.",
+      "U okviru projekta, naš studio je razvijao kompletan vizuelno-komunikacioni okvir – od uređivanja sadržaja i prilagođavanja tekstova, preko oblikovanja kreativne vizije  koja objedinjuje knjigu, izložbu i info tablu, do sprovođenja umjetničkog usmjeravanja kroz tipografiju, boje i vizuelne simbole, sve do završnog dizajna i rasporeda publikacije, plakata i interaktivne info table na samom lokalitetu kulturnog dobra.",
+      "Rezultat ovog procesa je studija koja je pretočena u knjigu, zatim postavljanje interaktivne informativne table na lokalitetu tvrđave, kao i izložba u Budvi. Na taj način, teorijsko istraživanje dobilo je i svoju materijalizaciju u prostoru i komunikaciji sa publikom, čineći kulturnu baštinu prepoznatljivijom i istaknutijom. Projekat je zatim nastavio da se razvija uz podršku Ministarstva kulture i medija Crne Gore, omogućavajući razvoj imerzivne prezentacije ovog značajnog kulturno-istorijskog spomenika."
+    ],
+    "fort_kosmac_lista": {
+      "uredjivanje": "Uređivanje",
+      "kreativna_direkcija": "Kreativna direkcija ",
+      "art_direkcija": "Art direkcija",
+      "dizajn_layout": "Dizajn & layout"
     }
   },
   "NewsPage": {

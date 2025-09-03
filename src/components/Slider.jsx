@@ -59,7 +59,8 @@ export default function CenteredSlider({ images }) {
             return (
               <div
                 key={index}
-                className="flex-shrink-0 flex justify-center transition-all duration-500"
+                onClick={() => setCurrentIndex(index)}
+                className="flex-shrink-0 flex justify-center transition-all duration-500 cursor-pointer"
                 style={{
                   width: containerWidth,
                   zIndex: isActive ? 10 : 1,

@@ -124,7 +124,41 @@
       "prostori": "Environments",
       "produkti": "Products",
       "film_mediji": "Film / Visual media"
-    } 
+    },
+    "informacije_o_projektu": "Project information",
+    "nazad_na_sve": "Back to all",
+    "sta_smo_uradili": "What we did",
+
+    "explore_mne_lista": {
+      "koncept": "Concept",
+      "naming": "Naming",
+      "kopirajting": "Copywriting",
+      "logo_brending": "Logo & Branding",
+      "dizajn_ambalaze": "Packaging",
+      "strategija_komunikacije": "Communication strategy"
+    },
+    "explore_mne_paragrafi": [
+      "Piece by piece, stone by stone, puzzle by puzzle- we reveal Montenegro. A country whose largest mausoleum guards Lovćen, the fortress of stone, and pays a close look over peacefull coast of Boka. There we find many national parks, lakes and rivers, deep canyons and intriguing coasts of Jadran. The ancient Olive tree located in Bar dating from years B.C. as well as fascinating landscapes where a refined mixture of sea and mountains arises.",
+      "All the above is perfectly captured by camera lens of Duško Miljanić one of most renowned montenegrin photographers, in series that reveal natural treassures of this almost (small) unique country. Puzzle series Explore Montenegro is made for school age chidren or ages above, as well as for everyone who has kept their mind young as well as their child-like curiosity.",
+      "Both souvenir and decorative item, a small getaway into landscapes worth of eternity."
+    ],
+    "explore_mne_teaser": "<highlight>Explore Montenegro</highlight> combines game and aesthetics revealing both natural and cultural wealth of Montenegro. From concept and name, through visual identity, to package and communication every detail tells a story about this unique country.",
+    "explore_mne_opis": "Explore Montenegro, the brand whose project concept we developed entirely- from name and narrative to visual identity, packaging and communication strategy. Packaging design is made as a combination of functionality and souvenir character, while product itself is designed to be educational and attractive at the same time. Series of puzzles, with photographs taken by Duško Miljanić, reveal both natural and cultural wealth of Montenegro, combining play, aesthetics and tell stories of this unique country.",
+    "explore_mne_podnaslov": "Nature. Culture. Game.",
+    "fort_kosmac_teaser": "<highlight>Fort Kosmač</highlight> project brings closer monumental Austro-Hungarian fortresses to the public. Our team has formed visual identity, book design, exhibition and interactive info-board, fusing research, education and modern presentation of cultural heritage.",
+    "fort_kosmac_opis": "For valorisation project of Austro-Hungarian fortresses we have developed an entire concept – from editing content, shaping naratives  to visual identity, info-boards and exhibitional promotions. Book and interactive board at the site of Fort Kosmač are designed to educate and attract visitors at the same time, while exhibition materials and posters connect research work with the contemporary presentation of cultural heritage od Montenegro.",
+    "fort_kosmac_podnaslov": "Monument to design",
+    "fort_kosmac_paragrafi": [
+      "A 330-page study published at the Technical University of Vienna presents possibilities for valorization of Austro-Hungarian fortifications, with special focus on Fort Kosmač. Fortifications that shaped the coast of Boka for centuries as well as its hinterlant, although monumental and historically priceless, today stand mostly in ruins, hidden from view and collective memory. This fact precisely explains why work on their interpretation and presentation to the public and is imposed as a cultural and social obligation.",
+      "As part of the project, our studio has developed a complete visual-communication framework – from editing and adapting contents, through making a creative vision that unites the book, exhibition and info board, to implementation of art direction through typography, colors and visual symbols which all lead to final design and layout of the publication, visuals and interactive info board on the cultural property itself.",
+      "Result of this process is a study that has been made into a book, then installation of an interactive info board at the site of the fortress, as well as an exhibition in Budva. This way, theoretical research has gotten its materialisation in space and communication with the audience making cultural heritage more recognizable and prominent. Project then continued to develop with support of Ministry of Culture and Media of Montenegro enablin development of an immersive presentation of this significant cultural and historical monument."
+    ],
+    "fort_kosmac_lista": {
+      "uredjivanje": "Editing ",
+      "kreativna_direkcija": "Creative direction",
+      "art_direkcija": "Art direction ",
+      "dizajn_layout": "Design & layout"
+    }
   },
   "NewsPage": {
     "novosti": "News"

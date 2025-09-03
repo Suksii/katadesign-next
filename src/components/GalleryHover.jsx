@@ -41,15 +41,14 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      sub_title: "Priroda. Kultura. Igra.",
-      description: (
-        <span>
-          <u>Explore Montenegro </u>
-          spaja igru i estetiku, otkrivajući prirodna i kulturna bogatstva Crne
-          Gore. Od koncepta i imena, preko vizuelnog identiteta, do pakovanja i
-          komunikacije – svaki detalj priča priču o ovoj jedinstvenoj zemlji.
-        </span>
-      ),
+      sub_title: t("explore_mne_podnaslov"),
+      description: t.rich("explore_mne_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: [
@@ -57,8 +56,7 @@ const GalleryHover = () => {
         "Sve to bilježi objektiv Duška Miljanića, jednog od najistaknutijih crnogorskih fotografa, u serijalu koji otkriva prirodno bogatstvo ove, gotovo jedinstvene zemlje.Serija puzli Explore Montenegro namijenjena je djeci srednjeg uzrasta – i svima koji su zadržali radoznalost djeteta u sebi. ",
         "Suvenir i ukras, mali bijeg u pejzaže koji vrijede vječnosti.",
       ],
-      project_desc:
-        "Za Explore Montenegro razvili smo cjelokupan koncept brenda i proizvoda – od imena i narativa do vizuelnog identiteta, pakovanja i komunikacione strategije. Dizajn pakovanja zamišljen je kao spoj funkcionalnosti i suvenirskog karaktera, dok je sam proizvod oblikovan tako da bude istovremeno edukativan i atraktivan. Serija puzli, sa fotografijama Duška Miljanića, otkriva prirodna i kulturna bogatstva Crne Gore, kombinujući igru, estetiku i priču o ovoj jedinstvenoj zemlji.",
+      project_desc: t("explore_mne_opis"),
       list: [
         "Koncept",
         "Naming",
@@ -100,10 +98,14 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      sub_title: "Baština u novom svjetlu",
-      description: 
-      <span><u>Projekat Fort Kosmač </u>približava monumentalne austrougarske tvrđave Crne Gore publici. Naš tim je oblikovao vizuelni identitet, dizajn knjige, izložbe i interaktivne info table, spajajući istraživanje, edukaciju i savremenu prezentaciju kulturne baštine.
-      </span>,
+      sub_title: t("fort_kosmac_podnaslov"),
+      description: t.rich("fort_kosmac_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "fort-kosmac",

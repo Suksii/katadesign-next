@@ -2,9 +2,11 @@
 
 import { useRouter } from "@/i18n/navigation";
 import ArrowLeft from "@/icons/ArrowLeft";
+import { useTranslations } from "next-intl";
 
 const GoBackButton = () => {
   const router = useRouter();
+  const t = useTranslations('ProjectPage');
 
   return (
     <button
@@ -13,7 +15,7 @@ const GoBackButton = () => {
       onClick={() => router.back()}
     >
       <ArrowLeft />
-      <p className="text-sm sm:text-base text-nowrap">Nazad na sve</p>
+      <p className="text-sm sm:text-base text-nowrap">{t('nazad_na_sve')}</p>
     </button>
   );
 };

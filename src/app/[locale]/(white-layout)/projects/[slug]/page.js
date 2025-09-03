@@ -239,24 +239,24 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      description: t.rich("explore_mne_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
-      paragraphs: [
-        "Dio po dio, kamen po kamen, puzlu po puzlu – otkrivamo Crnu Goru. Zemlju u kojoj najviši mauzolej na svijetu stražari nad valovitim Lovćenom i budno motri na mirne obale Boke.Tu su nacionalni parkovi, jezera i rijeke, duboki kanjoni i zavodljive obale Jadrana. Barska maslina, starija od Hrista, i krajolici u kojima se miješaju mirisi mora i planine.",
-        "Sve to bilježi objektiv Duška Miljanića, jednog od najistaknutijih crnogorskih fotografa, u serijalu koji otkriva prirodno bogatstvo ove, gotovo jedinstvene zemlje.Serija puzli Explore Montenegro namijenjena je djeci srednjeg uzrasta – i svima koji su zadržali radoznalost djeteta u sebi. ",
-        "Suvenir i ukras, mali bijeg u pejzaže koji vrijede vječnosti.",
-      ],
-      project_desc:
-        "Za Explore Montenegro razvili smo cjelokupan koncept brenda i proizvoda – od imena i narativa do vizuelnog identiteta, pakovanja i komunikacione strategije. Dizajn pakovanja zamišljen je kao spoj funkcionalnosti i suvenirskog karaktera, dok je sam proizvod oblikovan tako da bude istovremeno edukativan i atraktivan. Serija puzli, sa fotografijama Duška Miljanića, otkriva prirodna i kulturna bogatstva Crne Gore, kombinujući igru, estetiku i priču o ovoj jedinstvenoj zemlji.",
+      paragraphs: t.raw("explore_mne_paragrafi"),
+      project_desc: t("explore_mne_opis"),
       list: [
-        "Koncept",
-        "Naming",
-        "Copywriting",
-        "Logo & Branding",
-        "Packaging",
-        "Communication strategy",
+        t("explore_mne_lista.koncept"),
+        t("explore_mne_lista.naming"),
+        t("explore_mne_lista.kopirajting"),
+        t("explore_mne_lista.logo_brending"),
+        t("explore_mne_lista.dizajn_ambalaze"),
+        t("explore_mne_lista.strategija_komunikacije"),
       ],
     },
     {
@@ -398,23 +398,23 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      description: t.rich("fort_kosmac_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "fort-kosmac",
-      paragraphs: [
-        "Na 330 strana je predstavljena studija objavljena na Tehničkom univerzitetu u Beču o mogućnostima valorizacije austrougarskih fortifikacija u Crnoj Gori, sa posebnim fokusom na tvrđavu Fort Kosmač. Fortifikacije koje vjekovima oblikuju obalu i zaleđe Boke, iako monumentalne i istorijski neprocjenjive, danas pretežno stoje u ruševinama, skrivene od pogleda i kolektivnog sjećanja. Upravo zato, rad na njihovoj interpretaciji i predstavljanju javnosti nameće se kao kulturna i društvena obaveza.",
-        "U okviru projekta, naš studio je razvijao kompletan vizuelno-komunikacioni okvir – od uređivanja sadržaja i prilagođavanja tekstova, preko oblikovanja kreativne vizije  koja objedinjuje knjigu, izložbu i info tablu, do sprovođenja umjetničkog usmjeravanja kroz tipografiju, boje i vizuelne simbole, sve do završnog dizajna i rasporeda publikacije, plakata i interaktivne info table na samom lokalitetu kulturnog dobra.",
-        "Rezultat ovog procesa je studija koja je pretočena u knjigu, zatim postavljanje interaktivne informativne table na lokalitetu tvrđave, kao i izložba u Budvi. Na taj način, teorijsko istraživanje dobilo je i svoju materijalizaciju u prostoru i komunikaciji sa publikom, čineći kulturnu baštinu prepoznatljivijom i istaknutijom. Projekat je zatim nastavio da se razvija uz podršku Ministarstva kulture i medija Crne Gore, omogućavajući razvoj imerzivne prezentacije ovog značajnog kulturno-istorijskog spomenika.",
-      ],
-      project_desc:
-        "Za projekat valorizacije austrougarskih tvrđava razvili smo cjelokupan koncept – od uređivanja sadržaja i oblikovanja narativa do vizuelnog identiteta, info table i izložbene promocije. Knjiga i interaktivna tabla na lokalitetu Kosmača osmišljene su da istovremeno edukuju i privuku posjetioce, dok izložbeni materijali i plakati povezuju istraživački rad sa savremenom prezentacijom kulturne baštine Crne Gore.",
+      paragraphs: t.raw("fort_kosmac_paragrafi"),
+      project_desc: t("fort_kosmac_opis"),
       list: [
-        "Uređivanje",
-        "Kreativna direkcija",
-        "Art direkcija",
-        "Dizajn & layout",
+        t("fort_kosmac_lista.uredjivanje"),
+        t("fort_kosmac_lista.kreativna_direkcija"),
+        t("fort_kosmac_lista.art_direkcija"),
+        t("fort_kosmac_lista.dizajn_layout"),
       ],
     },
   ];
@@ -437,7 +437,9 @@ const SingleProject = ({ params }) => {
                     isProjectOpened ? "text-white" : "text-black"
                   }`}
                 >
-                  {isProjectOpened ? project.title : "Projects informations"}
+                  {isProjectOpened
+                    ? project.title
+                    : t("informacije_o_projektu")}
                 </h4>
                 <span className="relative w-4 sm:w-8 h-4 sm:h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
                   <span
@@ -472,7 +474,7 @@ const SingleProject = ({ params }) => {
             <div className="sm:py-32 flex flex-col md:flex-row w-full lg:w-3/4">
               <div className="flex-1 flex flex-col gap-2 pb-8">
                 <h3 className="font-semibold uppercase tracking-wide">
-                  Uradili smo
+                  {t("sta_smo_uradili")}
                 </h3>
                 <div>
                   {project.list.map((item, index) => (
