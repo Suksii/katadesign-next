@@ -4,6 +4,7 @@ import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
@@ -270,7 +271,18 @@ const GalleryHover = () => {
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
-      project_desc: t("explore_mne_opis"),
+      project_desc: t.rich("explore_mne_opis", {
+        link: (chunks) => (
+          <Link
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600 hover:text-blue-800"
+          >
+            {chunks}
+          </Link>
+        ),
+      }),
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),

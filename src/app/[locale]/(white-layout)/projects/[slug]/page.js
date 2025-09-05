@@ -5,6 +5,7 @@ import GoBackButton from "@/components/GoBackButton";
 import ProjectInfo from "@/components/ProjectInfo";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Slider from "@/components/Slider";
+import { Link } from "@/i18n/navigation";
 import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -275,7 +276,18 @@ const SingleProject = ({ params }) => {
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
-      project_desc: t("explore_mne_opis"),
+      project_desc: t.rich("explore_mne_opis", {
+        link: (chunks) => (
+          <Link
+            href="https://duskomiljanic.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600 hover:text-blue-800"
+          >
+            {chunks}
+          </Link>
+        ),
+      }),
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),
