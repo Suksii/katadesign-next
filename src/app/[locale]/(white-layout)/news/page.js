@@ -12,7 +12,6 @@ const newsData = [
     description:
       "Grad Podgorica započinje novi infrastrukturni projekat koji će poboljšati promet u centru grada.",
 
-      
     mainImage: "/pexels-1.jpg",
   },
   {
@@ -59,6 +58,15 @@ const newsData = [
 
 const NewsPage = () => {
   const t = useTranslations("NewsPage");
+
+  const formatDateParts = (dateStr) => {
+    const [day, month, year] = dateStr.split(".");
+    return {
+      month: month.padStart(2, "0"),
+      year: year.slice(-2),
+    };
+  };
+
   return (
     <PagesWrapper title={t("novosti")}>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -74,7 +82,19 @@ const NewsPage = () => {
             </div>
 
             <div className="py-2 flex flex-col md:flex-row gap-4">
-              <p>{news.date}</p>
+              <div className="text-sm text-gray-600">
+                <p className="block md:hidden">{news.date}</p>
+                <div className="hidden md:flex flex-col items-center justify-center leading-none">
+                  <span className="text-2xl font-semibold tracking-wide">
+                    {formatDateParts(news.date).month}
+                  </span>
+                  <span className="w-6 border-b border-gray-800 my-1" />
+                  <span className="text-lg tracking-wide">
+                    {formatDateParts(news.date).year}
+                  </span>
+                </div>
+              </div>
+
               <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-medium">{news.title}</h3>
                 <p className="text-lg line-clamp-3 md:line-clamp-4">
