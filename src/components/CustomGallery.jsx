@@ -107,9 +107,9 @@ const CustomGallery = ({
         </div>
       )}
       {layout === "three" && (
-        <div className="flex gap-2 h-auto lg:h-screen w-full">
-          <div className="flex-1"></div>
-          <div className="flex-2 flex gap-2 h-full">
+        <div className="flex flex-col lg:flex-row gap-2 h-auto lg:h-screen w-full">
+          <div className="flex-1 hidden lg:block"></div>
+          <div className="flex-2 flex flex-col lg:flex-row gap-2 h-full">
             <div className={`flex-${flexNum}`}>
               <div className="relative w-full h-[300px] lg:h-full">
                 <Image
@@ -120,7 +120,7 @@ const CustomGallery = ({
                 />
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 flex-col lg:flex-row">
               {index1 && (
                 <div className="relative w-full h-[300px] lg:h-1/3">
                   <Image
