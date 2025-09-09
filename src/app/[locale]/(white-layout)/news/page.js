@@ -3,56 +3,37 @@
 import Image from "next/image";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const newsData = [
   {
-    id: 1,
-    title: "Novi projekat u Podgorici",
-    date: "16.08.2025",
-    description:
-      "Grad Podgorica započinje novi infrastrukturni projekat koji će poboljšati promet u centru grada.",
-
-    mainImage: "/pexels-1.jpg",
-  },
-  {
-    id: 2,
-    title: "Digitalizacija javne uprave",
-    date: "14.08.2025",
-    description:
-      "Novi plan digitalizacije javne uprave u Crnoj Gori donosi brže i transparentnije usluge za građane.",
-    mainImage: "/pexels-2.jpg",
-  },
-  {
-    id: 3,
-    title: "Energetska efikasnost u firmama",
-    date: "12.08.2025",
-    description:
-      "Vlada podstiče firme da primjene energetski efikasna rješenja kroz subvencije i grantove.",
-    mainImage: "/pexels-3.jpg",
-  },
-  {
-    id: 4,
-    title: "Festival savremene umjetnosti",
-    date: "10.08.2025",
-    description:
-      "Podgorica domaćin festivala savremene umjetnosti sa radionicama, izložbama i performansima.",
-    mainImage: "/pexels-4.jpg",
-  },
-  {
-    id: 5,
-    title: "Tehnološki startup u Crnoj Gori",
-    date: "08.08.2025",
-    description:
-      "Mladi poduzetnici lansirali startup fokusiran na AI rješenja za lokalno tržište.",
-    mainImage: "/pexels-5.jpg",
-  },
-  {
-    id: 6,
-    title: "Održavanje lokalnih puteva",
-    date: "06.08.2025",
-    description:
-      "Radovi na održavanju lokalnih puteva u toku, sa fokusom na sigurnost saobraćaja.",
-    mainImage: "/pexels-6.jpg",
+    title: "Brskut – Tradicionalno i savremeno.",
+    subtitle:
+      "Brskut je brend koji spaja tradiciju i inovaciju u organskim delicijama i prirodnim proizvodima iz Crne Gore. Naš tim je kreirao kompletan identitet – od imena i ambalaže do digitalnog prostora – kako bi svaki proizvod postao priča o ukusu, kvalitetu i emociji.",
+    main_paragraphs: [
+      "Brskut je crnogorski brend organskih delikatesa i prirodnih proizvoda koji spajaju tradiciju i inovaciju. Njihova ponuda – od džemova i meda, preko sirupa, rakija i turšija, do suhomesnatih proizvoda i prirodne kozmetike – svaki artikal čini malim ambasadorom ukusa i mirisa Crne Gore. Iako raznolika, njihova priča ima zajednički imenitelj: prirodnost, pažnja i domaći ukus.",
+      "Naš zadatak bio je da tu raznolikost pretočimo u prepoznatljiv vizuelni identitet. Krenuli smo od samog imena, razvili kreativni pravac i art direkciju, oblikovali branding i dizajn ambalaže, ilustrovali motive koji prate proizvode, osmislili komunikaciju kroz riječi i kreirali digitalni prostor – web sajt koji sve povezuje u jednu cjelinu. Svaki sloj dizajna građen je s namjerom da naglasi prirodni kvalitet i posebnost proizvoda, ali i da stvori emotivnu povezanost sa ljudima, pričajući priču o autentičnom ukusu Crne Gore.",
+      "Brskut pokazuje kako dizajn može biti most između prošlosti i budućnosti, između tradicije i inovacije. Pažljivo oblikovana strategija, kreativni impuls i promišljena naracija zajedno stvaraju vizuelni identitet koji je više od estetike – on postaje iskustvo, gradi povjerenje i prenosi vrijednosti brenda na iskren i savremen način. ",
+    ],
+    paragraphs: [
+      "U procesu smo razmišljali o tome kako tradiciju predstaviti kroz savremen dizajn, kako bogatstvo domaćih recepata i sastojaka dobije vizuelni izraz koji je jednako snažan kao i sam proizvod. Ambalaža i ilustracije postale su produžetak priče o zemlji iz koje brend dolazi, dok je digitalna platforma osmišljena da korisnicima pruži intuitivno i estetski privlačno iskustvo.",
+      "Za nas je Brskut podsjetnik zašto radimo ono što radimo: da pomažemo ambicioznim brendovima da rastu, izraze se i pronađu svoje mjesto na tržištu, ostavljajući utisak koji traje.",
+    ],
+    banner_image: { src: "/1.jpg", alt: "1", width: 400, height: 800 },
+    main_images: [
+      { src: "/1.jpg", alt: "1", width: 400, height: 800 },
+      { src: "/2.jpg", alt: "2", width: 400, height: 800 },
+    ],
+    slider_images: [
+      { src: "/1.jpg", alt: "1", width: 400, height: 800 },
+      { src: "/1.jpg", alt: "2", width: 400, height: 800 },
+      { src: "/1.jpg", alt: "3", width: 400, height: 800 },
+      { src: "/1.jpg", alt: "4", width: 400, height: 800 },
+      { src: "/1.jpg", alt: "5", width: 400, height: 800 },
+      { src: "/1.jpg", alt: "6", width: 400, height: 800 },
+    ],
+    date: "28.08.2025",
+    slug: "brskut",
   },
 ];
 
@@ -72,14 +53,17 @@ const NewsPage = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {newsData.map((news) => (
           <div key={news.id} className="bg-white flex flex-col">
-            <div className="relative w-full h-[300px] overflow-hidden">
+            <Link
+              href={`/${t("novosti_slug")}/${news.slug}`}
+              className="relative w-full h-[300px] overflow-hidden"
+            >
               <Image
-                src={news.mainImage}
+                src={news.banner_image}
                 alt={news.title}
                 fill
                 className="object-cover"
               />
-            </div>
+            </Link>
 
             <div className="py-2 flex flex-col md:flex-row gap-4">
               <div className="text-sm text-gray-600">
@@ -96,9 +80,14 @@ const NewsPage = () => {
               </div>
 
               <div className="flex flex-col gap-4">
-                <h3 className="text-xl font-medium">{news.title}</h3>
+                <Link
+                  href={`/${t("novosti_slug")}/${news.slug}`}
+                  className="text-xl font-medium"
+                >
+                  {news.title}
+                </Link>
                 <p className="text-lg line-clamp-3 md:line-clamp-4">
-                  {news.description}
+                  {news.subtitle}
                 </p>
               </div>
             </div>

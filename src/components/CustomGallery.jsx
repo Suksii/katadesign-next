@@ -106,6 +106,45 @@ const CustomGallery = ({
           </div>
         </div>
       )}
+      {layout === "three" && (
+        <div className="flex gap-2 h-auto lg:h-screen w-full">
+          <div className="flex-1"></div>
+          <div className="flex-2 flex gap-2 h-full">
+            <div className={`flex-${flexNum}`}>
+              <div className="relative w-full h-[300px] lg:h-full">
+                <Image
+                  src={gallery[index3]?.src}
+                  alt={gallery[index3]?.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="flex-1">
+              {index1 && (
+                <div className="relative w-full h-[300px] lg:h-1/3">
+                  <Image
+                    src={gallery[index1]?.src}
+                    alt={gallery[index1]?.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              {index2 && (
+                <div className="relative w-full h-[300px] lg:h-1/3">
+                  <Image
+                    src={gallery[index2]?.src}
+                    alt={gallery[index2]?.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

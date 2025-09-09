@@ -161,6 +161,7 @@
     }
   },
   "NewsPage": {
-    "novosti": "Novosti"
+    "novosti": "Novosti",
+    "novosti_slug": "novosti"
   }
 }

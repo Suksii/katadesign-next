@@ -650,8 +650,7 @@ const SingleProject = ({ params }) => {
           <section className="pb-2 lg:pb-[500px]">
             <CustomGallery
               gallery={project.galery_images}
-              type="reverse"
-              flexNum={2}
+              layout="three"
               index1={20}
               index3={19}
             />
