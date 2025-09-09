@@ -531,18 +531,6 @@ const SingleProject = ({ params }) => {
             </div>
           )}
         </section>
-        {/* {project.galery_images[0] && (
-          <div className="section h-screen pb-2">
-            <div className="relative w-full h-full">
-              <Image
-                src={project.galery_images[0].src}
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        )} */}
         <section className="pb-2">
           <CustomGallery gallery={project.galery_images} index3={0} />
         </section>
@@ -604,7 +592,7 @@ const SingleProject = ({ params }) => {
               gallery={project.galery_images}
               flexNum={2}
               type="reverse"
-              index2={10}
+              index1={10}
               index3={9}
             />
           </section>

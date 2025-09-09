@@ -20,39 +20,59 @@ const CustomGallery = ({
           } gap-2 h-auto lg:h-screen w-full`}
         >
           <div
-            className={`${
-              index1 || index2 ? "flex-1" : ""
-            }  flex flex-col gap-2`}
+            className={`flex flex-col ${
+              type === "reverse" ? "lg:flex-row-reverse" : "lg:flex-row"
+            } gap-2 h-auto lg:h-screen w-full`}
           >
-            {index1 && (
-              <div className="relative w-full h-[300px] lg:h-1/2">
-                <Image
-                  src={gallery[index1]?.src}
-                  alt={gallery[index1]?.alt}
-                  fill
-                  className="object-cover"
-                />
+            <div
+              className={`flex flex-col ${
+                type === "reverse" ? "lg:flex-row-reverse" : "lg:flex-row"
+              } gap-2 h-auto lg:h-screen w-full`}
+            >
+              <div
+                className={`${
+                  index1 || index2 ? "flex-1" : ""
+                } flex flex-col gap-2`}
+              >
+                {/* GORNJI BLOK - index2 ili placeholder (samo na lg) */}
+                {index2 ? (
+                  <div className="relative w-full h-[300px] lg:h-1/2">
+                    <Image
+                      src={gallery[index2]?.src}
+                      alt={gallery[index2]?.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  // Placeholder samo na velikim ekranima
+                  <div className="hidden lg:block w-full h-[300px] lg:h-1/2" />
+                )}
+
+                {/* DONJI BLOK - index1 */}
+                {index1 && (
+                  <div className="relative w-full h-[300px] lg:h-1/2">
+                    <Image
+                      src={gallery[index1]?.src}
+                      alt={gallery[index1]?.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
               </div>
-            )}
-            {index2 && (
-              <div className="relative w-full h-[300px] lg:h-1/2">
-                <Image
-                  src={gallery[index2]?.src}
-                  alt={gallery[index2]?.alt}
-                  fill
-                  className="object-cover"
-                />
+
+              {/* DESNI BLOK - index3 */}
+              <div className={`flex-${flexNum}`}>
+                <div className="relative w-full h-[300px] lg:h-full">
+                  <Image
+                    src={gallery[index3]?.src}
+                    alt={gallery[index3]?.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            )}
-          </div>
-          <div className={`flex-${flexNum}`}>
-            <div className="relative w-full h-[300px] lg:h-full">
-              <Image
-                src={gallery[index3]?.src}
-                alt={gallery[index3]?.alt}
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
