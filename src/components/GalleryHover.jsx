@@ -46,32 +46,7 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      galery_images: [
-        {
-          src: "/explore_mne-06-19-123.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-96.jpg",
-          alt: "4",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-79.jpg",
-          alt: "3",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-71.jpg",
-          alt: "2",
-          width: 1200,
-          height: 800,
-        },
-      ],
+      galery_images: [],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
