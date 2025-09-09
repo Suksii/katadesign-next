@@ -633,7 +633,7 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.slider_images.length > 0 && (
+        {project.slider_images && (
           <section className="pt-2 lg:pt-[300px]">
             <Slider images={project?.slider_images} />
           </section>
