@@ -161,6 +161,17 @@
   },
   "NewsPage": {
     "novosti": "News",
-    "novosti_slug": "news"
+    "novosti_slug": "news",
+    "brskut_naslov": "Brskut – Traditional and contemporary.",
+    "brskut_teaser": "Brskut is a brand that blends tradition and innovation in organic delicacies and natural products from Montenegro. Our team created a complete identity – from the name and packaging to the digital space – so that each product becomes a story about taste, quality, and emotion.",
+    "brskut_desc_1": [
+      "Brskut is a Montenegrin brand of organic delicacies and natural products that combines tradition and innovation. Their range – from jams and honey to syrups, brandy, pickles, cured meat products, and natural cosmetics – makes each item a small ambassador of the taste and scent of Montenegro. Although diverse, their story has a common denominator: naturalness, care, and a homemade touch.",
+      "Our task was to translate this diversity into a recognizable visual identity. We started with the name itself, developed the creative and art direction, shaped the branding and packaging design, illustrated the motifs that accompany the products, devised the verbal communication, and created a digital space – a website that brings everything together. Each design layer was built with the intention of emphasizing the natural quality and uniqueness of the products, while also creating an emotional connection with people by telling the story of the authentic taste of Montenegro.",
+      "In the process, we considered how to present tradition through modern design, and how to give the wealth of domestic recipes and ingredients a visual expression as strong as the products themselves. Packaging and illustrations became an extension of the story of the country the brand comes from, while the digital platform was designed to provide users with an intuitive and aesthetically appealing experience."
+    ],
+    "brskut_desc_2": [
+      "Brskut shows how design can be a bridge between past and future, between tradition and innovation. A carefully designed strategy, creative impulse, and thoughtful narrative together create a visual identity that is more than just aesthetics – it becomes an experience, builds trust, and conveys brand values in an honest and contemporary way.",
+      "For us, Brskut is a reminder of why we do what we do: to help ambitious brands grow, express themselves, and find their place in the market – leaving a lasting impression."
+    ]
   }
 }
