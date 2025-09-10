@@ -71,3 +71,60 @@ export const newsData = [
     slug: "brskut",
   },
 ];
+
+export const sidebarMenu = [
+  {
+    id: 1,
+    name: "Projekti",
+    link: "/projekti",
+    options: [
+      {
+        name: "Dodaj projekat",
+        link: "/dodaj-projekat",
+      },
+      {
+        name: "Pogledaj projekte",
+        link: "/pogledaj-projekte",
+      },
+      {
+        name: "Kategorije",
+        link: "/kategorije",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Karijera",
+    link: "/karijera",
+    options: [
+      {
+        name: "Dodaj oglas",
+        link: "/dodaj-oglas",
+      },
+      {
+        name: "Pogledaj oglase",
+        link: "/pogledaj-oglase",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Novosti",
+    link: "/novosti",
+    options: [
+      {
+        name: "Dodaj novost",
+        link: "/dodaj-novost",
+      },
+      {
+        name: "Pogledaj novosti",
+        link: "/pogledaj-novosti",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "O nama",
+    link: "/o-nama",
+  },
+];

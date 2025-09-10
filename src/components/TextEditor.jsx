@@ -17,7 +17,6 @@ import { useState, useEffect } from "react";
 
 const TextEditor = () => {
   const [fontSize, setFontSize] = useState("text-base");
-  const [preview, setPreview] = useState(""); // držimo HTML za preview
 
   const editor = useEditor({
     extensions: [
@@ -44,22 +43,8 @@ const TextEditor = () => {
     immediatelyRender: false,
   });
 
-  // automatsko updateovanje preview-a
   useEffect(() => {
     if (!editor) return;
-
-    const updatePreview = () => {
-      setPreview(editor.getHTML());
-    };
-
-    editor.on("update", updatePreview);
-
-    // inicijalni preview
-    setPreview(editor.getHTML());
-
-    return () => {
-      editor.off("update", updatePreview);
-    };
   }, [editor]);
 
   if (!editor) return null;
@@ -218,15 +203,6 @@ const TextEditor = () => {
             Sačuvaj
           </span>
         </button>
-
-        {/* Preview */}
-        <div className="mt-6 p-4 border rounded bg-gray-50">
-          <h3 className="font-semibold mb-2">Preview:</h3>
-          <div
-            className={`prose min-h-[100px] ${fontSize} break-words overflow-hidden`}
-            dangerouslySetInnerHTML={{ __html: preview }}
-          ></div>
-        </div>
       </div>
     </div>
   );

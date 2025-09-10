@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { formatDateParts } from "@/components/utils/helpers";
 import { newsData } from "@/components/utils/constants";
 
-export default function NewsPage({ params, intl }) {
+export default function NewsPage() {
   const t = useTranslations("NewsPage");
 
   return (
