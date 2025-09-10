@@ -196,9 +196,6 @@ const TextEditor = ({ label }) => {
           editor={editor}
           className="border rounded p-4 min-h-[300px] bg-white overflow-y-hidden"
         />
-
-        {/* Save Button */}
-        <CustomButton onClick={saveContent} label="Sačuvaj" />
       </div>
     </div>
   );
