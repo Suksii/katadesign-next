@@ -12,12 +12,12 @@ import {
   ListOrdered,
   Type,
   LinkIcon,
-  Unlink,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const TextEditor = () => {
   const [fontSize, setFontSize] = useState("text-base");
+  const [preview, setPreview] = useState(""); // držimo HTML za preview
 
   const editor = useEditor({
     extensions: [
@@ -44,14 +44,28 @@ const TextEditor = () => {
     immediatelyRender: false,
   });
 
-  if (!editor) {
-    return null;
-  }
+  // automatsko updateovanje preview-a
+  useEffect(() => {
+    if (!editor) return;
+
+    const updatePreview = () => {
+      setPreview(editor.getHTML());
+    };
+
+    editor.on("update", updatePreview);
+
+    // inicijalni preview
+    setPreview(editor.getHTML());
+
+    return () => {
+      editor.off("update", updatePreview);
+    };
+  }, [editor]);
+
+  if (!editor) return null;
 
   const saveContent = () => {
-    if (editor) {
-      console.log(editor.getJSON());
-    }
+    console.log(editor.getJSON());
   };
 
   const handleFontSizeChange = (newSize) => {
@@ -74,9 +88,7 @@ const TextEditor = () => {
     const previousUrl = editor.getAttributes("link").href;
     const url = window.prompt("URL:", previousUrl);
 
-    if (url === null) {
-      return;
-    }
+    if (url === null) return;
 
     if (url === "") {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
@@ -97,8 +109,9 @@ const TextEditor = () => {
   ];
 
   return (
-    <div className="flex flex-col w-full mx-auto">
+    <div className="flex flex-col w-full mx-auto max-w-7xl overflow-x-hidden">
       <div className="w-full py-12">
+        {/* Toolbar */}
         <div className="flex space-x-2 mb-4 flex-wrap gap-2">
           {/* Font Size Selector */}
           <div className="relative">
@@ -192,21 +205,28 @@ const TextEditor = () => {
         {/* Editor */}
         <EditorContent
           editor={editor}
-          className="border rounded p-4 min-h-[300px] bg-white"
+          className="border rounded p-4 min-h-[300px] bg-white overflow-y-hidden"
         />
 
         {/* Save Button */}
         <button
           onClick={saveContent}
-          className="mt-6 px-8 py-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 active:scale-95 transition-all duration-300 ease-in-out font-semibold text-sm uppercase tracking-wider cursor-pointer border-0 focus:outline-none relative rounded overflow-hidden group
-  "
+          className="mt-6 px-8 py-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 active:scale-95 transition-all duration-300 ease-in-out font-semibold text-sm uppercase tracking-wider cursor-pointer border-0 focus:outline-none relative rounded overflow-hidden group"
         >
           <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded pointer-events-none"></span>
-
           <span className="relative z-10 flex items-center justify-center gap-2">
             Sačuvaj
           </span>
         </button>
+
+        {/* Preview */}
+        <div className="mt-6 p-4 border rounded bg-gray-50">
+          <h3 className="font-semibold mb-2">Preview:</h3>
+          <div
+            className={`prose min-h-[100px] ${fontSize} break-words overflow-hidden`}
+            dangerouslySetInnerHTML={{ __html: preview }}
+          ></div>
+        </div>
       </div>
     </div>
   );
