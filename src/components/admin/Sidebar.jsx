@@ -15,7 +15,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-72 h-screen bg-gradient-to-b from-gray-900 to-black text-gray-200 shadow-xl flex flex-col">
+    <div className="w-72 min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-200 shadow-xl flex flex-col">
       <div className="px-6 py-6 border-b border-gray-700">
         <Logo variant="white" />
       </div>

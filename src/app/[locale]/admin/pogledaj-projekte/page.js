@@ -11,11 +11,7 @@ const PogledajNovosti = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {newsData.map((news) => (
-        <Link
-          href={"/"}
-          key={news.id}
-          className="bg-white flex flex-col relative group"
-        >
+        <div key={news.id} className="bg-white flex flex-col relative group">
           <div className="absolute top-0 w-full flex justify-between opacity-0 -translate-y-full group-hover:opacity-100 transition-all duration-200 group-hover:translate-y-0 z-10">
             <Link
               href={"/"}
@@ -43,7 +39,7 @@ const PogledajNovosti = () => {
           <h3 className="text-xl text-center font-medium">
             {t(news.titleKey)}
           </h3>
-        </Link>
+        </div>
       ))}
     </div>
   );

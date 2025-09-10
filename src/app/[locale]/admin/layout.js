@@ -9,9 +9,9 @@ export default function RootLayout({ children, params }) {
   return (
     <html lang={params.locale}>
       <body>
-        <div className="flex items-center w-full">
+        <div className="flex w-full">
           <Sidebar />
-          <div className="p-12 w-full">{children}</div>
+          <div className="w-full p-12">{children}</div>
         </div>
       </body>
     </html>

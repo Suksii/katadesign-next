@@ -14,8 +14,9 @@ import {
   LinkIcon,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import CustomButton from "./buttons/CustomButton";
 
-const TextEditor = () => {
+const TextEditor = ({ label }) => {
   const [fontSize, setFontSize] = useState("text-base");
 
   const editor = useEditor({
@@ -94,9 +95,12 @@ const TextEditor = () => {
   ];
 
   return (
-    <div className="flex flex-col w-full mx-auto max-w-7xl overflow-x-hidden">
-      <div className="w-full py-12">
+    <div className="flex flex-col w-full mx-auto overflow-x-hidden pt-6">
+      <div className="w-full">
         {/* Toolbar */}
+        <label className="block mb-2 text-sm font-semibold uppercase tracking-wider text-gray-800">
+          {label}
+        </label>
         <div className="flex space-x-2 mb-4 flex-wrap gap-2">
           {/* Font Size Selector */}
           <div className="relative">
@@ -194,15 +198,7 @@ const TextEditor = () => {
         />
 
         {/* Save Button */}
-        <button
-          onClick={saveContent}
-          className="mt-6 px-8 py-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 active:scale-95 transition-all duration-300 ease-in-out font-semibold text-sm uppercase tracking-wider cursor-pointer border-0 focus:outline-none relative rounded overflow-hidden group"
-        >
-          <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded pointer-events-none"></span>
-          <span className="relative z-10 flex items-center justify-center gap-2">
-            Sačuvaj
-          </span>
-        </button>
+        <CustomButton onClick={saveContent} label="Sačuvaj" />
       </div>
     </div>
   );
