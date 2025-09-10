@@ -1,44 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { formatDateParts } from "@/components/utils/helpers";
+import { newsData } from "@/components/utils/constants";
 
-const NewsPage = () => {
+export default function NewsPage({ params, intl }) {
   const t = useTranslations("NewsPage");
-
-  const newsData = [
-    {
-      title: t("brskut_naslov"),
-      subtitle: t("brskut_teaser"),
-      main_paragraphs: t.raw("brskut_desc_1"),
-      paragraphs: t.raw("brskut_desc_2"),
-      banner_image: { src: "/1.jpg", alt: "1", width: 400, height: 800 },
-      main_images: [
-        { src: "/1.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/2.jpg", alt: "2", width: 400, height: 800 },
-      ],
-      slider_images: [
-        { src: "/1.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "2", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "3", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "4", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "5", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "6", width: 400, height: 800 },
-      ],
-      date: "28.08.2025",
-      slug: "brskut",
-    },
-  ];
-
-  const formatDateParts = (dateStr) => {
-    const [day, month, year] = dateStr.split(".");
-    return {
-      month: month.padStart(2, "0"),
-      year: year.slice(-2),
-    };
-  };
 
   return (
     <PagesWrapper title={t("novosti")}>
@@ -51,7 +19,7 @@ const NewsPage = () => {
             >
               <Image
                 src={news.banner_image}
-                alt={news.title}
+                alt={t(news.titleKey)}
                 fill
                 className="object-cover"
               />
@@ -76,10 +44,10 @@ const NewsPage = () => {
                   href={`/${t("novosti_slug")}/${news.slug}`}
                   className="text-xl font-medium"
                 >
-                  {news.title}
+                  {t(news.titleKey)}
                 </Link>
                 <p className="text-lg line-clamp-3 md:line-clamp-4">
-                  {news.subtitle}
+                  {t(news.subtitleKey)}
                 </p>
               </div>
             </div>
@@ -88,6 +56,4 @@ const NewsPage = () => {
       </div>
     </PagesWrapper>
   );
-};
-
-export default NewsPage;
+}
