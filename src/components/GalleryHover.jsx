@@ -4,6 +4,7 @@ import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
@@ -45,32 +46,7 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      galery_images: [
-        {
-          src: "/explore_mne-06-19-123.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-96.jpg",
-          alt: "4",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-79.jpg",
-          alt: "3",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-71.jpg",
-          alt: "2",
-          width: 1200,
-          height: 800,
-        },
-      ],
+      galery_images: [],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
@@ -270,7 +246,18 @@ const GalleryHover = () => {
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
-      project_desc: t("explore_mne_opis"),
+      project_desc: t.rich("explore_mne_opis", {
+        link: (chunks) => (
+          <Link
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600 hover:text-blue-800"
+          >
+            {chunks}
+          </Link>
+        ),
+      }),
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),

@@ -5,6 +5,7 @@ import GoBackButton from "@/components/GoBackButton";
 import ProjectInfo from "@/components/ProjectInfo";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Slider from "@/components/Slider";
+import { Link } from "@/i18n/navigation";
 import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -50,32 +51,7 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      galery_images: [
-        {
-          src: "/explore_mne-06-19-123.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-96.jpg",
-          alt: "4",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-79.jpg",
-          alt: "3",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/explore_mne-06-19-71.jpg",
-          alt: "2",
-          width: 1200,
-          height: 800,
-        },
-      ],
+      galery_images: [],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
@@ -275,7 +251,18 @@ const SingleProject = ({ params }) => {
       category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
-      project_desc: t("explore_mne_opis"),
+      project_desc: t.rich("explore_mne_opis", {
+        link: (chunks) => (
+          <Link
+            href="https://duskomiljanic.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600 hover:text-blue-800"
+          >
+            {chunks}
+          </Link>
+        ),
+      }),
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),
@@ -519,21 +506,11 @@ const SingleProject = ({ params }) => {
             </div>
           )}
         </section>
-        {/* {project.galery_images[0] && (
-          <div className="section h-screen pb-2">
-            <div className="relative w-full h-full">
-              <Image
-                src={project.galery_images[0].src}
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        )} */}
-        <section className="pb-2">
-          <CustomGallery gallery={project.galery_images} index3={0} />
-        </section>
+        {project.galery_images.length > 0 && (
+          <section className="pb-2">
+            <CustomGallery gallery={project.galery_images} index3={0} />
+          </section>
+        )}
         {project.galery_row_images &&
           project.galery_row_images[2] &&
           project.galery_row_images[3] &&
@@ -550,7 +527,8 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.galery_images[2] &&
+        {project.galery_images.length > 0 &&
+          project.galery_images[2] &&
           project.galery_images[3] &&
           project.galery_images[1] && (
             <section className="pb-2 lg:pb-[300px]">
@@ -563,7 +541,8 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.galery_images[4] &&
+        {project.galery_images.length > 0 &&
+          project.galery_images[4] &&
           project.galery_images[5] &&
           project.galery_images[6] && (
             <section className="pb-2 lg:pb-[300px]">
@@ -576,28 +555,33 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.galery_images[7] && project.galery_images[8] && (
-          <section className="pb-2 lg:pb-[300px]">
-            <CustomGallery
-              gallery={project.galery_images}
-              flexNum={2}
-              index1={7}
-              index3={8}
-            />
-          </section>
-        )}
-        {project.galery_images[9] && project.galery_images[10] && (
-          <section className="pb-2 lg:pb-[500px]">
-            <CustomGallery
-              gallery={project.galery_images}
-              flexNum={2}
-              type="reverse"
-              index2={10}
-              index3={9}
-            />
-          </section>
-        )}
-        {project.galery_images[11] &&
+        {project.galery_images.length > 0 &&
+          project.galery_images[7] &&
+          project.galery_images[8] && (
+            <section className="pb-2 lg:pb-[300px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                flexNum={2}
+                index1={7}
+                index3={8}
+              />
+            </section>
+          )}
+        {project.galery_images.length > 0 &&
+          project.galery_images[9] &&
+          project.galery_images[10] && (
+            <section className="pb-2 lg:pb-[500px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                flexNum={2}
+                type="reverse"
+                index1={10}
+                index3={9}
+              />
+            </section>
+          )}
+        {project.galery_images.length > 0 &&
+          project.galery_images[11] &&
           project.galery_images[12] &&
           project.galery_images[13] && (
             <section className="pb-2">
@@ -610,7 +594,8 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.galery_images[11] &&
+        {project.galery_images.length > 0 &&
+          project.galery_images[11] &&
           project.galery_images[16] &&
           project.galery_images[14] && (
             <section className="pb-2 lg:pb-[300px]">
@@ -624,27 +609,30 @@ const SingleProject = ({ params }) => {
               />
             </section>
           )}
-        {project.galery_images[17] && project.galery_images[18] && (
-          <section className="pb-2">
-            <CustomGallery
-              gallery={project.galery_images}
-              flexNum={2}
-              index2={17}
-              index3={18}
-            />
-          </section>
-        )}
-        {project.galery_images[19] && project.galery_images[20] && (
-          <section className="pb-2 lg:pb-[500px]">
-            <CustomGallery
-              gallery={project.galery_images}
-              type="reverse"
-              flexNum={2}
-              index1={20}
-              index3={19}
-            />
-          </section>
-        )}
+        {project.galery_images.length > 0 &&
+          project.galery_images[17] &&
+          project.galery_images[18] && (
+            <section className="pb-2">
+              <CustomGallery
+                gallery={project.galery_images}
+                flexNum={2}
+                index2={17}
+                index3={18}
+              />
+            </section>
+          )}
+        {project.galery_images.length > 0 &&
+          project.galery_images[19] &&
+          project.galery_images[20] && (
+            <section className="pb-2 lg:pb-[500px]">
+              <CustomGallery
+                gallery={project.galery_images}
+                layout="three"
+                index1={20}
+                index3={19}
+              />
+            </section>
+          )}
         {project.slider_images && (
           <section className="pt-2 lg:pt-[300px]">
             <Slider images={project?.slider_images} />

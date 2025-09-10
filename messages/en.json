@@ -138,11 +138,11 @@
     },
     "explore_mne_paragrafi": [
       "Piece by piece, stone by stone, puzzle by puzzle- we reveal Montenegro. A country whose largest mausoleum guards Lovćen, the fortress of stone, and pays a close look over peacefull coast of Boka. There we find many national parks, lakes and rivers, deep canyons and intriguing coasts of Jadran. The ancient Olive tree located in Bar dating from years B.C. as well as fascinating landscapes where a refined mixture of sea and mountains arises.",
-      "All the above is perfectly captured by camera lens of Duško Miljanić one of most renowned montenegrin photographers, in series that reveal natural treassures of this almost (small) unique country. Puzzle series Explore Montenegro is made for school age chidren or ages above, as well as for everyone who has kept their mind young as well as their child-like curiosity.",
+      "All the above is perfectly captured by camera lens of <link>Duško Miljanić</link> one of most renowned montenegrin photographers, in series that reveal natural treassures of this almost (small) unique country. Puzzle series Explore Montenegro is made for school age chidren or ages above, as well as for everyone who has kept their mind young as well as their child-like curiosity.",
       "Both souvenir and decorative item, a small getaway into landscapes worth of eternity."
     ],
     "explore_mne_teaser": "<highlight>Explore Montenegro</highlight> combines game and aesthetics revealing both natural and cultural wealth of Montenegro. From concept and name, through visual identity, to package and communication every detail tells a story about this unique country.",
-    "explore_mne_opis": "Explore Montenegro, the brand whose project concept we developed entirely- from name and narrative to visual identity, packaging and communication strategy. Packaging design is made as a combination of functionality and souvenir character, while product itself is designed to be educational and attractive at the same time. Series of puzzles, with photographs taken by Duško Miljanić, reveal both natural and cultural wealth of Montenegro, combining play, aesthetics and tell stories of this unique country.",
+    "explore_mne_opis": "Explore Montenegro, the brand whose project concept we developed entirely- from name and narrative to visual identity, packaging and communication strategy. Packaging design is made as a combination of functionality and souvenir character, while product itself is designed to be educational and attractive at the same time. Series of puzzles, with photographs taken by <link>Duško Miljanić</link>, reveal both natural and cultural wealth of Montenegro, combining play, aesthetics and tell stories of this unique country.",
     "explore_mne_podnaslov": "Nature. Culture. Game.",
     "fort_kosmac_teaser": "<highlight>Fort Kosmač</highlight> project brings closer monumental Austro-Hungarian fortresses to the public. Our team has formed visual identity, book design, exhibition and interactive info-board, fusing research, education and modern presentation of cultural heritage.",
     "fort_kosmac_opis": "For valorisation project of Austro-Hungarian fortresses we have developed an entire concept – from editing content, shaping naratives  to visual identity, info-boards and exhibitional promotions. Book and interactive board at the site of Fort Kosmač are designed to educate and attract visitors at the same time, while exhibition materials and posters connect research work with the contemporary presentation of cultural heritage od Montenegro.",
@@ -160,6 +160,18 @@
     }
   },
   "NewsPage": {
-    "novosti": "News"
+    "novosti": "News",
+    "novosti_slug": "news",
+    "brskut_naslov": "Brskut – Traditional and contemporary.",
+    "brskut_teaser": "Brskut is a brand that blends tradition and innovation in organic delicacies and natural products from Montenegro. Our team created a complete identity – from the name and packaging to the digital space – so that each product becomes a story about taste, quality, and emotion.",
+    "brskut_desc_1": [
+      "Brskut is a Montenegrin brand of organic delicacies and natural products that combines tradition and innovation. Their range – from jams and honey to syrups, brandy, pickles, cured meat products, and natural cosmetics – makes each item a small ambassador of the taste and scent of Montenegro. Although diverse, their story has a common denominator: naturalness, care, and a homemade touch.",
+      "Our task was to translate this diversity into a recognizable visual identity. We started with the name itself, developed the creative and art direction, shaped the branding and packaging design, illustrated the motifs that accompany the products, devised the verbal communication, and created a digital space – a website that brings everything together. Each design layer was built with the intention of emphasizing the natural quality and uniqueness of the products, while also creating an emotional connection with people by telling the story of the authentic taste of Montenegro.",
+      "In the process, we considered how to present tradition through modern design, and how to give the wealth of domestic recipes and ingredients a visual expression as strong as the products themselves. Packaging and illustrations became an extension of the story of the country the brand comes from, while the digital platform was designed to provide users with an intuitive and aesthetically appealing experience."
+    ],
+    "brskut_desc_2": [
+      "Brskut shows how design can be a bridge between past and future, between tradition and innovation. A carefully designed strategy, creative impulse, and thoughtful narrative together create a visual identity that is more than just aesthetics – it becomes an experience, builds trust, and conveys brand values in an honest and contemporary way.",
+      "For us, Brskut is a reminder of why we do what we do: to help ambitious brands grow, express themselves, and find their place in the market – leaving a lasting impression."
+    ]
   }
 }

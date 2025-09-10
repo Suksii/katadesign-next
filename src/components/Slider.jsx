@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Slider({ images }) {
-  const containerRef = useRef(null); // ✅ bez TS tipova
+  const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(2);
   const [slidesToShow, setSlidesToShow] = useState(5);
 
