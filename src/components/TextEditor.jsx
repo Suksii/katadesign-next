@@ -95,7 +95,7 @@ const TextEditor = ({ label }) => {
   ];
 
   return (
-    <div className="flex flex-col w-full mx-auto overflow-x-hidden pt-6">
+    <div className="flex flex-col w-full mx-auto overflow-x-hidden">
       <div className="w-full">
         {/* Toolbar */}
         <label className="block mb-2 text-sm font-semibold uppercase tracking-wider text-gray-800">

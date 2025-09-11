@@ -9,7 +9,7 @@ const CustomInput = ({
   label,
 }) => {
   return (
-    <div className="relative w-full pt-6">
+    <div className="relative w-full">
       {label && (
         <label
           htmlFor={name}
