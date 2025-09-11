@@ -4,6 +4,7 @@ const CustomInput = ({
   type = "text",
   placeholder = "",
   value,
+  defaultValue,
   onChange,
   name,
   label,
@@ -25,6 +26,7 @@ const CustomInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         className="w-full px-4 py-3 border border-gray-700 placeholder-gray-400 rounded bg-transparent shadow-sm focus:border-gray-400 focus:ring-2 focus:ring-gray-500 focus:outline-none text-sm transition-all duration-300 ease-in-out"
       />
     </div>
