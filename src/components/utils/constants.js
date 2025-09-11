@@ -124,6 +124,21 @@ export const sidebarMenu = [
   },
   {
     id: 4,
+    name: "Usluge",
+    link: "/usluge",
+    options: [
+      {
+        name: "Dodaj uslugu",
+        link: "/dodaj-uslugu",
+      },
+      {
+        name: "Pogledaj usluge",
+        link: "/pogledaj-usluge",
+      },
+    ],
+  },
+  {
+    id: 5,
     name: "O nama",
     link: "/o-nama",
   },
