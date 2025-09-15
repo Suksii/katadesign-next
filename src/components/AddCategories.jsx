@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CustomInput from "@/components/forms/inputs/CustomInput";
 import CustomButton from "@/components/buttons/CustomButton";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 const AddCategories = () => {
   const [titleMn, setTitleMn] = useState("");
@@ -13,13 +14,11 @@ const AddCategories = () => {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await fetch("/api/categories", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ titleMn, titleEn }),
+      const { data } = await axios.post("/api/categories", {
+        titleMn,
+        titleEn,
       });
-      if (!res.ok) throw new Error("Neuspješno dodavanje kategorije");
-      return res.json();
+      return data;
     },
     onSuccess: () => {
       setTitleMn("");

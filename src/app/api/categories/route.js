@@ -36,3 +36,31 @@ export async function POST(req) {
     );
   }
 }
+
+export async function DELETE(req) {
+  try {
+    const { id } = await req.json();
+
+    if (!id) {
+      return NextResponse.json(
+        { error: "ID kategorije je obavezan" },
+        { status: 400 }
+      );
+    }
+
+    await prisma.category.delete({
+      where: { id: Number(id) },
+    });
+
+    return NextResponse.json(
+      { message: "Kategorija obrisana" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Greška pri brisanju kategorije", details: error },
+      { status: 500 }
+    );
+  }
+}

@@ -6,14 +6,32 @@ import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import Modal from "./Modal";
 import { useCategories } from "@/hooks/useCategories";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 const Categories = () => {
   const t = useTranslations("ProjectPage");
   const [editingId, setEditingId] = useState(null);
   const [showModalId, setShowModalId] = useState(null);
-  const [language, setLanguage] = useState("mn"); // "mn" ili "en"
+  const [language, setLanguage] = useState("mn");
 
+  const queryClient = useQueryClient();
   const { data: categories, isLoading, error } = useCategories();
+
+  const deleteMutation = useMutation({
+    mutationFn: async (id) => {
+      const { data } = await axios.delete("/api/categories", { data: { id } });
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
+      alert("Kategorija obrisana!");
+    },
+    onError: (err) => {
+      console.error(err);
+      alert("Greška pri brisanju kategorije!");
+    },
+  });
 
   if (isLoading) return <p>Učitavanje...</p>;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
@@ -24,7 +42,6 @@ const Categories = () => {
 
   return (
     <div>
-      {/* Switcher jezika */}
       <div className="mb-6 flex items-center gap-4">
         <span className="font-semibold">Jezik:</span>
         <button
@@ -44,7 +61,9 @@ const Categories = () => {
             {editingId === category.id ? (
               <CustomInput
                 type="text"
-                defaultValue={language === "mn" ? category.titleMn : category.titleEn}
+                defaultValue={
+                  language === "mn" ? category.titleMn : category.titleEn
+                }
               />
             ) : (
               <p>{language === "mn" ? category.titleMn : category.titleEn}</p>
@@ -62,6 +81,10 @@ const Categories = () => {
                   </span>
                 }
                 setShowModal={setShowModalId}
+                onDelete={() => {
+                  deleteMutation.mutate(category.id);
+                  setShowModalId(null);
+                }}
               />
             )}
 

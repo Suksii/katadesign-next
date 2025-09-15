@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import React from "react";
 import CustomButton from "./buttons/CustomButton";
 
-const Modal = ({ modalContent, setShowModal }) => {
+const Modal = ({ modalContent, setShowModal, onDelete }) => {
   return (
     <div className="fixed inset-0 w-full h-full bg-black/50 z-50 flex items-center justify-center">
       <div className="w-full max-w-[450px] h-auto min-h-[100px] bg-white rounded shadow-xl px-6 py-8 relative">
@@ -24,6 +24,7 @@ const Modal = ({ modalContent, setShowModal }) => {
           <CustomButton
             label="Izbriši"
             classNameBg="bg-gradient-to-r from-red-600 via-red-700 to-red-600 hover:from-red-700 hover:via-red-800 hover:to-red-700"
+            onClick={() => onDelete()}
           />
         </div>
       </div>
