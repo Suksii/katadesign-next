@@ -64,3 +64,28 @@ export async function DELETE(req) {
     );
   }
 }
+export async function PUT(req) {
+  try {
+    const { id, titleMn, titleEn } = await req.json();
+
+    if (!id || !titleMn || !titleEn) {
+      return NextResponse.json(
+        { error: "Svi podaci su obavezni" },
+        { status: 400 }
+      );
+    }
+
+    const updatedCategory = await prisma.category.update({
+      where: { id },
+      data: { titleMn, titleEn },
+    });
+
+    return NextResponse.json(updatedCategory, { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Greška pri izmjeni kategorije" },
+      { status: 500 }
+    );
+  }
+}
