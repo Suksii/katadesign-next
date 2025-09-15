@@ -3,11 +3,13 @@
 import { useState } from "react";
 import GalleryImage from "./GalleryImage";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { useCategories } from "@/hooks/useCategories";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
+  const locale = useLocale();
 
   const projects = [
     {
@@ -428,15 +430,15 @@ const GalleryHover = () => {
     },
   ];
 
-  const categories = [
-    t("kategorije.sve"),
-    t("kategorije.identitet"),
-    t("kategorije.komunikacije"),
-    t("kategorije.digital"),
-    t("kategorije.film_mediji"),
-    t("kategorije.produkti"),
-    t("kategorije.prostori"),
-  ];
+  // const categories = [
+  //   t("kategorije.sve"),
+  //   t("kategorije.identitet"),
+  //   t("kategorije.komunikacije"),
+  //   t("kategorije.digital"),
+  //   t("kategorije.film_mediji"),
+  //   t("kategorije.produkti"),
+  //   t("kategorije.prostori"),
+  // ];
 
   // const categories = [
   //   t("kategorije.sve"),
@@ -446,6 +448,10 @@ const GalleryHover = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
+  const { data: categories, isLoading, error } = useCategories();
+  if (isLoading) return <p>Učitavanje kategorija...</p>;
+  if (error) return <p>Greška pri učitavanju kategorija</p>;
+
   const filteredProjects =
     selectedCategory === t("kategorije.sve")
       ? projects
@@ -454,13 +460,23 @@ const GalleryHover = () => {
   return (
     <>
       <div className="flex flex-wrap gap-x-10 gap-y-4 md:gap-x-16 md:gap-y-8 pb-8 md:w-2/3">
+        <button
+          onClick={() => setSelectedCategory(t("kategorije.sve"))}
+          className="relative cursor-pointer overflow-hidden text-nowrap text-xl group"
+        >
+          <span className="relative z-10">{t("kategorije.sve")}</span>
+          <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+        </button>
+
         {categories.map((category) => (
           <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
+            key={category.id}
+            onClick={() => setSelectedCategory(category.id)}
             className="relative cursor-pointer overflow-hidden text-nowrap text-xl group"
           >
-            <span className="relative z-10">{category}</span>
+            <span className="relative z-10">
+              {locale === "mn" ? category.titleMn : category.titleEn}
+            </span>
             <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
           </button>
         ))}

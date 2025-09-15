@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Roboto } from "next/font/google";
+import { AdminProviders } from "@/components/wrappers/Providers";
 
 export const metadata = {
   title: {
@@ -35,9 +36,11 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body className={roboto.className}>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <AdminProviders>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </AdminProviders>
       </body>
     </html>
   );
