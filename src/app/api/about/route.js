@@ -26,16 +26,15 @@ export async function PUT(req) {
       );
     }
 
-    // Promenite ovo sa AboutUs na aboutUs
     const existing = await prisma.aboutUs.findFirst();
     
     console.log("Existing:", existing);
     const about = existing
-      ? await prisma.aboutUs.update({  // Promenite ovo
+      ? await prisma.aboutUs.update({
           where: { id: existing.id },
           data: { contentMn, contentEn },
         })
-      : await prisma.aboutUs.create({  // Promenite ovo
+      : await prisma.aboutUs.create({
           data: { contentMn, contentEn },
         });
     console.log("About:", about);

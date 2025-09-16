@@ -1,5 +1,5 @@
+import AboutUs from "@/components/webpages/AboutUs";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
@@ -11,22 +11,12 @@ export async function generateMetadata() {
   };
 }
 
-const AboutPage = () => {
-  const t = useTranslations("AboutPage");
-  const paragraphs = t.raw("o_nama_paragrafi");
-
+const page = () => {
   return (
-    <PagesWrapper title={t("o_nama")}>
-      <div>
-        <h2>{t("o_nama_naslov")}</h2>
-        <div className="tracking-wide text-xl leading-8 flex flex-col gap-4">
-          {paragraphs.map((text, index) => (
-            <p key={index}>{text}</p>
-          ))}
-        </div>
-      </div>
-    </PagesWrapper>
+    <div>
+      <AboutUs />
+    </div>
   );
 };
 
-export default AboutPage;
+export default page;

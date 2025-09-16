@@ -7,9 +7,8 @@ export function useAbout() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["about"],
     queryFn: async () => {
-      const res = await fetch("/api/about");
-      if (!res.ok) throw new Error("Failed to fetch AboutUs");
-      return res.json();
+      const { data } = await axios.get("/api/about");
+      return data;
     },
   });
 
