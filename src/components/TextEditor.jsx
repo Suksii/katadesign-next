@@ -14,9 +14,8 @@ import {
   LinkIcon,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import CustomButton from "./buttons/CustomButton";
 
-const TextEditor = ({ label }) => {
+const TextEditor = ({ label, initialContent, onChange }) => {
   const [fontSize, setFontSize] = useState("text-base");
 
   const editor = useEditor({
@@ -35,11 +34,16 @@ const TextEditor = ({ label }) => {
         },
       }),
     ],
-    content: "<span></span>",
+    content: initialContent || "<span></span>",
     editorProps: {
       attributes: {
         class: `prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none min-h-[350px] ${fontSize}`,
       },
+    },
+    onUpdate: ({ editor }) => {
+      if (onChange) {
+        onChange(editor.getHTML());
+      }
     },
     immediatelyRender: false,
   });
@@ -49,10 +53,6 @@ const TextEditor = ({ label }) => {
   }, [editor]);
 
   if (!editor) return null;
-
-  const saveContent = () => {
-    console.log(editor.getJSON());
-  };
 
   const handleFontSizeChange = (newSize) => {
     setFontSize(newSize);

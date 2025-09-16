@@ -19,3 +19,11 @@ model Category {
   titleMn String
   titleEn String
 }
+
+model AboutUs {
+  id    Int     @id @default(autoincrement())
+  contentMn String
+  contentEn String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
