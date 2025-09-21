@@ -1,4 +1,5 @@
 import Sidebar from "@/components/admin/Sidebar";
+import Stickybar from "@/components/admin/Stickybar";
 import { AdminProviders } from "@/components/wrappers/Providers";
 import { routing } from "@/i18n/routing";
 import { hasLocale } from "next-intl";
@@ -17,8 +18,13 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <AdminProviders>
+      <div className="block md:hidden">
+        <Stickybar />
+      </div>
       <div className="flex w-full">
-        <Sidebar />
+        <div className="hidden md:block">
+          <Sidebar />
+        </div>
         <div className="w-full p-12">{children}</div>
       </div>
     </AdminProviders>

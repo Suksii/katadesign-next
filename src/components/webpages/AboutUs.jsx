@@ -18,7 +18,7 @@ const AboutUs = () => {
 
   const content = locale === "en" ? data?.contentEn : data?.contentMn;
 
-//   const paragraphs = content ? content.split("\n") : [];
+  //   const paragraphs = content ? content.split("\n") : [];
 
   return (
     <PagesWrapper title={t("o_nama")}>
