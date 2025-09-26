@@ -1,5 +1,4 @@
 import AboutUs from "@/components/webpages/AboutUs";
-import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 

@@ -1,4 +1,4 @@
-import Services from "@/components/Services";
+import Services from "@/components/webpages/Services";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
