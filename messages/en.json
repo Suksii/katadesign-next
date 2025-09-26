@@ -78,15 +78,14 @@
       "Kata studio is a global design studio shaping brand identities, digital products, and spatial systems for brands, creators, institutions, and the cultural sector worldwide.",
       "At Kata studio we craft design-driven identities, products, and spaces that tell compelling stories and shape meaningful visual experiences.",
       "Leveraging market-leading capabilities, we develop cross-disciplinary design systems that seamlessly integrate strategy, narrative, and technology. Our approach fuses functional design with contextual insight, ensuring every brand and project is precisely positioned within its ecosystem.",
-      "Combining strategy, design, and production into a unified creative process, we collaborate with individuals and institutions through bold and strategic communication.",
-      "Together, we create impact."
+      "Combining strategy, design, and production into a unified creative process, we collaborate with individuals and institutions through bold and strategic communication."
     ]
   },
   "ContactPage": {
     "kontakt": "Contact",
     "pronadjite_nas": "Find us",
-    "ime": "Fullname",
-    "ime_placeholder": "Your fullname",
+    "ime": "Full name",
+    "ime_placeholder": "Your full name",
     "preduzece": "Company",
     "preduzece_placeholder": "Your company",
     "tema": "Subject",
