@@ -245,7 +245,10 @@ const GalleryHover = () => {
           </span>
         ),
       }),
-      category: t("kategorije.produkti"),
+      category: {
+        id: 10,
+        title: t("kategorije.produkti")
+      },
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
       project_desc: t.rich("explore_mne_opis", {
@@ -417,7 +420,10 @@ const GalleryHover = () => {
         ),
       }),
       alt: "Slika1",
-      category: t("kategorije.digital"),
+      category: {
+        id: 9,
+        title: t("kategorije.digital"),
+      },
       slug: "fort-kosmac",
       paragraphs: t.raw("fort_kosmac_paragrafi"),
       project_desc: t("fort_kosmac_opis"),
@@ -452,10 +458,19 @@ const GalleryHover = () => {
   if (isLoading) return <p>Učitavanje kategorija...</p>;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
 
+  console.log("Selected category:", selectedCategory);
+  console.log(
+    "All categories in projects:",
+    projects.map((img) => img.category.id)
+  );
+
   const filteredProjects =
     selectedCategory === t("kategorije.sve")
       ? projects
-      : projects.filter((img) => img.category === selectedCategory);
+      : projects.filter((img) => {
+          console.log("Comparing:", img.category.id, "vs", selectedCategory);
+          return img.category.id === selectedCategory;
+        });
 
   return (
     <>
