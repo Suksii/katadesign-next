@@ -21,11 +21,11 @@ export default async function RootLayout({ children, params }) {
       <div className="block md:hidden">
         <Stickybar />
       </div>
-      <div className="flex w-full">
+      <div className="flex w-full h-screen overflow-y-hidden">
         <div className="hidden md:block">
           <Sidebar />
         </div>
-        <div className="w-full p-12">{children}</div>
+        <div className="w-full p-12 overflow-y-auto">{children}</div>
       </div>
     </AdminProviders>
   );

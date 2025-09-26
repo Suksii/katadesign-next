@@ -1,23 +1,74 @@
 "use client";
 
-import CustomButton from "../buttons/CustomButton";
-import CustomInput from "./inputs/CustomInput";
+import React, { useState } from "react";
+import CustomInput from "@/components/forms/inputs/CustomInput";
+import CustomButton from "@/components/buttons/CustomButton";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 import CustomTextarea from "./inputs/CustomTextarea";
 
-export default function ServicesForm() {
+const AddServices = () => {
+  const [titleMn, setTitleMn] = useState("");
+  const [titleEn, setTitleEn] = useState("");
+  const [contentMn, setContentMn] = useState("");
+  const [contentEn, setContentEn] = useState("");
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: async () => {
+      const { data } = await axios.post("/api/services", {
+        titleMn,
+        titleEn,
+      });
+      return data;
+    },
+    onSuccess: () => {
+      setTitleMn("");
+      setTitleEn("");
+      queryClient.invalidateQueries({ queryKey: ["services"] });
+      alert("Usluga dodata!");
+    },
+  });
+
   return (
-    <form className="flex flex-col gap-4 w-full max-w-4xl mx-auto py-8">
+    <div className="flex flex-col gap-6 py-8 w-full max-w-2xl mx-auto">
       <CustomInput
-        label="Naslov Usluge"
-        type="text"
-        placeholder="Unesite naslov usluge"
+        label="Naziv usluge (MN)"
+        placeholder="Unesite naziv usluge"
+        value={titleMn}
+        onChange={(e) => setTitleMn(e.target.value)}
       />
       <CustomTextarea
-        label="Opis usluge"
+        label="Opis usluge (MN)"
         type="text"
         placeholder="Unesite opis usluge"
+        value={contentMn}
+        onChange={(e) => setContentMn(e.target.value)}
       />
-      <CustomButton label="Sačuvaj" />
-    </form>
+      <CustomInput
+        label="Naziv usluge (EN)"
+        placeholder="Enter service name"
+        value={titleEn}
+        onChange={(e) => setTitleEn(e.target.value)}
+      />
+      <CustomTextarea
+        label="Opis usluge (EN)"
+        type="text"
+        placeholder="Enter service description"
+        value={contentEn}
+        onChange={(e) => setContentEn(e.target.value)}
+      />
+      <CustomButton
+        label={mutation.isLoading ? "Čuvanje..." : "Sačuvaj"}
+        onClick={() => mutation.mutate()}
+        disabled={mutation.isLoading}
+      />
+      {mutation.isError && (
+        <p className="text-red-500">{mutation.error.message}</p>
+      )}
+    </div>
   );
-}
+};
+
+export default AddServices;

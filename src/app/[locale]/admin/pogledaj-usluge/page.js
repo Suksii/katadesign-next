@@ -84,7 +84,7 @@ const PogledajUsluge = () => {
           >
             <div className="absolute top-3 right-3 w-full flex gap-2 justify-end opacity-0 -translate-y-full group-hover:opacity-100 transition-all duration-200 group-hover:translate-y-0 z-10">
               <Link
-                href={"/"}
+                href={`/izmijeni-uslugu/${service.id}`}
                 className="p-2 rounded-full bg-yellow-500 text-yellow-100"
               >
                 <Edit />
