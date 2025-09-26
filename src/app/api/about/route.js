@@ -8,7 +8,7 @@ export async function GET() {
   } catch (error) {
     console.error("Error fetching AboutUs:", error);
     return NextResponse.json(
-      { error: "Failed to fetch content" },
+      { error: "Failed to fetch content:", error },
       { status: 500 }
     );
   }
