@@ -114,7 +114,7 @@ const Services = () => {
             </div>
             <p
               className={`overflow-hidden transition-all duration-500 text-lg text-gray-300 pr-12 ${
-                openedItemId === service.id ? "max-h-[500px]" : "max-h-0"
+                openedItemId === service.id ? "max-h-[520px]" : "max-h-0"
               }`}
             >
               {service.description}
