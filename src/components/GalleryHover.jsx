@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCategories } from "@/hooks/useCategories";
+import CategoriesSkeleton from "./skeletons/CategoriesSkeleton";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
@@ -455,7 +456,7 @@ const GalleryHover = () => {
   const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
   const { data: categories, isLoading, error } = useCategories();
-  if (isLoading) return <p>Učitavanje kategorija...</p>;
+  if (isLoading) return <CategoriesSkeleton />;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
 
   console.log("Selected category:", selectedCategory);

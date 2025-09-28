@@ -143,3 +143,10 @@ export const sidebarMenu = [
     link: "/o-nama",
   },
 ];
+
+export const shimmerStyle = {
+  background: "linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%)",
+  backgroundSize: "200% 100%",
+  animation: "shimmer 3s infinite",
+  backgroundPosition: "-200% 0",
+};
