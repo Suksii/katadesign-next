@@ -2,6 +2,7 @@
 import { useAbout } from "@/hooks/useAbout";
 import { useLocale, useTranslations } from "next-intl";
 import PagesWrapper from "../wrappers/PagesWrapper";
+import AboutSkeleton from "../skeletons/AboutSkeleton";
 
 const AboutUs = () => {
   const t = useTranslations("AboutPage");
@@ -10,7 +11,11 @@ const AboutUs = () => {
   const locale = useLocale();
 
   if (isLoading)
-    return <PagesWrapper title={t("o_nama")}>Loading...</PagesWrapper>;
+    return (
+      <PagesWrapper title={t("o_nama")}>
+        <AboutSkeleton />
+      </PagesWrapper>
+    );
   if (isError)
     return (
       <PagesWrapper title={t("o_nama")}>Error loading content</PagesWrapper>

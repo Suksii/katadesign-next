@@ -14,7 +14,7 @@ const PogledajUsluge = () => {
   const { data: services, isLoading, isError } = useServices();
   const queryClient = useQueryClient();
 
-  const [language, setLanguage] = useState("mn"); // "mn" ili "en"
+  const [language, setLanguage] = useState("mn");
   const [editingId, setEditingId] = useState(null);
   const [showModalId, setShowModalId] = useState(null);
   const [editValues, setEditValues] = useState({

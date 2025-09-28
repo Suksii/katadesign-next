@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-     "build": "prisma generate && next build",
+    "build": "prisma generate && next build",
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && prisma db push && next build",
     "start": "next start",
@@ -32,6 +32,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-i18next": "^15.6.1",
+    "react-loading-skeleton": "^3.5.0",
     "tailwind-merge": "^3.3.1",
     "zustand": "^5.0.6"
   },
