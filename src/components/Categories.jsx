@@ -7,6 +7,7 @@ import Modal from "./Modal";
 import { useCategories } from "@/hooks/useCategories";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
+import ToggleLanguage from "./admin/ToggleLanguage";
 
 const Categories = () => {
   const [editingId, setEditingId] = useState(null);
@@ -60,21 +61,12 @@ const Categories = () => {
 
   return (
     <div>
-      <div className="mb-6 flex items-center gap-4">
-        <span className="font-semibold">Jezik:</span>
-        <button
-          onClick={toggleLanguage}
-          className="px-4 py-2 bg-gray-700 text-white rounded cursor-pointer uppercase"
-        >
-          {language}
-        </button>
-      </div>
-
+      <ToggleLanguage onClick={toggleLanguage} language={language} />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
         {categories.map((category) => (
           <div
             key={category.id}
-            className="relative group rounded-xl p-6 shadow-md bg-white/5"
+            className="relative group rounded p-6 shadow-md bg-white/5"
           >
             {editingId === category.id ? (
               <div className="flex flex-col gap-2">
@@ -134,10 +126,9 @@ const Categories = () => {
                         id: editingId,
                         titleMn: editValues.titleMn,
                         titleEn: editValues.titleEn,
-                      })
-                      setEditingId(null)
-                    }
-                  }
+                      });
+                      setEditingId(null);
+                    }}
                     className="p-2 rounded-full bg-green-600 text-white cursor-pointer"
                   >
                     <Check size={18} />

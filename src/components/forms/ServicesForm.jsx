@@ -20,16 +20,21 @@ const AddServices = () => {
       const { data } = await axios.post("/api/services", {
         titleMn,
         titleEn,
+        contentMn,
+        contentEn,
       });
       return data;
     },
     onSuccess: () => {
       setTitleMn("");
       setTitleEn("");
+      setContentMn("");
+      setContentEn("");
       queryClient.invalidateQueries({ queryKey: ["services"] });
       alert("Usluga dodata!");
     },
   });
+
 
   return (
     <div className="flex flex-col gap-6 py-8 w-full max-w-2xl mx-auto">
