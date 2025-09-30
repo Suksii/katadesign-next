@@ -173,5 +173,27 @@
       "Brskut pokazuje kako dizajn može biti most između prošlosti i budućnosti, između tradicije i inovacije. Pažljivo oblikovana strategija, kreativni impuls i promišljena naracija zajedno stvaraju vizuelni identitet koji je više od estetike – on postaje iskustvo, gradi povjerenje i prenosi vrijednosti brenda na iskren i savremen način.",
       "Za nas je Brskut podsjetnik zašto radimo ono što radimo: da pomažemo ambicioznim brendovima da rastu, izraze se i pronađu svoje mjesto na tržištu, ostavljajući utisak koji traje."
     ]
+  },
+  "Metadata": {
+    "news_page": {
+      "title": "Novosti",
+      "description": ""
+    },
+    "projects_page": {
+      "title": "Projekti",
+      "description": "Kata Studio oblikuje projekte kroz promišljena i savremena rešenja za kompanije/brendove, kulturne projekte i kreativne inicijative."
+    },
+    "services_page": {
+      "title": "Usluge",
+      "description": "Kata Studio kreira brendove i projekte kroz art direkciju, vizuelni identitet, digitalna rješenja i prostorno-imerzivna iskustva, spajajući kreativnost i tehnologiju."
+    },
+    "contact_page": {
+      "title": "Kontakt",
+      "description": "Za upite i saradnju: pišite nam na office@kataagency.com, pratite nas na mrežama ili posjetite naš studio u Crnoj Gori."
+    },
+    "home_page": {
+      "title": "Početna",
+      "description": "Dizajn agencija nove generacije – oblikujemo identitete, brendove i iskustva koja inspirišu."
+    }
   }
 }

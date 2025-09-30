@@ -5,10 +5,10 @@ import { getTranslations } from "next-intl/server";
 import React from "react";
 
 export async function generateMetadata() {
-  const t = await getTranslations("ProjectPage");
+  const t = await getTranslations("Metadata.projects_page");
   return {
-    title: t("projekti"),
-    description: "",
+    title: t("title"),
+    description: t("description"),
   };
 }
 

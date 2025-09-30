@@ -1,9 +1,6 @@
-import "react-loading-skeleton/dist/skeleton.css";
 import { shimmerStyle } from "../utils/constants";
 
 export default function AboutSkeleton() {
-
-
   return (
     <div className="space-y-6">
       {/* Naslov skeleton */}

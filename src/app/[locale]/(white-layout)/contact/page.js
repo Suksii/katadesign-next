@@ -5,10 +5,10 @@ import { getTranslations } from "next-intl/server";
 import React from "react";
 
 export async function generateMetadata() {
-  const t = await getTranslations("ContactPage");
+  const t = await getTranslations("Metadata.contact_page");
   return {
-    title: t("kontakt"),
-    description: "",
+    title: t("title"),
+    description: t("description"),
   };
 }
 
@@ -21,7 +21,7 @@ const ContactPage = () => {
       titleClassName="!text-5xl"
       layoutClassName="max-w-full"
     >
-     <Contact />
+      <Contact />
     </PagesWrapper>
   );
 };

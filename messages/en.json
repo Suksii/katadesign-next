@@ -172,5 +172,27 @@
       "Brskut shows how design can be a bridge between past and future, between tradition and innovation. A carefully designed strategy, creative impulse, and thoughtful narrative together create a visual identity that is more than just aesthetics – it becomes an experience, builds trust, and conveys brand values in an honest and contemporary way.",
       "For us, Brskut is a reminder of why we do what we do: to help ambitious brands grow, express themselves, and find their place in the market – leaving a lasting impression."
     ]
+  },
+  "Metadata": {
+    "news_page": {
+      "title": "News",
+      "description": ""
+    },
+    "projects_page": {
+      "title": "Projects",
+      "description": "Kata studio crafts projects through deliberate and modern solutions for companies/brands, cultural projects and creative initiatives."
+    },
+    "services_page": {
+      "title": "Services",
+      "description": "Kata Studio shapes brands and projects through art direction, visual identity, digital solutions, and spatial and immersive experiences."
+    },
+    "contact_page": {
+      "title": "Contact",
+      "description": "For business inquiries and collaboration contact us via e-mail – office@kataagency.com, follow us on social media accounts or visit our studio in Montenegro."
+    },
+    "home_page": {
+      "title": "Home",
+      "description": "New generation design agency - we craft identities, brand and inspiring experiences."
+    }
   }
 }
