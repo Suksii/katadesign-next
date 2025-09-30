@@ -3,14 +3,14 @@ import { getTranslations } from "next-intl/server";
 import React from "react";
 
 export async function generateMetadata() {
-  const t = await getTranslations("AboutPage");
+  const t = await getTranslations("Metadata.about_page");
   return {
-    title: t("o_nama"),
-    description: "",
+    title: t("title"),
+    description: t("description"),
   };
 }
 
-const page = () => {
+const AboutUsPage = () => {
   return (
     <div>
       <AboutUs />
@@ -18,4 +18,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AboutUsPage;
