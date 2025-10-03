@@ -264,6 +264,12 @@ const SingleProject = ({ params }) => {
           </Link>
         ),
       }),
+      team: [
+        {
+          name: t("tim_explore_mne.dusko_miljanic.name"),
+          role: t("tim_explore_mne.dusko_miljanic.role"),
+        },
+      ],
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),
@@ -425,6 +431,16 @@ const SingleProject = ({ params }) => {
       slug: "fort-kosmac",
       paragraphs: t.raw("fort_kosmac_paragrafi"),
       project_desc: t("fort_kosmac_opis"),
+      team: [
+        {
+          name: t("tim_kosmac.ivan_vratnica.name"),
+          role: t("tim_kosmac.ivan_vratnica.role"),
+        },
+        {
+          name: t("tim_kosmac.vuk_zecevic.name"),
+          role: t("tim_kosmac.vuk_zecevic.role"),
+        },
+      ],
       list: [
         t("fort_kosmac_lista.uredjivanje"),
         t("fort_kosmac_lista.kreativna_direkcija"),

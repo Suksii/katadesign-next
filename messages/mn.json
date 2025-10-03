@@ -127,6 +127,23 @@
     },
     "informacije_o_projektu": "Informacije o projektu",
     "nazad_na_sve": "Nazad na sve",
+    "tim": "Tim",
+    "tim_explore_mne": {
+      "dusko_miljanic": {
+        "name": "Duško Miljanić",
+        "role": "Autor fotografija"
+      }
+    },
+    "tim_kosmac": {
+      "ivan_vratnica": {
+        "name": "Ivan Vratnica",
+        "role": "Arhitekta i autor knjige"
+      },
+      "vuk_zecevic": {
+        "name": "Vuk Zečević",
+        "role": "Arhitekta, 3D vizualizacije"
+      }
+    },
     "sta_smo_uradili": "Uradili smo",
     "explore_mne_lista": {
       "koncept": "Koncept",
@@ -177,7 +194,7 @@
   "Metadata": {
     "news_page": {
       "title": "Novosti",
-      "description": ""
+      "description": "Kata Studio donosi aktuelne projekte i priče koje oblikuju savremeni dizajn."
     },
     "projects_page": {
       "title": "Projekti",
