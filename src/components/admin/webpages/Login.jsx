@@ -21,29 +21,6 @@ export default function LoginComponent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-zinc-950 to-black flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-10 animate-pulse"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-red-800 rounded-full mix-blend-multiply filter blur-[100px] opacity-10 animate-pulse"
-          style={{ animationDelay: "1s", animationDuration: "4s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-red-950 rounded-full mix-blend-multiply filter blur-[80px] opacity-5 animate-pulse"
-          style={{ animationDelay: "2s", animationDuration: "5s" }}
-        ></div>
-      </div>
-
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-          backgroundSize: "50px 50px",
-        }}
-      ></div>
-
       <div className="w-full max-w-md relative z-10">
         <div className="relative">
           <div className="absolute -inset-1 bg-gradient-to-r from-red-600/20 via-red-800/20 to-red-600/20 rounded blur-xl opacity-50"></div>
@@ -52,9 +29,7 @@ export default function LoginComponent() {
             <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
 
             <div className="pt-12 pb-8 px-8 text-center relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-red-950/10 via-transparent to-transparent pointer-events-none"></div>
-
-              <div className="relative inline-block mb-8 group">
+              <div className="relative inline-block mb-8 group z-50 text-white">
                 <div className="absolute -inset-4 bg-gradient-to-r from-red-600/30 to-red-800/30 rounded blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative transform transition-transform duration-300 group-hover:scale-105">
                   <Logo variant="dark" />
