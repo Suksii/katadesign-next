@@ -1,9 +1,9 @@
 require("dotenv").config({
-  path: '.env.local'
+  path: ".env.local",
 });
 
 const { PrismaClient } = require("../src/generated/prisma");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
 const prisma = new PrismaClient();
 
@@ -20,7 +20,6 @@ async function main() {
       password: hashedPassword,
     },
   });
-
 }
 
 main()

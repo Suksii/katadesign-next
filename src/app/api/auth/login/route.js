@@ -1,8 +1,8 @@
-import { PrismaClient } from '@/generated/prisma';
-import bcrypt from 'bcryptjs';
-import { SignJWT } from 'jose';
-import { cookies } from 'next/headers';
-import { NextResponse } from 'next/server';
+import { PrismaClient } from "@/generated/prisma";
+import bcrypt from "bcryptjs";
+import { SignJWT } from "jose";
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
@@ -40,14 +40,17 @@ function resetAttempts(ip) {
 
 export async function POST(request) {
   try {
-    const ip = request.headers.get('x-forwarded-for') || 
-               request.headers.get('x-real-ip') || 
-               'unknown';
+    const ip =
+      request.headers.get("x-forwarded-for") ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
 
     const rateCheck = checkRateLimit(ip);
     if (rateCheck.blocked) {
       return NextResponse.json(
-        { error: `Previše neuspješnih pokušaja. Pokušajte ponovo za ${rateCheck.minutesLeft} minuta.` },
+        {
+          error: `Previše neuspješnih pokušaja. Pokušajte ponovo za ${rateCheck.minutesLeft} minuta.`,
+        },
         { status: 429 }
       );
     }
@@ -56,7 +59,7 @@ export async function POST(request) {
 
     if (!email || !password) {
       return NextResponse.json(
-        { error: 'Email i password su obavezni' },
+        { error: "Email i password su obavezni" },
         { status: 400 }
       );
     }
@@ -65,19 +68,19 @@ export async function POST(request) {
     if (!emailRegex.test(email)) {
       recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: 'Pogrešan email ili password' },
+        { error: "Pogrešan email ili password" },
         { status: 401 }
       );
     }
 
     const user = await prisma.admin.findUnique({
-      where: { email: email.toLowerCase() }
+      where: { email: email.toLowerCase() },
     });
 
     if (!user) {
       recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: 'Pogrešan email ili password' },
+        { error: "Pogrešan email ili password" },
         { status: 401 }
       );
     }
@@ -87,7 +90,7 @@ export async function POST(request) {
     if (!validPassword) {
       recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: 'Pogrešan email ili password' },
+        { error: "Password nije validan" },
         { status: 401 }
       );
     }
@@ -95,21 +98,23 @@ export async function POST(request) {
     resetAttempts(ip);
 
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-    const token = await new SignJWT({ 
-      userId: user.id, 
-      email: user.email 
+    const token = await new SignJWT({
+      userId: user.id,
+      email: user.email,
     })
-      .setProtectedHeader({ alg: 'HS256' })
+      .setProtectedHeader({ alg: "HS256" })
       .setIssuedAt()
-      .setExpirationTime('7d')
+      .setExpirationTime("7d")
       .sign(secret);
 
-    cookies().set('auth-token', token, {
+    const cookieStore = await cookies();
+
+    cookieStore.set("auth-token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
       maxAge: 60 * 60 * 24 * 7,
-      path: '/'
+      path: "/",
     });
 
     return NextResponse.json({
@@ -117,15 +122,11 @@ export async function POST(request) {
       user: {
         id: user.id,
         email: user.email,
-        name: user.name
-      }
+        name: user.name,
+      },
     });
-
   } catch (error) {
-    console.error('Login error:', error);
-    return NextResponse.json(
-      { error: 'Greška na serveru' },
-      { status: 500 }
-    );
+    console.error("Login error:", error);
+    return NextResponse.json({ error: "Greška na serveru" }, { status: 500 });
   }
 }
