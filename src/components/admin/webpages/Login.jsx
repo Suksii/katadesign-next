@@ -4,21 +4,38 @@ import CustomButton from "@/components/buttons/CustomButton";
 import CustomCheckbox from "@/components/forms/inputs/CustomCheckbox";
 import CustomInput from "@/components/forms/inputs/CustomInput";
 import Logo from "@/components/Logo";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useState } from "react";
+import { useLogin } from "@/hooks/useLogin"; // 🚀 koristi hook
 
 export default function LoginComponent() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      console.log("Login:", { email, password, rememberMe });
-      setIsLoading(false);
-    }, 1500);
+  const loginMutation = useLogin();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    loginMutation.mutate(
+      { email, password },
+      {
+        onSuccess: (data) => {
+          if (data.success) {
+            router.push("/admin");
+            router.refresh();
+          }
+        },
+      }
+    );
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
   };
 
   return (
@@ -42,15 +59,25 @@ export default function LoginComponent() {
             </div>
 
             <div className="px-8 pb-10">
-              <div className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {loginMutation.error && (
+                  <div className="bg-red-500/10 border border-red-500/50 rounded p-3 text-red-400 text-sm text-center animate-shake">
+                    {loginMutation.error?.response?.data?.error ||
+                      loginMutation.error.message}
+                  </div>
+                )}
+
                 <CustomInput
                   type="email"
                   name="email"
                   label="Email adresa"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  required
+                  disabled={loginMutation.isPending}
                   classNameLabel="text-zinc-300"
-                  classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600"
+                  classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
 
                 <CustomInput
@@ -59,8 +86,11 @@ export default function LoginComponent() {
                   label="Lozinka"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  required
+                  disabled={loginMutation.isPending}
                   classNameLabel="text-zinc-300"
-                  classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600"
+                  classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
 
                 <div className="flex items-center justify-between pt-2">
@@ -68,10 +98,12 @@ export default function LoginComponent() {
                     setIsChecked={setRememberMe}
                     isChecked={rememberMe}
                     label="Zapamti me"
+                    disabled={loginMutation.isPending}
                   />
                   <Link
                     href="/admin-login/reset-lozinke"
                     className="text-sm text-red-500 hover:text-red-400 transition-colors duration-200 font-medium relative group"
+                    tabIndex={loginMutation.isPending ? -1 : 0}
                   >
                     <span className="relative z-10">Zaboravljena lozinka?</span>
                     <span className="absolute inset-x-0 bottom-0 h-px bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
@@ -80,11 +112,12 @@ export default function LoginComponent() {
 
                 <CustomButton
                   label="Prijavi se"
-                  onClick={handleSubmit}
-                  loading={isLoading}
-                  classNameBg="md:w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 hover:from-red-700 hover:via-red-800 hover:to-red-700"
+                  type="submit"
+                  loading={loginMutation.isPending}
+                  disabled={loginMutation.isPending || !email || !password}
+                  classNameBg="md:w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 hover:from-red-700 hover:via-red-800 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
-              </div>
+              </form>
             </div>
 
             <div className="h-1 bg-gradient-to-r from-transparent via-red-600/50 to-transparent"></div>
