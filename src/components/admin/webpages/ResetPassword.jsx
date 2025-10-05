@@ -1,22 +1,20 @@
 "use client";
 
 import CustomButton from "@/components/buttons/CustomButton";
-import CustomCheckbox from "@/components/forms/inputs/CustomCheckbox";
 import CustomInput from "@/components/forms/inputs/CustomInput";
 import Logo from "@/components/Logo";
-import { Link } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 
-export default function LoginComponent() {
+export default function ResetPassword() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async () => {
     setIsLoading(true);
     setTimeout(() => {
-      console.log("Login:", { email, password, rememberMe });
+      console.log("Reset password:", { email });
       setIsLoading(false);
     }, 1500);
   };
@@ -32,11 +30,11 @@ export default function LoginComponent() {
 
             <div className="pt-12 pb-8 px-8 text-center relative">
               <div className="relative inline-block mb-8 group text-white">
-                <Logo variant="dark" />
+                  <Logo variant="dark" />
               </div>
               <div className="flex items-center justify-center gap-2 text-zinc-400 text-sm">
                 <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                <p>Pristup administratorskom panelu</p>
+                <p>Reset lozinke - Administrator</p>
                 <div className="w-1 h-1 bg-red-600 rounded-full"></div>
               </div>
             </div>
@@ -52,38 +50,22 @@ export default function LoginComponent() {
                   classNameLabel="text-zinc-300"
                   classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600"
                 />
-
-                <CustomInput
-                  type="password"
-                  name="password"
-                  label="Lozinka"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  classNameLabel="text-zinc-300"
-                  classNameInput="focus:bg-zinc-800 focus:ring-red-500 focus:border-red-600"
-                />
-
-                <div className="flex items-center justify-between pt-2">
-                  <CustomCheckbox
-                    setIsChecked={setRememberMe}
-                    isChecked={rememberMe}
-                    label="Zapamti me"
+                <div className="flex justify-between items-center">
+                  <CustomButton
+                    label="Potvrdi"
+                    onClick={handleSubmit}
+                    loading={isLoading}
+                    classNameBg="bg-gradient-to-r from-red-600 via-red-700 to-red-600 hover:from-red-700 hover:via-red-800 hover:to-red-700"
                   />
-                  <Link
-                    href="/admin-login/reset-lozinke"
-                    className="text-sm text-red-500 hover:text-red-400 transition-colors duration-200 font-medium relative group"
+                  <button
+                    type="button"
+                    onClick={() => router.back()}
+                    className="text-sm text-red-500 hover:text-red-400 transition-colors duration-200 font-medium relative group cursor-pointer"
                   >
-                    <span className="relative z-10">Zaboravljena lozinka?</span>
+                    <span className="relative z-10">Nazad na prijavu</span>
                     <span className="absolute inset-x-0 bottom-0 h-px bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                  </Link>
+                  </button>
                 </div>
-
-                <CustomButton
-                  label="Prijavi se"
-                  onClick={handleSubmit}
-                  loading={isLoading}
-                  classNameBg="md:w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 hover:from-red-700 hover:via-red-800 hover:to-red-700"
-                />
               </div>
             </div>
 
