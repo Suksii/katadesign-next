@@ -28,7 +28,6 @@ export async function PUT(req) {
 
     const existing = await prisma.aboutUs.findFirst();
     
-    console.log("Existing:", existing);
     const about = existing
       ? await prisma.aboutUs.update({
           where: { id: existing.id },
@@ -37,7 +36,6 @@ export async function PUT(req) {
       : await prisma.aboutUs.create({
           data: { contentMn, contentEn },
         });
-    console.log("About:", about);
     
     return NextResponse.json(about);
   } catch (error) {

@@ -459,17 +459,11 @@ const GalleryHover = () => {
   if (isLoading) return <CategoriesSkeleton />;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
 
-  console.log("Selected category:", selectedCategory);
-  console.log(
-    "All categories in projects:",
-    projects.map((img) => img.category.id)
-  );
 
   const filteredProjects =
     selectedCategory === t("kategorije.sve")
       ? projects
       : projects.filter((img) => {
-          console.log("Comparing:", img.category.id, "vs", selectedCategory);
           return img.category.id === selectedCategory;
         });
 

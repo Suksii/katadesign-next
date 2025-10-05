@@ -14,7 +14,6 @@ export default function ResetPassword() {
   const handleSubmit = async () => {
     setIsLoading(true);
     setTimeout(() => {
-      console.log("Reset password:", { email });
       setIsLoading(false);
     }, 1500);
   };

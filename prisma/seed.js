@@ -1,7 +1,8 @@
 require("dotenv").config({
   path: '.env.local'
 });
-const { PrismaClient } = require("@prisma/client");
+
+const { PrismaClient } = require("../src/generated/prisma");
 const bcrypt = require('bcryptjs');
 
 const prisma = new PrismaClient();
@@ -20,7 +21,6 @@ async function main() {
     },
   });
 
-  console.log("Admin korisnik je ubačen u bazu.");
 }
 
 main()

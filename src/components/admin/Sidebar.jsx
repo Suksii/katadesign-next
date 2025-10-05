@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Logo from "../Logo";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { sidebarMenu } from "../utils/constants";
+import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -95,8 +96,11 @@ const Sidebar = () => {
       </nav>
 
       {/* Footer */}
-      <div className="px-6 py-4 border-t border-gray-700 text-sm text-gray-500">
-        © {new Date().getFullYear()}
+      <div className="flex justify-between items-center w-full px-6 py-4 border-t border-gray-700">
+        <p className="text-sm text-gray-500">© {new Date().getFullYear()}</p>
+        <div>
+          <LogoutButton />
+        </div>
       </div>
     </div>
   );
