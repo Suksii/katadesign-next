@@ -32,6 +32,9 @@ export default function LoginComponent() {
     );
   };
 
+  console.log(process.env.NODE_ENV);
+  
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSubmit(e);
