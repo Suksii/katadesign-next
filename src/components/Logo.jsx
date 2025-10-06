@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Logo = ({ variant = "light" }) => {
+const Logo = ({ variant = "light", width = 140, height = 47 }) => {
   const isOpen = useMenuStore((state) => state.isOpen);
   const isProjectOpened = useProjectStore((state) => state.isProjectOpened);
 
@@ -18,7 +18,7 @@ const Logo = ({ variant = "light" }) => {
 
   return (
     <Link href="/" className="flex-shrink-0 z-50">
-      <Image src={logoSrc} width={140} height={47} alt="Kata logo" priority />
+      <Image src={logoSrc} width={width} height={height} alt="Kata logo" priority />
     </Link>
   );
 };
