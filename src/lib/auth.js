@@ -2,7 +2,8 @@ import { cookies } from "next/headers";
 import { jwtVerify } from "jose";
 
 export async function getUser() {
-  const token = cookies().get("auth-token")?.value;
+  const cookieStore = await cookies();
+  const token = cookieStore.get("auth-token")?.value;
 
   if (!token) return null;
 
