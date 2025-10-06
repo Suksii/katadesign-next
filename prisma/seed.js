@@ -1,12 +1,10 @@
-require("dotenv").config();
-
+const { ADMIN1_PASSWORD, ADMIN1_EMAIL } = require("@/components/utils/env");
 const { PrismaClient } = require("../src/generated/prisma");
 const bcrypt = require("bcryptjs");
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const { ADMIN1_EMAIL, ADMIN1_PASSWORD } = process.env;
 
   const hashedPassword = await bcrypt.hash(ADMIN1_PASSWORD, 12);
 
