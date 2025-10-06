@@ -89,8 +89,9 @@ const Services = () => {
       {services.map((service) => {
         return (
           <div
+            onClick={() => handleOpen(service.id)}
             key={service.id}
-            className={`py-6 ${
+            className={`py-6 cursor-pointer ${
               service.id !== services.length ? "border-b border-gray-500" : ""
             }`}
           >
@@ -99,17 +100,14 @@ const Services = () => {
                 {service.name}
               </h3>
               {service.description && (
-                <button
-                  onClick={() => handleOpen(service.id)}
-                  className="relative w-8 h-8 flex items-center justify-center cursor-pointer shrink-0"
-                >
+                <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
                   <span className="absolute w-6 h-[2px] bg-gray-400 transition-transform duration-300"></span>
                   <span
                     className={`absolute w-[2px] h-6 bg-gray-400 transition-transform duration-300 ${
                       openedItemId === service.id ? "scale-y-0" : "scale-y-100"
                     }`}
                   ></span>
-                </button>
+                </div>
               )}
             </div>
             <p
