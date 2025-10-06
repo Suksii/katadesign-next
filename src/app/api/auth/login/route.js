@@ -68,7 +68,7 @@ export async function POST(request) {
     if (!emailRegex.test(email)) {
       recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: "Pogrešan email ili password" },
+        { error: "Pogrešan email" },
         { status: 401 }
       );
     }
@@ -76,6 +76,8 @@ export async function POST(request) {
     const user = await prisma.admin.findUnique({
       where: { email: email.toLowerCase() },
     });
+
+    console.log(user);
 
     if (!user) {
       recordFailedAttempt(ip);
@@ -111,7 +113,7 @@ export async function POST(request) {
 
     cookieStore.set("auth-token", token, {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60 * 24 * 7,
       path: "/",
