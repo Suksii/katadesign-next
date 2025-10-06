@@ -77,8 +77,6 @@ export async function POST(request) {
       where: { email: email.toLowerCase() },
     });
 
-    console.log(user);
-
     if (!user) {
       recordFailedAttempt(ip);
       return NextResponse.json(
