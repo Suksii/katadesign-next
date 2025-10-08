@@ -1,7 +1,7 @@
 export default function robots() {
-  const blockRobots = process.env.NEXT_PUBLIC_BLOCK_ROBOTS === "true";
+  const domain = process.env.NEXT_PUBLIC_DOMAIN || "katadesign.vercel.app";
 
-  if (blockRobots) {
+  if (domain.includes("vercel.app")) {
     return {
       rules: {
         userAgent: "*",
@@ -16,6 +16,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/admin", "/admin-login"],
     },
-    sitemap: "https://kataagency.com/sitemap.xml",
+    sitemap: `https://${domain}/sitemap.xml`,
   };
 }
