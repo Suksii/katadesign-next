@@ -1,7 +1,7 @@
 export default function robots() {
-  const isVercelUrl = process.env.VERCEL_URL?.includes("vercel.app") ?? false;
+  const blockRobots = process.env.NEXT_PUBLIC_BLOCK_ROBOTS === "true";
 
-  if (isVercelUrl) {
+  if (blockRobots) {
     return {
       rules: {
         userAgent: "*",
