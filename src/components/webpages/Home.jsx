@@ -9,14 +9,26 @@ function Home() {
 
   return (
     <div className="min-h-[calc(100vh-288px)] flex flex-col md:justify-end relative pb-12">
-      <div className="fixed top-0 w-full md:w-[60%] right-0 h-1/2 md:h-[60%] z-0">
-        <Image src="/bg-header.png" alt="bg-header" fill />
+      <div className="fixed top-0 right-0 max-w-[1000px] z-0">
+        <Image
+          src="/bg-header.png"
+          alt="bg-header"
+          width={1200}
+          height={809}
+          className="w-full h-auto"
+        />
       </div>
-      <div className="fixed bottom-0 w-full md:w-[60%] right-0 h-[300px] z-0">
-        <Image src="/bg-footer.png" alt="bg-footer" fill />
+      <div className="fixed bottom-0 max-w-[769px] right-0 z-0">
+        <Image
+          src="/bg-footer.png"
+          alt="bg-footer"
+          width={769}
+          height={300}
+          className="w-full h-auto"
+        />
       </div>
 
-      <HeaderMotion animation={fadeInLeft(1)} className="mb-12 md:mb-32">
+      <HeaderMotion animation={fadeInLeft(1)} className="mb-12 md:mb-32 z-10">
         {t("ko_smo_mi")}
       </HeaderMotion>
 
@@ -27,10 +39,10 @@ function Home() {
           textClassName="inline-block w-[10ch] font-bold text-6xl md:text-[110px] uppercase tracking-widest leading-none relative"
         />
 
-        <div className="flex flex-col justify-between md:py-12">
+        <div className="flex flex-col justify-between md:py-12 overflow-x-hidden">
           <TextMotion
             animation={fadeIn(3, 3.5)}
-            className="flex-1 flex flex-col gap-1 pt-16 md:pt-0 md:text-lg"
+            className="flex-1 flex flex-col gap-1 pt-16 md:pt-0 md:text-lg z-10"
           >
             <span className="flex flex-col md:flex-row gap-1 md:gap-2">
               {" "}
