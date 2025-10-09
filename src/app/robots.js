@@ -1,5 +1,5 @@
 export default function robots() {
-  const domain = process.env.NEXT_PUBLIC_DOMAIN || "katadesign.vercel.app";
+  const domain = process.env.NEXT_PUBLIC_DOMAIN;
 
   if (domain.includes("vercel.app")) {
     return {
@@ -16,6 +16,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/admin", "/admin-login"],
     },
-    sitemap: `https://${domain}/sitemap.xml`,
+    sitemap: `https://kataagency.com/sitemap.xml`,
   };
 }
