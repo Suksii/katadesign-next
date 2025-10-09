@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className="flex gap-12 flex-col md:flex-row md:pt-12">
       <div className="flex-1 flex flex-col justify-between gap-6">
-        <p className="pb-8 md:pb-0">archivekata@gmail.com</p>
+        <p className="pb-8 md:pb-0">office@kataagency.com</p>
         <div className="flex justify-between md:w-[80%]">
           <div className="flex flex-col gap-4">
             <p className="uppercase font-medium">{t("pronadjite_nas")}</p>
