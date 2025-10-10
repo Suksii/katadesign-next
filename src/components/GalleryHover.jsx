@@ -248,7 +248,7 @@ const GalleryHover = () => {
       }),
       category: {
         id: 10,
-        title: t("kategorije.produkti")
+        title: t("kategorije.produkti"),
       },
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
@@ -456,9 +456,8 @@ const GalleryHover = () => {
   const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
   const { data: categories, isLoading, error } = useCategories();
-  if (isLoading) return <CategoriesSkeleton />;
+  // if (isLoading) return <CategoriesSkeleton />;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
-
 
   const filteredProjects =
     selectedCategory === t("kategorije.sve")

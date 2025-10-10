@@ -7,15 +7,8 @@ import AboutSkeleton from "../skeletons/AboutSkeleton";
 const AboutUs = () => {
   const t = useTranslations("AboutPage");
   const paragraphs = t.raw("o_nama_paragrafi");
-  const { data, isLoading, isError } = useAbout();
+  const { data, isError } = useAbout();
   const locale = useLocale();
-
-  if (isLoading)
-    return (
-      <PagesWrapper title={t("o_nama")}>
-        <AboutSkeleton />
-      </PagesWrapper>
-    );
   if (isError)
     return (
       <PagesWrapper title={t("o_nama")}>Error loading content</PagesWrapper>

@@ -23,7 +23,7 @@ const AboutPage = () => {
     updateAbout.mutate({ contentMn, contentEn });
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  // if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error fetching content</p>;
 
   return (
