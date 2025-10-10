@@ -460,12 +460,12 @@ const SingleProject = ({ params }) => {
         <section className="section pb-8">
           <div className="flex justify-between">
             <button
-              className="cursor-pointer z-50"
+              className="cursor-pointer z-[35]"
               onClick={() => setIsProjectOpened(!isProjectOpened)}
             >
-              <div className="flex gap-2 items-center z-50">
+              <div className="flex gap-2 items-center z-[35]">
                 <h4
-                  className={`text-sm sm:text-base text-nowrap transition-colors duration-300 z-50 ${
+                  className={`text-sm sm:text-base text-nowrap transition-colors duration-300 z-[35] ${
                     isProjectOpened ? "text-white" : "text-black"
                   }`}
                 >
@@ -473,7 +473,7 @@ const SingleProject = ({ params }) => {
                     ? project.title
                     : t("informacije_o_projektu")}
                 </h4>
-                <span className="relative w-4 sm:w-8 h-4 sm:h-8 flex items-center justify-center cursor-pointer shrink-0 z-50">
+                <span className="relative w-4 sm:w-8 h-4 sm:h-8 flex items-center justify-center cursor-pointer shrink-0 z-[35]">
                   <span
                     className={`absolute w-4 sm:w-6 h-[2px] transition-transform duration-300 ${
                       isProjectOpened ? "bg-white" : "bg-black"

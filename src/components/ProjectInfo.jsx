@@ -20,7 +20,7 @@ const ProjectInfo = ({ isOpen, project }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black text-white z-40 pt-12 flex items-end pb-12"
+          className="fixed inset-0 bg-black text-white z-30 pt-12 flex items-end pb-12"
           variants={containerVariants("+", "+", 0.3, 0.3)}
           initial="hidden"
           animate="visible"
