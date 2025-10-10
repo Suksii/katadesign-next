@@ -3,11 +3,10 @@
 import { usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import React from "react";
+import { TextMotion } from "./MotionTags";
 
 const HomePageWrapper = ({ children }) => {
   const pathname = usePathname();
-
-  console.log(pathname);
 
   if (pathname !== "/") {
     return children;
@@ -15,7 +14,15 @@ const HomePageWrapper = ({ children }) => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="absolute top-0 right-0 w-3/4 md:w-[60%] md:max-w-[1200px] z-0">
+      {/* Gornja animirana slika */}
+      <TextMotion
+        animation={{
+          initial: { opacity: 0, x: 250 },
+          animate: { opacity: 1, x: 0 },
+          transition: { duration: 1 },
+        }}
+        className="absolute top-0 right-0 w-3/4 md:w-[60%] md:max-w-[1200px] z-0"
+      >
         <Image
           src="/bg-header.png"
           alt="bg-header"
@@ -24,8 +31,17 @@ const HomePageWrapper = ({ children }) => {
           height={809}
           className="w-full h-auto"
         />
-      </div>
-      <div className="absolute bottom-0 max-w-[769px] right-0 md:right-[15%] z-0">
+      </TextMotion>
+
+      {/* Donja animirana slika */}
+      <TextMotion
+        animation={{
+          initial: { opacity: 0, x: 250 },
+          animate: { opacity: 1, x: 0 },
+          transition: { duration: 1.2, delay: 0.3 },
+        }}
+        className="absolute bottom-0 max-w-[769px] right-0 md:right-[15%] z-0"
+      >
         <Image
           src="/bg-footer.png"
           alt="bg-footer"
@@ -34,7 +50,8 @@ const HomePageWrapper = ({ children }) => {
           height={300}
           className="w-full h-auto"
         />
-      </div>
+      </TextMotion>
+
       <div className="relative">{children}</div>
     </div>
   );
