@@ -15,7 +15,7 @@ const HomePageWrapper = ({ children }) => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="absolute top-0 right-0 w-3/4 md:max-w-[1200px] z-0">
+      <div className="absolute top-0 right-0 w-3/4 md:w-[60%] md:max-w-[1200px] z-0">
         <Image
           src="/bg-header.png"
           alt="bg-header"
@@ -25,7 +25,7 @@ const HomePageWrapper = ({ children }) => {
           className="w-full h-auto"
         />
       </div>
-      <div className="absolute bottom-0 max-w-[769px] right-0 z-0">
+      <div className="absolute bottom-0 max-w-[769px] right-0 md:right-[15%] z-0">
         <Image
           src="/bg-footer.png"
           alt="bg-footer"
