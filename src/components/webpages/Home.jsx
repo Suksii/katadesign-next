@@ -8,26 +8,7 @@ function Home() {
   const t = useTranslations("HomePage");
 
   return (
-    <div className="min-h-[calc(100vh-288px)] flex flex-col md:justify-end relative pb-12">
-      <div className="fixed top-0 right-0 max-w-[1000px] z-0">
-        <Image
-          src="/bg-header.png"
-          alt="bg-header"
-          width={1200}
-          height={809}
-          className="w-full h-auto"
-        />
-      </div>
-      <div className="fixed bottom-0 max-w-[769px] right-0 z-0">
-        <Image
-          src="/bg-footer.png"
-          alt="bg-footer"
-          width={769}
-          height={300}
-          className="w-full h-auto"
-        />
-      </div>
-
+    <div className="min-h-[calc(100vh-130px)] w-full flex flex-col justify-end relative pb-32">
       <HeaderMotion animation={fadeInLeft(1)} className="mb-12 md:mb-32 z-10">
         {t("ko_smo_mi")}
       </HeaderMotion>

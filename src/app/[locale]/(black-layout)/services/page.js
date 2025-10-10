@@ -16,9 +16,11 @@ const ServicesPage = () => {
   const t = useTranslations("ServicesPage");
   return (
     <PagesWrapper title={t("usluge")}>
-      <h2>{t("uslugeNaslov")}</h2>
-      <div>
-        <Services />
+      <div className="py-20">
+        <h2>{t("uslugeNaslov")}</h2>
+        <div>
+          <Services />
+        </div>
       </div>
     </PagesWrapper>
   );

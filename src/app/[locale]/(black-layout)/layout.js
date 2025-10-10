@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
+import HomePageWrapper from "@/components/wrappers/HomePageWrapper";
 
 export default async function DarkLayout({ children }) {
   return (
     <div className="min-h-screen bg-black text-white antialiased">
-      <div className="w-[80%] mx-auto pt-10 md:pt-12">
-        <Navbar variant="black" />
-        <main className="py-12 md:py-24">{children}</main>
-      </div>
+      <HomePageWrapper>
+        <div className="w-[80%] mx-auto">
+          <Navbar variant="black" />
+          <main>{children}</main>
+        </div>
+      </HomePageWrapper>
     </div>
   );
 }

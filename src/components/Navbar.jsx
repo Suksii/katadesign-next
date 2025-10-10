@@ -9,7 +9,7 @@ const Navbar = ({ variant = "light" }) => {
   const t = useTranslations("Navbar");
 
   return (
-    <nav className="flex justify-between items-center">
+    <nav className="flex justify-between items-center min-h-[130px] h-auto max-h-[180px]">
       <Logo variant={variant} />
       <div className="flex gap-1 md:gap-14 items-center">
         <LocaleSwitcher />
