@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCategories } from "@/hooks/useCategories";
 import CategoriesSkeleton from "./skeletons/CategoriesSkeleton";
+import { CustomLoader } from "./admin/CustomLoader";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
@@ -456,7 +457,7 @@ const GalleryHover = () => {
   const [selectedCategory, setSelectedCategory] = useState(t("kategorije.sve"));
 
   const { data: categories, isLoading, error } = useCategories();
-  // if (isLoading) return <CategoriesSkeleton />;
+  if (isLoading) return <span></span>;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
 
   const filteredProjects =

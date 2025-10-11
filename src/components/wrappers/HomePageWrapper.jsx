@@ -17,7 +17,7 @@ const HomePageWrapper = ({ children }) => {
       {/* Gornja animirana slika */}
       <TextMotion
         animation={{
-          initial: { opacity: 0, x: 250 },
+          initial: { opacity: 0, x: 150 },
           animate: { opacity: 1, x: 0 },
           transition: { duration: 1 },
         }}
@@ -36,9 +36,9 @@ const HomePageWrapper = ({ children }) => {
       {/* Donja animirana slika */}
       <TextMotion
         animation={{
-          initial: { opacity: 0, x: 250 },
+          initial: { opacity: 0, x: 150 },
           animate: { opacity: 1, x: 0 },
-          transition: { duration: 1.2, delay: 0.3 },
+          transition: { duration: 1.2, delay: 3.5 },
         }}
         className="absolute bottom-0 max-w-[769px] right-0 md:right-[15%] z-0"
       >
