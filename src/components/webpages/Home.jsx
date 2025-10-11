@@ -8,7 +8,7 @@ function Home() {
   const t = useTranslations("HomePage");
 
   return (
-    <div className="min-h-[calc(100vh-130px)] w-full flex flex-col justify-end relative pb-32">
+    <div className="min-h-[calc(100vh-100px)] w-full flex flex-col justify-end relative pb-32">
       <HeaderMotion animation={fadeInLeft(1)} className="mb-12 md:mb-32 z-10">
         {t("ko_smo_mi")}
       </HeaderMotion>
