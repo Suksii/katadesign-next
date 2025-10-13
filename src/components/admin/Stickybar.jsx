@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { sidebarMenu } from "../utils/constants";
+import LogoutButton from "./LogoutButton";
 
 const Stickybar = () => {
   const pathname = usePathname();
@@ -63,6 +64,9 @@ const Stickybar = () => {
             </div>
           );
         })}
+        <div>
+          <LogoutButton />
+        </div>
       </nav>
     </div>
   );
