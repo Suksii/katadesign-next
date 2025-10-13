@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Roboto } from "next/font/google";
 import { AdminProviders } from "@/components/wrappers/Providers";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: {
@@ -36,11 +38,13 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body className={roboto.className}>
-        <AdminProviders>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </AdminProviders>
+        <Suspense fallback={<Loading />}>
+          <AdminProviders>
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </AdminProviders>
+        </Suspense>
       </body>
     </html>
   );
