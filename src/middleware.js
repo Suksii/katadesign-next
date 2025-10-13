@@ -7,7 +7,6 @@
 //   matcher: ["/", "/(mn|en)/:path*"],
 // };
 
-// middleware.js ili middleware.ts u root ili /src/ folderu (gde god već koristiš)
 
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
@@ -19,8 +18,6 @@ const intlMiddleware = createMiddleware(routing);
 export default async function middleware(request) {
   const pathname = request.nextUrl.pathname;
   
-
-  // Ekstraktuj locale iz URL-a (npr. /mn/admin → locale = "mn")
   const localeMatch = pathname.match(/^\/(mn|en)/);
   const locale = localeMatch ? localeMatch[1] : 'mn';
 
@@ -32,11 +29,9 @@ export default async function middleware(request) {
   }
 
   if (isLoginPage) {
-    console.log("✅ Login stranica, propuštam");
     return intlMiddleware(request);
   }
 
-  console.log("🔒 Admin ruta, provjeravam auth...");
 
   const token = request.cookies.get("auth-token")?.value;
 

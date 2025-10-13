@@ -6,7 +6,7 @@ import CustomInput from "@/components/forms/inputs/CustomInput";
 import Logo from "@/components/Logo";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useState } from "react";
-import { useLogin } from "@/hooks/useLogin"; // 🚀 koristi hook
+import { useLogin } from "@/hooks/useLogin";
 
 export default function LoginComponent() {
   const router = useRouter();

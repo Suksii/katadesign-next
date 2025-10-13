@@ -1,6 +1,5 @@
 import TypewriterText from "@/components/Typewriter";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { fadeIn, fadeInLeft, fadeInRight } from "@/components/utils/motions";
 import { HeaderMotion, TextMotion } from "@/components/wrappers/MotionTags";
 
@@ -8,7 +7,7 @@ function Home() {
   const t = useTranslations("HomePage");
 
   return (
-    <div className="min-h-[calc(100vh-100px)] w-full flex flex-col justify-end relative pb-32">
+    <div className="min-h-[calc(100vh-130px)] w-full flex flex-col justify-end relative pb-16 md:28 lg:pb-32">
       <HeaderMotion animation={fadeInLeft(1)} className="mb-12 md:mb-32 z-10">
         {t("ko_smo_mi")}
       </HeaderMotion>
