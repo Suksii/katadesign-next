@@ -20,15 +20,17 @@ const HomePageWrapper = ({ children }) => {
           animate: { opacity: 1, x: 0 },
           transition: { duration: 1 },
         }}
-        className="absolute top-0 right-0 w-3/5 md:w-[60%] md:max-w-[1200px] z-0"
+        className="absolute top-0 right-0 w-3/5 md:w-[40%] md:max-w-[1200px] z-0"
       >
         <Image
           src="/bg-header.png"
           alt="bg-header"
           priority
-          width={1200}
-          height={809}
+          width={800}
+          height={530}
+          unoptimized
           className="w-full h-auto"
+          style={{ aspectRatio: 80 / 53 }}
         />
       </TextMotion>
 
