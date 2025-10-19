@@ -20,7 +20,7 @@ const HomePageWrapper = ({ children }) => {
           animate: { opacity: 1, x: 0 },
           transition: { duration: 1 },
         }}
-        className="absolute top-0 right-0 w-3/5 md:w-[40%] md:max-w-[1200px] z-0"
+        className="absolute top-0 right-0 w-1/2 md:w-[40%] md:max-w-[1200px] z-0"
       >
         <Image
           src="/bg-header.png"
