@@ -286,7 +286,7 @@ const SingleProject = ({ params }) => {
         alt: "Slika1",
       },
       main_banner_img: {
-        src: "/1.jpg",
+        src: "/Kosmac.jpg",
         alt: "Slika1",
       },
       galery_row_images: [],
