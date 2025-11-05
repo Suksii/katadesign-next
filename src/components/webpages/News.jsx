@@ -14,7 +14,7 @@ const News = () => {
         <div key={news.id} className="bg-white flex flex-col">
           <Link
             href={`/${t("novosti_slug")}/${news.slug}`}
-            className="relative w-full h-[300px] overflow-hidden"
+            className="relative w-full h-[300px] overflow-hidden pointer-events-none"
           >
             <Image
               src={news.banner_image}
@@ -41,7 +41,7 @@ const News = () => {
             <div className="flex flex-col gap-4">
               <Link
                 href={`/${t("novosti_slug")}/${news.slug}`}
-                className="text-xl font-medium"
+                className="text-xl font-medium pointer-events-none"
               >
                 {t(news.titleKey)}
               </Link>
