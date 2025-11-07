@@ -458,7 +458,7 @@ const SingleProject = ({ params }) => {
       <ScrollToTopButton />
       <div>
         <section className="section pb-8">
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-col-reverse md:flex-row">
             <button
               className="cursor-pointer z-[35]"
               onClick={() => setIsProjectOpened(!isProjectOpened)}
@@ -487,7 +487,9 @@ const SingleProject = ({ params }) => {
                 </span>
               </div>
             </button>
-            <GoBackButton />
+            <div className="absolute md:static right-10 top-24">
+              <GoBackButton />
+            </div>
           </div>
 
           <ProjectInfo isOpen={isProjectOpened} project={project} />

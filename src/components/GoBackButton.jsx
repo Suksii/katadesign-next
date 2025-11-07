@@ -11,11 +11,11 @@ const GoBackButton = () => {
   return (
     <button
       type="button"
-      className="flex items-center gap-2 cursor-pointer"
+      className="flex items-center gap-1 cursor-pointer text-gray-600"
       onClick={() => router.back()}
     >
       <ArrowLeft />
-      <p className="text-sm sm:text-base text-nowrap">{t('nazad_na_sve')}</p>
+      <p className="text-xs sm:text-base text-nowrap">{t('nazad_na_sve')}</p>
     </button>
   );
 };
