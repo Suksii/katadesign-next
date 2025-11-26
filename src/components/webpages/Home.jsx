@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div className="min-h-[calc(100vh-130px)] w-full flex flex-col justify-end relative pb-16 md:28 lg:pb-32">
-      <div className="w-full flex justify-between items-end mb-12 md:mb-32 z-10">
+      <div className="w-full flex justify-between items-start mb-12 md:mb-32 z-10">
         <HeaderMotion animation={fadeInLeft(1)} className="">
           {t("ko_smo_mi")}
         </HeaderMotion>

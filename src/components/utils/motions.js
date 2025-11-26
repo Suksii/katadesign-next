@@ -17,8 +17,8 @@ export const fadeIn = (duration = 1, delay = 0) => ({
 });
 
 export const extendInOut = (duration = 1, delay = 0) => ({
-  initial: { scaleX: 0, originX: 0 },
-  animate: { scaleX: 1, originX: 0 },
+  initial: { scaleX: 0, originX: 1 },
+  animate: { scaleX: 1, originX: 1 },
   transition: { duration, delay },
 });
 
