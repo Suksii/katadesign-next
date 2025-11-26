@@ -17,3 +17,11 @@ export function TextMotion({ children, className = "", animation }) {
     </motion.p>
   );
 }
+
+export function LineExtend({ children, className = "", animation }) {
+  return (
+    <motion.div {...animation} className={`overflow-hidden ${className}`}>
+      {children}
+    </motion.div>
+  );
+}

@@ -1,5 +1,4 @@
 import Home from "@/components/webpages/Home";
-import HomePageWrapper from "@/components/wrappers/HomePageWrapper";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 

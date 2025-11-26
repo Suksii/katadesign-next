@@ -16,7 +16,18 @@ export const fadeIn = (duration = 1, delay = 0) => ({
   transition: { duration, delay },
 });
 
-export const containerVariants = (operandIn = "-", operandOut = "-", durationIn = 0.5, durationOut = 0.4) => ({
+export const extendInOut = (duration = 1, delay = 0) => ({
+  initial: { scaleX: 0, originX: 0 },
+  animate: { scaleX: 1, originX: 0 },
+  transition: { duration, delay },
+});
+
+export const containerVariants = (
+  operandIn = "-",
+  operandOut = "-",
+  durationIn = 0.5,
+  durationOut = 0.4
+) => ({
   hidden: { opacity: 0, y: `${operandIn}100%` },
   visible: {
     opacity: 1,
@@ -27,7 +38,11 @@ export const containerVariants = (operandIn = "-", operandOut = "-", durationIn 
       staggerChildren: 0.15,
     },
   },
-  exit: { opacity: 0, y: `${operandOut}100%`, transition: { duration: durationOut } },
+  exit: {
+    opacity: 0,
+    y: `${operandOut}100%`,
+    transition: { duration: durationOut },
+  },
 });
 
 export const linkVariants = {
