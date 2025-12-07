@@ -499,7 +499,7 @@ const SingleProject = ({ params }) => {
               alt={project.main_banner_img?.alt}
               width={1800}
               height={800}
-              className="object-cover"
+              className="object-cover w-full"
             />
           </div>
         </section>
