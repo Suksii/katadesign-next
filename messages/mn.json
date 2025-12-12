@@ -174,7 +174,15 @@
       "kreativna_direkcija": "Kreativna direkcija",
       "art_direkcija": "Art direkcija",
       "dizajn_layout": "Dizajn & layout"
-    }
+    },
+    "sloga_lista": {
+      "redizajn_logotipa": "Redizajn logotipa",
+      "art_direkcija": "Art direkcija",
+      "vizuelni_identitet": "Vizuelni identitet",
+      "korporativna_tipografija": "Korporativna tipografija",
+      "dizajn_layout": "Dizajn & layout"
+    },
+    "sloga_opis": "Kata design studio"
   },
   "NewsPage": {
     "novosti": "Novosti",

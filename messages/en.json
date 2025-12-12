@@ -171,9 +171,17 @@
     "fort_kosmac_lista": {
       "uredjivanje": "Editing ",
       "kreativna_direkcija": "Creative direction",
-      "art_direkcija": "Art direction ",
+      "art_direkcija": "Art direction",
       "dizajn_layout": "Design & layout"
-    }
+    },
+    "sloga_lista": {
+      "redizajn_logotipa": "Logo redesign",
+      "art_direkcija": "Art direction",
+      "vizuelni_identitet": "Visual identity",
+      "korporativna_tipografija": "Korporativna tipografija",
+      "dizajn_layout": "Design & layout"
+    },
+    "sloga_opis": "Kata design studio"
   },
   "NewsPage": {
     "novosti": "News",

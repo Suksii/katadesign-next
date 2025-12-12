@@ -436,6 +436,175 @@ const GalleryHover = () => {
         t("fort_kosmac_lista.dizajn_layout"),
       ],
     },
+    {
+      title: "Sloga",
+      main_project_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "sloga1",
+      },
+      main_banner_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "Slika1",
+      },
+      galery_row_images: [],
+      galery_images: [
+        {
+          src: "/sloga/sloga2.jpg",
+          alt: "1",
+          width: 1500,
+          height: 800,
+        },
+        {
+          src: "/2.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/3.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/4.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/5.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/6.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/7.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/8.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/9.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/10.jpg",
+          alt: "10",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/11.jpg",
+          alt: "11",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/12.jpg",
+          alt: "12",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/13.jpg",
+          alt: "13",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/14.jpg",
+          alt: "14",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/15.jpg",
+          alt: "15",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/16.jpg",
+          alt: "16",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/17.jpg",
+          alt: "17",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/18.jpg",
+          alt: "18",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/19.jpg",
+          alt: "19",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/20.jpg",
+          alt: "20",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/21.jpg",
+          alt: "21",
+          width: 1200,
+          height: 800,
+        },
+      ],
+      sub_title: t("fort_kosmac_podnaslov"),
+      description: t.rich("fort_kosmac_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
+      alt: "Slika1",
+      category: t("kategorije.digital"),
+      slug: "sloga",
+      paragraphs: t.raw("fort_kosmac_paragrafi"),
+      project_desc: t("fort_kosmac_opis"),
+      team: [
+        {
+          name: t("tim_kosmac.ivan_vratnica.name"),
+          role: t("tim_kosmac.ivan_vratnica.role"),
+        },
+        {
+          name: t("tim_kosmac.vuk_zecevic.name"),
+          role: t("tim_kosmac.vuk_zecevic.role"),
+        },
+      ],
+      list: [
+        t("fort_kosmac_lista.uredjivanje"),
+        t("fort_kosmac_lista.kreativna_direkcija"),
+        t("fort_kosmac_lista.art_direkcija"),
+        t("fort_kosmac_lista.dizajn_layout"),
+      ],
+    },
   ];
 
   // const categories = [

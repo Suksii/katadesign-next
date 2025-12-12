@@ -10,6 +10,7 @@ import { useProjectStore } from "@/store/projectStore";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import ProjectInfo from "../ProjectInfo";
+import GalleryRenderer from "../common/GalleryRenderer";
 
 const SingleProject = ({ params }) => {
   const t = useTranslations("ProjectPage");
@@ -26,7 +27,7 @@ const SingleProject = ({ params }) => {
         src: "/explore_mne-06-19-60.jpg",
         alt: "Slika1",
       },
-      galery_row_images: [
+      galery_images: [
         {
           src: "/explore_mne-06-19-123.jpg",
           alt: "1",
@@ -52,7 +53,6 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      galery_images: [],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
@@ -278,6 +278,13 @@ const SingleProject = ({ params }) => {
         t("explore_mne_lista.dizajn_ambalaze"),
         t("explore_mne_lista.strategija_komunikacije"),
       ],
+      gallery_layout: [
+        {
+          layout: "two",
+          indices: { index1: 0, index2: 3, index3: 2, index4: 1 },
+          spacing: "pb-2",
+        },
+      ],
     },
     {
       title: "Fort Kosmač",
@@ -447,6 +454,183 @@ const SingleProject = ({ params }) => {
         t("fort_kosmac_lista.art_direkcija"),
         t("fort_kosmac_lista.dizajn_layout"),
       ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 0 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          type: "reverse",
+          indices: { index1: 2, index2: 3, index3: 1 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 4, index2: 5, index3: 6 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 7, index3: 8 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          type: "reverse",
+          flexNum: 2,
+          indices: { index1: 10, index3: 9 },
+          spacing: "pb-2 lg:pb-[500px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 11, index2: 12, index3: 13 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          type: "reverse",
+          indices: { index1: 11, index2: 16, index3: 14 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index2: 17, index3: 18 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "three",
+          indices: { index2: 20, index3: 19 },
+          spacing: "pb-2 lg:pb-[500px]",
+        },
+      ],
+    },
+    {
+      title: "Sloga",
+      main_project_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "sloga1",
+      },
+      main_banner_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "Sloga 1",
+      },
+      galery_row_images: [],
+      galery_images: [
+        {
+          src: "/sloga/sloga1.jpg",
+          alt: "1",
+          width: 1500,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga2.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga3.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga4.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga5.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga6.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga7.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga8.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga9.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+      ],
+      sub_title: t("fort_kosmac_podnaslov"),
+      description: t.rich("fort_kosmac_teaser", {
+        highlight: (chunks) => (
+          <span className="underline decoration-2 underline-offset-4">
+            {chunks}
+          </span>
+        ),
+      }),
+      alt: "Slika1",
+      category: t("kategorije.digital"),
+      slug: "sloga",
+      project_desc: t("sloga_opis"),
+      list: [
+        t("sloga_lista.redizajn_logotipa"),
+        t("sloga_lista.art_direkcija"),
+        t("sloga_lista.vizuelni_identitet"),
+        t("sloga_lista.korporativna_tipografija"),
+        t("sloga_lista.dizajn_layout"),
+      ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 4 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 7 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index1: 3, index2: 8, index3: 2 },
+          type: "reverse",
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 6 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 5 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index3: 1 },
+          spacing: "pb-2",
+        },
+      ],
     },
   ];
 
@@ -497,9 +681,9 @@ const SingleProject = ({ params }) => {
             <Image
               src={project.main_banner_img?.src}
               alt={project.main_banner_img?.alt}
-              width={1800}
-              height={800}
-              className="object-cover w-full"
+              width={1920}
+              height={855}
+              className="object-cover"
             />
           </div>
         </section>
@@ -528,131 +712,13 @@ const SingleProject = ({ params }) => {
         </section>
         {project.galery_images.length > 0 && (
           <section className="pb-2">
-            <CustomGallery gallery={project.galery_images} index3={0} />
+            {/* <CustomGallery gallery={project.galery_images} index3={0} /> */}
+            <GalleryRenderer
+              gallery={project.galery_images}
+              layoutConfig={project.gallery_layout}
+            />
           </section>
         )}
-        {project.galery_row_images &&
-          project.galery_row_images[2] &&
-          project.galery_row_images[3] &&
-          project.galery_row_images[1] &&
-          project.galery_row_images[0] && (
-            <section className="pb-2">
-              <CustomGallery
-                gallery={project.galery_row_images}
-                layout="two"
-                index1={0}
-                index2={3}
-                index3={2}
-                index4={1}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[2] &&
-          project.galery_images[3] &&
-          project.galery_images[1] && (
-            <section className="pb-2 lg:pb-[300px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                type={"reverse"}
-                index1={2}
-                index2={3}
-                index3={1}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[4] &&
-          project.galery_images[5] &&
-          project.galery_images[6] && (
-            <section className="pb-2 lg:pb-[300px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                flexNum={2}
-                index1={4}
-                index2={5}
-                index3={6}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[7] &&
-          project.galery_images[8] && (
-            <section className="pb-2 lg:pb-[300px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                flexNum={2}
-                index1={7}
-                index3={8}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[9] &&
-          project.galery_images[10] && (
-            <section className="pb-2 lg:pb-[500px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                flexNum={2}
-                type="reverse"
-                index1={10}
-                index3={9}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[11] &&
-          project.galery_images[12] &&
-          project.galery_images[13] && (
-            <section className="pb-2">
-              <CustomGallery
-                gallery={project.galery_images}
-                flexNum={2}
-                index1={11}
-                index2={12}
-                index3={13}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[11] &&
-          project.galery_images[16] &&
-          project.galery_images[14] && (
-            <section className="pb-2 lg:pb-[300px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                type="reverse"
-                flexNum={2}
-                index1={11}
-                index2={16}
-                index3={14}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[17] &&
-          project.galery_images[18] && (
-            <section className="pb-2">
-              <CustomGallery
-                gallery={project.galery_images}
-                flexNum={2}
-                index2={17}
-                index3={18}
-              />
-            </section>
-          )}
-        {project.galery_images.length > 0 &&
-          project.galery_images[19] &&
-          project.galery_images[20] && (
-            <section className="pb-2 lg:pb-[500px]">
-              <CustomGallery
-                gallery={project.galery_images}
-                layout="three"
-                index1={20}
-                index3={19}
-              />
-            </section>
-          )}
         {project.slider_images && (
           <section className="pt-2 lg:pt-[300px]">
             <Slider images={project?.slider_images} />
