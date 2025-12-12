@@ -12,19 +12,31 @@ const SingleBlog = ({ params }) => {
       subtitle: t("brskut_teaser"),
       main_paragraphs: t.raw("brskut_desc_1"),
       paragraphs: t.raw("brskut_desc_2"),
-      banner_image: { src: "/1.jpg", alt: "1", width: 400, height: 800 },
+      banner_image: {
+        src: "/brskut/Brskut0.jpg",
+        alt: "1",
+        width: 400,
+        height: 800,
+      },
       main_images: [
-        { src: "/1.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/2.jpg", alt: "2", width: 400, height: 800 },
+        { src: "/brskut/Brskut1.jpg", alt: "1", width: 400, height: 800 },
+        { src: "/brskut/Brskut2.jpg", alt: "2", width: 400, height: 800 },
+      ],
+      blog_images: [
+        { src: "/brskut/Brskut3.jpg", alt: "3", width: 400, height: 800 },
+        { src: "/brskut/Brskut4.jpg", alt: "4", width: 400, height: 800 },
       ],
       slider_images: [
-        { src: "/1.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "2", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "3", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "4", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "5", width: 400, height: 800 },
-        { src: "/1.jpg", alt: "6", width: 400, height: 800 },
+        { src: "/brskut/Brskut5.jpg", alt: "1", width: 400, height: 800 },
+        { src: "/brskut/Brskut6.jpg", alt: "2", width: 400, height: 800 },
+        { src: "/brskut/Brskut7.jpg", alt: "3", width: 400, height: 800 },
       ],
+      singleImage: {
+        src: "/brskut/Brskut8.jpg",
+        alt: "1",
+        width: 400,
+        height: 800,
+      },
       date: "28.08.2025",
       slug: "brskut",
     },
@@ -71,7 +83,28 @@ const SingleBlog = ({ params }) => {
               {p}
             </p>
           ))}
+          <div className="flex gap-4 mt-12">
+            {blog.blog_images.map((image) => (
+              <div key={image.alt} className="relative w-full h-[500px]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
           <Slider images={blog.slider_images} slidesToShow={2} />
+
+          <div className="relative w-full aspect-video">
+            <Image
+              src={blog.singleImage}
+              alt="Placeholder"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
