@@ -47,9 +47,7 @@ const ProjectInfo = ({ isOpen, project }) => {
                         </p>
                       ))
                     ) : (
-                      <p key={index} className="text-xl">
-                        {p}
-                      </p>
+                      <p className="text-xl">{project.paragraphs}</p>
                     )}
                   </div>
                 </div>
