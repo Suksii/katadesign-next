@@ -24,7 +24,7 @@ const GalleryHover = () => {
         src: "/explore_mne-06-19-60.jpg",
         alt: "Slika1",
       },
-      galery_row_images: [
+      galery_images: [
         {
           src: "/explore_mne-06-19-123.jpg",
           alt: "1",
@@ -50,7 +50,6 @@ const GalleryHover = () => {
           height: 800,
         },
       ],
-      galery_images: [],
       slider_images: [
         {
           src: "/explore_mne/explore_mne-06-19-16.jpg",
@@ -247,16 +246,13 @@ const GalleryHover = () => {
           </span>
         ),
       }),
-      category: {
-        id: 10,
-        title: t("kategorije.produkti"),
-      },
+      category: t("kategorije.produkti"),
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
       project_desc: t.rich("explore_mne_opis", {
         link: (chunks) => (
           <Link
-            href="https://example.com"
+            href="https://duskomiljanic.me"
             target="_blank"
             rel="noopener noreferrer"
             className="underline text-blue-600 hover:text-blue-800"
@@ -265,6 +261,12 @@ const GalleryHover = () => {
           </Link>
         ),
       }),
+      team: [
+        {
+          name: t("tim_explore_mne.dusko_miljanic.name"),
+          role: t("tim_explore_mne.dusko_miljanic.role"),
+        },
+      ],
       list: [
         t("explore_mne_lista.koncept"),
         t("explore_mne_lista.naming"),
@@ -272,6 +274,13 @@ const GalleryHover = () => {
         t("explore_mne_lista.logo_brending"),
         t("explore_mne_lista.dizajn_ambalaze"),
         t("explore_mne_lista.strategija_komunikacije"),
+      ],
+      gallery_layout: [
+        {
+          layout: "two",
+          indices: { index1: 0, index2: 3, index3: 2, index4: 1 },
+          spacing: "pb-2",
+        },
       ],
     },
     {
@@ -281,7 +290,7 @@ const GalleryHover = () => {
         alt: "Slika1",
       },
       main_banner_img: {
-        src: "/1.jpg",
+        src: "/Kosmac.jpg",
         alt: "Slika1",
       },
       galery_row_images: [],
@@ -422,170 +431,8 @@ const GalleryHover = () => {
         ),
       }),
       alt: "Slika1",
-      category: {
-        id: 9,
-        title: t("kategorije.digital"),
-      },
-      slug: "fort-kosmac",
-      paragraphs: t.raw("fort_kosmac_paragrafi"),
-      project_desc: t("fort_kosmac_opis"),
-      list: [
-        t("fort_kosmac_lista.uredjivanje"),
-        t("fort_kosmac_lista.kreativna_direkcija"),
-        t("fort_kosmac_lista.art_direkcija"),
-        t("fort_kosmac_lista.dizajn_layout"),
-      ],
-    },
-    {
-      title: "Sloga",
-      main_project_img: {
-        src: "/sloga/sloga1.jpg",
-        alt: "sloga1",
-      },
-      main_banner_img: {
-        src: "/sloga/sloga1.jpg",
-        alt: "Slika1",
-      },
-      galery_row_images: [],
-      galery_images: [
-        {
-          src: "/sloga/sloga2.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
-        {
-          src: "/2.jpg",
-          alt: "2",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/3.jpg",
-          alt: "3",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/4.jpg",
-          alt: "4",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/5.jpg",
-          alt: "5",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/6.jpg",
-          alt: "6",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/7.jpg",
-          alt: "7",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/8.jpg",
-          alt: "8",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/9.jpg",
-          alt: "9",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/10.jpg",
-          alt: "10",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/11.jpg",
-          alt: "11",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/12.jpg",
-          alt: "12",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/13.jpg",
-          alt: "13",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/14.jpg",
-          alt: "14",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/15.jpg",
-          alt: "15",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/16.jpg",
-          alt: "16",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/17.jpg",
-          alt: "17",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/18.jpg",
-          alt: "18",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/19.jpg",
-          alt: "19",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/20.jpg",
-          alt: "20",
-          width: 1200,
-          height: 800,
-        },
-        {
-          src: "/21.jpg",
-          alt: "21",
-          width: 1200,
-          height: 800,
-        },
-      ],
-      sub_title: t("fort_kosmac_podnaslov"),
-      description: t.rich("fort_kosmac_teaser", {
-        highlight: (chunks) => (
-          <span className="underline decoration-2 underline-offset-4">
-            {chunks}
-          </span>
-        ),
-      }),
-      alt: "Slika1",
       category: t("kategorije.digital"),
-      slug: "sloga",
+      slug: "fort-kosmac",
       paragraphs: t.raw("fort_kosmac_paragrafi"),
       project_desc: t("fort_kosmac_opis"),
       team: [
@@ -603,6 +450,180 @@ const GalleryHover = () => {
         t("fort_kosmac_lista.kreativna_direkcija"),
         t("fort_kosmac_lista.art_direkcija"),
         t("fort_kosmac_lista.dizajn_layout"),
+      ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 0 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          type: "reverse",
+          indices: { index1: 2, index2: 3, index3: 1 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 4, index2: 5, index3: 6 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 7, index3: 8 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          type: "reverse",
+          flexNum: 2,
+          indices: { index1: 10, index3: 9 },
+          spacing: "pb-2 lg:pb-[500px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index1: 11, index2: 12, index3: 13 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          type: "reverse",
+          indices: { index1: 11, index2: 16, index3: 14 },
+          spacing: "pb-2 lg:pb-[300px]",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index2: 17, index3: 18 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "three",
+          indices: { index2: 20, index3: 19 },
+          spacing: "pb-2 lg:pb-[500px]",
+        },
+      ],
+    },
+    {
+      title: "Sloga",
+      main_project_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "sloga1",
+      },
+      main_banner_img: {
+        src: "/sloga/sloga1.jpg",
+        alt: "Sloga 1",
+      },
+      galery_row_images: [],
+      galery_images: [
+        {
+          src: "/sloga/sloga1.jpg",
+          alt: "1",
+          width: 1500,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga2.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga3.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga4.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga5.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga6.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga7.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga8.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/sloga/sloga9.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+      ],
+      paragraphs: t("sloga_paragrafi"),
+      sub_title: t("sloga_podnaslov"),
+      description: t.rich("sloga_teaser", {
+        bold: (chunks) => <span className="font-bold">{chunks}</span>,
+      }),
+      alt: "Slika1",
+      category: t("kategorije.digital"),
+      slug: "sloga",
+      project_desc: t("sloga_opis"),
+      list: [
+        t("sloga_lista.redizajn_logotipa"),
+        t("sloga_lista.art_direkcija"),
+        t("sloga_lista.vizuelni_identitet"),
+        t("sloga_lista.korporativna_tipografija"),
+        t("sloga_lista.dizajn_layout"),
+      ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 4 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 7 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index1: 3, index2: 8, index3: 2 },
+          type: "reverse",
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 6 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 5 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index3: 1 },
+          spacing: "pb-2",
+        },
       ],
     },
   ];
