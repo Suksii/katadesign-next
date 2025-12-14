@@ -40,11 +40,17 @@ const ProjectInfo = ({ isOpen, project }) => {
                       ))}
                   </div>
                   <div className="max-w-4xl">
-                    {project.paragraphs.map((p, index) => (
+                    {Array.isArray(project.paragraphs) ? (
+                      project.paragraphs.map((p, index) => (
+                        <p key={index} className="text-xl">
+                          {p}
+                        </p>
+                      ))
+                    ) : (
                       <p key={index} className="text-xl">
                         {p}
                       </p>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
