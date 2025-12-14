@@ -32,11 +32,12 @@ const ProjectInfo = ({ isOpen, project }) => {
                 <div className="w-full flex flex-col lg:flex-row justify-between gap-14">
                   <div>
                     <h3 className="font-semibold">{t("tim")}</h3>
-                    {project.team.map((t, index) => (
-                      <p key={index} className="text-sm text-nowrap">
-                        {t.name} - {t.role}
-                      </p>
-                    ))}
+                    {project.team &&
+                      project.team.map((t, index) => (
+                        <p key={index} className="text-sm text-nowrap">
+                          {t.name} - {t.role}
+                        </p>
+                      ))}
                   </div>
                   <div className="max-w-4xl">
                     {project.paragraphs.map((p, index) => (
