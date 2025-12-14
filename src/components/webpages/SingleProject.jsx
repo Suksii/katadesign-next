@@ -578,13 +578,10 @@ const SingleProject = ({ params }) => {
           height: 800,
         },
       ],
-      sub_title: t("fort_kosmac_podnaslov"),
-      description: t.rich("fort_kosmac_teaser", {
-        highlight: (chunks) => (
-          <span className="underline decoration-2 underline-offset-4">
-            {chunks}
-          </span>
-        ),
+      paragraphs: t("sloga_paragrafi"),
+      sub_title: t("sloga_podnaslov"),
+      description: t.rich("sloga_teaser", {
+        bold: (chunks) => <span className="font-bold">{chunks}</span>,
       }),
       alt: "Slika1",
       category: t("kategorije.digital"),

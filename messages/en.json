@@ -174,14 +174,17 @@
       "art_direkcija": "Art direction",
       "dizajn_layout": "Design & layout"
     },
+    "sloga_podnaslov": "Visual construction system for modern engineering",
+    "sloga_teaser": "Re-design of visual identity for <bold>SLOGA</bold> company blends brutalist clarity and retro-futuristic symbolism. Massive cyrilic typography and illusionist 3D symbol- made out of repeated letter 'C' create recognisable, technically precise and energetic identity. Bright-red colour takes over the role of identity holder and becomes visual signature of company whose work relates to project development, engineering and construction.",
     "sloga_lista": {
-      "redizajn_logotipa": "Logo redesign",
+      "redizajn_logotipa": "Logo design",
       "art_direkcija": "Art direction",
       "vizuelni_identitet": "Visual identity",
-      "korporativna_tipografija": "Korporativna tipografija",
+      "korporativna_tipografija": "Corporate typography",
       "dizajn_layout": "Design & layout"
     },
-    "sloga_opis": "Kata design studio"
+    "sloga_paragrafi": "SLOGA’s new identity shifts the company from a traditional engineering and project-development profile to a modern, clearly defined corporate system. Brutalist typography and a retro-futuristic 3D symbol create a structured, precise and visually assertive identity built on geometry, constructive layout and a dominant red tone.",
+    "sloga_opis": "Kata Design Studio enables companies and brands to build identities who clearly communicate their mission and industry role. For SLOGA we've developed corporate system that re-interpretes brutalist aesthetics through modern, technically precise approach. The logotype combines monolyt cyrilic typography with retro-futuristic 3D monogram of letter 'C', aluding on construction, planning and growth. Bright-red colour defines identity&#39;s emotional tone, bringing energy and strong presence across all formats."
   },
   "NewsPage": {
     "novosti": "News",
