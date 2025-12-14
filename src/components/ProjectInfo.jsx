@@ -31,7 +31,9 @@ const ProjectInfo = ({ isOpen, project }) => {
               <div className="flex flex-col gap-6 justify-center">
                 <div className="w-full flex flex-col lg:flex-row justify-between gap-14">
                   <div>
-                    <h3 className="font-semibold">{t("tim")}</h3>
+                    {project.team && (
+                      <h3 className="font-semibold">{t("tim")}</h3>
+                    )}
                     {project.team &&
                       project.team.map((t, index) => (
                         <p key={index} className="text-sm text-nowrap">
