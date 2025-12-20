@@ -6,8 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCategories } from "@/hooks/useCategories";
-import CategoriesSkeleton from "./skeletons/CategoriesSkeleton";
-import { CustomLoader } from "./admin/CustomLoader";
 
 const GalleryHover = () => {
   const t = useTranslations("ProjectPage");
@@ -520,12 +518,6 @@ const GalleryHover = () => {
       },
       galery_row_images: [],
       galery_images: [
-        {
-          src: "/sloga/sloga1.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
         {
           src: "/sloga/sloga2.jpg",
           alt: "2",

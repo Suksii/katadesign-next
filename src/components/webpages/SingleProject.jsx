@@ -1,7 +1,6 @@
 "use client";
 
 import React, { use } from "react";
-import CustomGallery from "../CustomGallery";
 import Slider from "../Slider";
 import Image from "next/image";
 import GoBackButton from "../GoBackButton";
@@ -524,56 +523,50 @@ const SingleProject = ({ params }) => {
       galery_row_images: [],
       galery_images: [
         {
-          src: "/sloga/sloga1.jpg",
-          alt: "1",
-          width: 1500,
-          height: 800,
-        },
-        {
           src: "/sloga/sloga2.jpg",
-          alt: "2",
+          alt: "1",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga3.jpg",
-          alt: "3",
+          alt: "2",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga4.jpg",
-          alt: "4",
+          alt: "3",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga5.jpg",
-          alt: "5",
+          alt: "4",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga6.jpg",
-          alt: "6",
+          alt: "5",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga7.jpg",
-          alt: "7",
+          alt: "6",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga8.jpg",
-          alt: "8",
+          alt: "7",
           width: 1200,
           height: 800,
         },
         {
           src: "/sloga/sloga9.jpg",
-          alt: "9",
+          alt: "8",
           width: 1200,
           height: 800,
         },
@@ -597,18 +590,7 @@ const SingleProject = ({ params }) => {
       gallery_layout: [
         {
           layout: "one",
-          indices: { index3: 4 },
-          spacing: "pb-2",
-        },
-        {
-          layout: "one",
-          indices: { index3: 7 },
-          spacing: "pb-2",
-        },
-        {
-          layout: "one",
-          indices: { index1: 3, index2: 8, index3: 2 },
-          type: "reverse",
+          indices: { index3: 3 },
           spacing: "pb-2",
         },
         {
@@ -618,13 +600,24 @@ const SingleProject = ({ params }) => {
         },
         {
           layout: "one",
+          indices: { index1: 2, index2: 7, index3: 1 },
+          type: "reverse",
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
           indices: { index3: 5 },
           spacing: "pb-2",
         },
         {
           layout: "one",
+          indices: { index3: 4 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
           flexNum: 2,
-          indices: { index3: 1 },
+          indices: { index3: 0 },
           spacing: "pb-2",
         },
       ],
@@ -708,13 +701,28 @@ const SingleProject = ({ params }) => {
           )}
         </section>
         {project.galery_images.length > 0 && (
-          <section className="pb-2">
-            {/* <CustomGallery gallery={project.galery_images} index3={0} /> */}
-            <GalleryRenderer
-              gallery={project.galery_images}
-              layoutConfig={project.gallery_layout}
-            />
-          </section>
+          <>
+            <section className="pb-2 hidden lg:block">
+              <GalleryRenderer
+                gallery={project.galery_images}
+                layoutConfig={project.gallery_layout}
+              />
+            </section>
+
+            <section className="pb-2 flex flex-col gap-2 lg:hidden relative w-full">
+              {project?.galery_images.map((image, index) => (
+                <div key={index} className="relative w-full aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={`Gallery image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                  />
+                </div>
+              ))}
+            </section>
+          </>
         )}
         {project.slider_images && (
           <section className="pt-2 lg:pt-[300px]">
