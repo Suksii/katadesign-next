@@ -244,7 +244,7 @@ const GalleryHover = () => {
           </span>
         ),
       }),
-      category: 13,
+      category: [5, 7],
       slug: "explore-montenegro",
       paragraphs: t.raw("explore_mne_paragrafi"),
       project_desc: t.rich("explore_mne_opis", {
@@ -429,7 +429,7 @@ const GalleryHover = () => {
         ),
       }),
       alt: "Slika1",
-      category: 9,
+      category: [5, 7],
       slug: "fort-kosmac",
       paragraphs: t.raw("fort_kosmac_paragrafi"),
       project_desc: t("fort_kosmac_opis"),
@@ -573,7 +573,7 @@ const GalleryHover = () => {
         bold: (chunks) => <span className="font-bold">{chunks}</span>,
       }),
       alt: "Slika1",
-      category: 9,
+      category: [5],
       slug: "sloga",
       project_desc: t("sloga_opis"),
       list: [
@@ -642,15 +642,11 @@ const GalleryHover = () => {
   if (isLoading) return <span></span>;
   if (error) return <p>Greška pri učitavanju kategorija</p>;
 
-  
-
   const filteredProjects =
     selectedCategory === t("kategorije.sve")
       ? projects
       : projects.filter((project) => {
-        console.log(project.category, selectedCategory);
-        
-          return project.category === selectedCategory;
+          return project.category.includes(selectedCategory);
         });
 
   return (
