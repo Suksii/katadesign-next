@@ -1,48 +1,12 @@
 import { Link } from "@/i18n/navigation";
 import React from "react";
+import { newsData } from "../utils/constants";
 import { formatDateParts } from "../utils/helpers";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { newsData } from "../utils/constants";
 
 const News = () => {
   const t = useTranslations("NewsPage");
-
-  const blogs = [
-    {
-      title: t("brskut_naslov"),
-      subtitle: t("brskut_teaser"),
-      main_paragraphs: t.raw("brskut_desc_1"),
-      paragraphs: t.raw("brskut_desc_2"),
-      banner_image: {
-        src: "/brskut/Brskut0.jpg",
-        alt: "1",
-        width: 400,
-        height: 800,
-      },
-      main_images: [
-        { src: "/brskut/Brskut1.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/brskut/Brskut2.jpg", alt: "2", width: 400, height: 800 },
-      ],
-      blog_images: [
-        { src: "/brskut/Brskut3.jpg", alt: "3", width: 400, height: 800 },
-        { src: "/brskut/Brskut4.jpg", alt: "4", width: 400, height: 800 },
-      ],
-      slider_images: [
-        { src: "/brskut/Brskut5.jpg", alt: "1", width: 400, height: 800 },
-        { src: "/brskut/Brskut6.jpg", alt: "2", width: 400, height: 800 },
-        { src: "/brskut/Brskut7.jpg", alt: "3", width: 400, height: 800 },
-      ],
-      singleImage: {
-        src: "/brskut/Brskut8.jpg",
-        alt: "1",
-        width: 400,
-        height: 800,
-      },
-      date: "28.08.2025",
-      slug: "brskut",
-    },
-  ];
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
