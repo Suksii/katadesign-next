@@ -6,9 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Slider({ images }) {
   const containerRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(2);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(5);
 
+  // ⛔ NE DIRATI – logika za broj slajdova
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -28,80 +29,71 @@ export default function Slider({ images }) {
     });
 
     observer.observe(container);
-
     return () => observer.disconnect();
   }, []);
 
+  // maksimalni dozvoljeni index (sprječava prazninu)
+  const maxIndex = Math.max(images.length - slidesToShow, 0);
+
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
+
+  // zaštita kada se promijeni slidesToShow (resize)
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [slidesToShow, maxIndex, currentIndex]);
 
   return (
     <div
       ref={containerRef}
       className="relative w-full flex items-center justify-center"
     >
+      {/* PREV */}
       <button
         onClick={handlePrev}
-        className="absolute left-0 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
+        className="absolute left-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
 
-      <div className="flex overflow-hidden w-full justify-center items-center">
+      <div className="overflow-hidden w-full">
         <div
-          className="flex transition-transform duration-500 items-center will-change-transform"
+          className="flex transition-transform duration-500 will-change-transform"
           style={{
-            transform: `translateX(calc(50% - ${
-              (currentIndex + 0.5) * (100 / slidesToShow)
-            }%))`,
+            transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
           }}
         >
-          {images.map((src, index) => {
-            const isActive = index === currentIndex;
-            const containerWidth = `${100 / slidesToShow}%`;
-
-            return (
-              <div
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className="flex-shrink-0 flex justify-center transition-all duration-500 cursor-pointer"
-                style={{
-                  width: containerWidth,
-                  zIndex: isActive ? 10 : 1,
-                }}
-              >
-                <div
-                  className="relative shadow-lg transition-transform duration-500 will-change-transform"
-                  style={{
-                    transform: isActive ? "scale(1.1)" : "scale(0.9)",
-                    transformOrigin: "center center",
-                    width: "100%",
-                  }}
-                >
-                  <Image
-                    src={src}
-                    alt={`Image ${index}`}
-                    width={400}
-                    height={800}
-                    className={`w-full object-cover transition-transform duration-500 shrink-0 ${
-                      isActive ? "h-[500px] object-bottom" : "h-[320px]"
-                    }`}
-                  />
-                </div>
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 px-2"
+              style={{ width: `${100 / slidesToShow}%` }}
+            >
+              <div className="relative overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                <Image
+                  src={src}
+                  alt={`Image ${index}`}
+                  width={400}
+                  height={500}
+                  className="w-full h-[360px] object-cover"
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 
+      {/* NEXT */}
       <button
         onClick={handleNext}
-        className="absolute right-0 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
+        className="absolute right-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

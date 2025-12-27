@@ -66,7 +66,7 @@ const SingleBlog = ({ params }) => {
               {p}
             </p>
           ))}
-          <div className="flex gap-4 mt-12">
+          <div className="flex flex-col xl:flex-row gap-4 mt-12">
             {blog.main_images.map((image) => (
               <div key={image.alt} className="relative w-full h-[500px]">
                 <Image
@@ -83,7 +83,7 @@ const SingleBlog = ({ params }) => {
               {p}
             </p>
           ))}
-          <div className="flex gap-4 mt-12">
+          <div className="flex flex-col xl:flex-row gap-4 mt-12">
             {blog.blog_images.map((image) => (
               <div key={image.alt} className="relative w-full h-[500px]">
                 <Image
