@@ -9,7 +9,6 @@ export default function Slider({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(5);
 
-  // ⛔ NE DIRATI – logika za broj slajdova
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -32,7 +31,6 @@ export default function Slider({ images }) {
     return () => observer.disconnect();
   }, []);
 
-  // maksimalni dozvoljeni index (sprječava prazninu)
   const maxIndex = Math.max(images.length - slidesToShow, 0);
 
   const handlePrev = () => {
@@ -43,7 +41,6 @@ export default function Slider({ images }) {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
-  // zaštita kada se promijeni slidesToShow (resize)
   useEffect(() => {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
@@ -55,7 +52,6 @@ export default function Slider({ images }) {
       ref={containerRef}
       className="relative w-full flex items-center justify-center"
     >
-      {/* PREV */}
       <button
         onClick={handlePrev}
         className="absolute left-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
@@ -90,7 +86,6 @@ export default function Slider({ images }) {
         </div>
       </div>
 
-      {/* NEXT */}
       <button
         onClick={handleNext}
         className="absolute right-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
