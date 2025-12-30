@@ -54,7 +54,7 @@ export default function Slider({ images }) {
     >
       <button
         onClick={handlePrev}
-        className="absolute left-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
+        className="absolute left-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
@@ -69,7 +69,7 @@ export default function Slider({ images }) {
           {images.map((src, index) => (
             <div
               key={index}
-              className="flex-shrink-0 px-2"
+              className="flex-shrink-0 md:px-2"
               style={{ width: `${100 / slidesToShow}%` }}
             >
               <div className="relative overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
@@ -78,7 +78,7 @@ export default function Slider({ images }) {
                   alt={`Image ${index}`}
                   width={400}
                   height={500}
-                  className="w-full h-[360px] object-cover"
+                  className="w-full h-[400px] object-cover"
                 />
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Slider({ images }) {
 
       <button
         onClick={handleNext}
-        className="absolute right-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
+        className="absolute right-2 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

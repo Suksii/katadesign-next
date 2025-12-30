@@ -709,17 +709,17 @@ const SingleProject = ({ params }) => {
               />
             </section>
 
-            <section className="pb-2 flex flex-col gap-2 lg:hidden relative w-full">
+            <section className="pb-2 flex flex-col gap-2 lg:hidden w-full">
               {project?.galery_images.map((image, index) => (
-                <div key={index} className="relative w-full aspect-[4/3]">
-                  <Image
-                    src={image.src}
-                    alt={`Gallery image ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                  />
-                </div>
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={`Gallery image ${index + 1}`}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                  sizes="100vw"
+                />
               ))}
             </section>
           </>
