@@ -36,7 +36,7 @@ const CustomGallery = ({
               >
                 {/* GORNJI BLOK - index2 ili placeholder (samo na lg) */}
                 {index2 ? (
-                  <div className="relative w-full h-[300px] lg:h-1/2">
+                  <div className="relative w-full lg:h-1/2">
                     <Image
                       src={gallery[index2]?.src}
                       alt={gallery[index2]?.alt}
@@ -46,12 +46,12 @@ const CustomGallery = ({
                   </div>
                 ) : (
                   // Placeholder samo na velikim ekranima
-                  <div className="hidden lg:block w-full h-[300px] lg:h-1/2" />
+                  <div className="hidden lg:block w-full lg:h-1/2" />
                 )}
 
                 {/* DONJI BLOK - index1 */}
                 {index1 && (
-                  <div className="relative w-full h-[300px] lg:h-1/2">
+                  <div className="relative w-full lg:h-1/2">
                     <Image
                       src={gallery[index1]?.src}
                       alt={gallery[index1]?.alt}
@@ -64,7 +64,7 @@ const CustomGallery = ({
 
               {/* DESNI BLOK - index3 */}
               <div className={`flex-${flexNum}`}>
-                <div className="relative w-full h-[300px] lg:h-full">
+                <div className="relative w-full lg:h-full">
                   <Image
                     src={gallery[index3]?.src}
                     alt={gallery[index3]?.alt}
@@ -82,7 +82,7 @@ const CustomGallery = ({
         <div className="flex flex-col gap-2 h-auto lg:h-[150vh] w-full">
           <div className="flex flex-col lg:flex-row gap-2 h-auto lg:h-1/2">
             <div className="flex-2">
-              <div className="relative w-full h-[400px] lg:h-full">
+              <div className="relative w-full lg:h-full">
                 <Image
                   src={gallery[index1]?.src}
                   alt={gallery[index1]?.alt}
@@ -92,7 +92,7 @@ const CustomGallery = ({
               </div>
             </div>
             <div className="flex-1">
-              <div className="relative w-full h-[400px] lg:h-full">
+              <div className="relative w-full lg:h-full">
                 <Image
                   src={gallery[index2]?.src}
                   alt={gallery[index2]?.alt}
@@ -104,7 +104,7 @@ const CustomGallery = ({
           </div>
           <div className="flex flex-col lg:flex-row gap-2 h-auto lg:h-1/2">
             <div className="flex-1">
-              <div className="relative w-full h-[400px] lg:h-full">
+              <div className="relative w-full lg:h-full">
                 <Image
                   src={gallery[index3]?.src}
                   alt={gallery[index3]?.alt}
@@ -114,7 +114,7 @@ const CustomGallery = ({
               </div>
             </div>
             <div className="flex-2">
-              <div className="relative w-full h-[400px] lg:h-full">
+              <div className="relative w-full lg:h-full">
                 <Image
                   src={gallery[index4]?.src}
                   alt={gallery[index4]?.alt}
@@ -131,7 +131,7 @@ const CustomGallery = ({
           <div className="flex-1 hidden lg:block"></div>
           <div className="flex-2 flex flex-col lg:flex-row gap-2 h-full">
             <div className={`flex-${flexNum}`}>
-              <div className="relative w-full h-[300px] lg:h-full">
+              <div className="relative w-full lg:h-full">
                 <Image
                   src={gallery[index3]?.src}
                   alt={gallery[index3]?.alt}
@@ -142,7 +142,7 @@ const CustomGallery = ({
             </div>
             <div className="flex-1 flex-col lg:flex-row">
               {index1 && (
-                <div className="relative w-full h-[300px] lg:h-1/3">
+                <div className="relative w-full lg:h-1/3">
                   <Image
                     src={gallery[index1]?.src}
                     alt={gallery[index1]?.alt}
@@ -152,7 +152,7 @@ const CustomGallery = ({
                 </div>
               )}
               {index2 && (
-                <div className="relative w-full h-[300px] lg:h-1/3">
+                <div className="relative w-full lg:h-1/3">
                   <Image
                     src={gallery[index2]?.src}
                     alt={gallery[index2]?.alt}
