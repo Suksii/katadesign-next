@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import Slider from "../Slider";
 import Image from "next/image";
 import GoBackButton from "../GoBackButton";
@@ -627,6 +627,10 @@ const SingleProject = ({ params }) => {
   const { slug } = use(params);
 
   const project = projects.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    setIsProjectOpened(false);
+  }, [slug]);
   return (
     <div>
       <ScrollToTopButton />
