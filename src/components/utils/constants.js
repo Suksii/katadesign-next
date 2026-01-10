@@ -54,7 +54,12 @@ export const newsData = [
     subtitleKey: "brskut_teaser",
     main_paragraphsKey: "brskut_desc_1",
     paragraphsKey: "brskut_desc_2",
-    banner_image: { src: "/brskut/Brskut0.jpg", alt: "1", width: 400, height: 800 },
+    banner_image: {
+      src: "/brskut/Brskut0.jpg",
+      alt: "1",
+      width: 400,
+      height: 800,
+    },
     main_images: [
       { src: "/1.jpg", alt: "1", width: 400, height: 800 },
       { src: "/2.jpg", alt: "2", width: 400, height: 800 },
@@ -69,6 +74,22 @@ export const newsData = [
     ],
     date: "28.08.2025",
     slug: "brskut",
+  },
+  {
+    id: "histora",
+    titleKey: "histora_naslov",
+    subtitleKey: "histora_teaser",
+    main_paragraphsKey: "histora_desc_1",
+    paragraphsKey: "histora_desc_2",
+    banner_image: {
+      src: "/histora/histora0.jpg",
+      alt: "1",
+      width: 400,
+      height: 800,
+    },
+    main_images: [{ src: "/1.jpg", alt: "1", width: 400, height: 800 }],
+    date: "28.08.2025",
+    slug: "histora",
   },
 ];
 
