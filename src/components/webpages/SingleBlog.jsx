@@ -64,7 +64,7 @@ const SingleBlog = ({ params }) => {
           title: t("histora_naslov_1"),
           main_description: t.raw("histora_main_desc_1"),
           paragraphs: t.raw("histora_desc_2"),
-          images: [{ src: "/histora/histora_slika.png", alt: "Histora" }],
+          images: [{ src: "/histora/histora_slika.pngþ", alt: "Histora" }],
         },
         {
           title: t("histora_naslov_2"),

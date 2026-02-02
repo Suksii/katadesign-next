@@ -27,6 +27,7 @@ const GalleryRenderer = ({ gallery, layoutConfig }) => {
               layout={config.layout || "one"}
               type={config.type || "normal"}
               flexNum={config.flexNum || 1}
+              customHeight={config.customHeight}
               {...config.indices}
             />
           </section>

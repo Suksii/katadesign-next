@@ -618,6 +618,149 @@ const GalleryHover = () => {
         },
       ],
     },
+    
+    {
+      title: "IDEA",
+      main_project_img: {
+        src: "/idea1/idea1.jpg",
+        alt: "Idea 1",
+      },
+      main_banner_img: {
+        src: "/idea/idea2.jpg",
+        alt: "Idea 2",
+      },
+      galery_row_images: [],
+      galery_images: [
+        {
+          src: "/idea/idea2.jpg",
+          alt: "1",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "10",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "11",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "12",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea1.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+      ],
+      paragraphs: t("sloga_paragrafi"),
+      sub_title: t("sloga_podnaslov"),
+      description: t.rich("sloga_teaser", {
+        bold: (chunks) => <span className="font-bold">{chunks}</span>,
+      }),
+      alt: "Slika1",
+      category: t("kategorije.digital"),
+      slug: "idea",
+      project_desc: t("sloga_opis"),
+      list: [
+        t("sloga_lista.redizajn_logotipa"),
+        t("sloga_lista.art_direkcija"),
+        t("sloga_lista.vizuelni_identitet"),
+        t("sloga_lista.korporativna_tipografija"),
+        t("sloga_lista.dizajn_layout"),
+      ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 3 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 2 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "two",
+          indices: { index1: 2, index2: 7, index3: 1 },
+          type: "reverse",
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 5 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          indices: { index3: 4 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "one",
+          flexNum: 2,
+          indices: { index3: 0 },
+          spacing: "pb-2",
+        },
+      ],
+    },
   ];
 
   // const categories = [

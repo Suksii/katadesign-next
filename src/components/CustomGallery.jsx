@@ -10,6 +10,7 @@ const CustomGallery = ({
   index2,
   index3,
   index4,
+  customHeight,
 }) => {
   return (
     <>
@@ -163,6 +164,45 @@ const CustomGallery = ({
               )}
             </div>
           </div>
+        </div>
+      )}
+
+      {layout === "four" && (
+        <div className={`flex flex-col ${
+          type === "reverse" ? "lg:flex-row-reverse" : "lg:flex-row"
+        } gap-2 h-auto ${customHeight || 'lg:aspect-[2/1]'} w-full`}>
+          <div className="flex-1">
+            <div className="relative w-full h-64 lg:h-full">
+              <Image
+                src={gallery[index1]?.src}
+                alt={gallery[index1]?.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className={`flex-${flexNum}`}>
+            <div className="relative w-full h-64 lg:h-full">
+              <Image
+                src={gallery[index2]?.src}
+                alt={gallery[index2]?.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          {index3 !== undefined && index3 !== null && (
+            <div className="flex-1">
+              <div className="relative w-full h-64 lg:h-full">
+                <Image
+                  src={gallery[index3]?.src}
+                  alt={gallery[index3]?.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )}
         </div>
       )}
     </>

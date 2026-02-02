@@ -622,6 +622,152 @@ const SingleProject = ({ params }) => {
         },
       ],
     },
+    {
+      title: "IDEA",
+      main_project_img: {
+        src: "/idea/idea1.jpg",
+        alt: "Idea 1",
+      },
+      main_banner_img: {
+        src: "/idea/idea1.jpg",
+        alt: "Idea 1",
+      },
+      galery_row_images: [],
+      galery_images: [
+        {
+          src: "/idea/idea34.jpg",
+          alt: "1",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea5.jpg",
+          alt: "2",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea6.jpg",
+          alt: "3",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea7.jpg",
+          alt: "4",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea8.jpg",
+          alt: "5",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea9.jpg",
+          alt: "6",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea10.jpg",
+          alt: "7",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea11.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea12.jpg",
+          alt: "9",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea13.jpg",
+          alt: "10",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea14.jpg",
+          alt: "14",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea15.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+      ],
+      paragraphs: t("sloga_paragrafi"),
+      sub_title: t("sloga_podnaslov"),
+      description: t.rich("sloga_teaser", {
+        bold: (chunks) => <span className="font-bold">{chunks}</span>,
+      }),
+      alt: "Slika1",
+      category: t("kategorije.digital"),
+      slug: "idea",
+      project_desc: t("sloga_opis"),
+      list: [
+        t("sloga_lista.redizajn_logotipa"),
+        t("sloga_lista.art_direkcija"),
+        t("sloga_lista.vizuelni_identitet"),
+        t("sloga_lista.korporativna_tipografija"),
+        t("sloga_lista.dizajn_layout"),
+      ],
+      gallery_layout: [
+        {
+          layout: "one",
+          indices: { index3: 2 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "four",
+          indices: { index1: 4, index2: 4 },
+          spacing: "pb-15",
+        },
+        {
+          layout: "one",
+          indices: { index3: 1 },
+          spacing: "pb-15",
+        },
+        {
+          layout: "one",
+          indices: { index3: 2 },
+          spacing: "pb-15",
+        },
+        {
+          layout: "four",
+          indices: { index1: 3, index2: 4 },
+          spacing: "pb-15",
+        },
+        {
+          layout: "four",
+          indices: { index1: 5, index2: 6, index3: 7 },
+          spacing: "pb-2",
+        },
+        {
+          layout: "four",
+          indices: { index1: 8, index2: 9 },
+          spacing: "pb-2",
+          customHeight : "lg:h-screen"
+        },
+        {
+          layout: "four",
+          flexNum: 2,
+          indices: { index1: 10, index2: 11 },
+          spacing: "pb-2",
+        },
+      ],
+    },
   ];
 
   const { slug } = use(params);
