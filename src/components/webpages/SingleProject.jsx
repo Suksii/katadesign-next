@@ -630,7 +630,7 @@ const SingleProject = ({ params }) => {
       },
       main_banner_img: {
         src: "/idea/idea1.jpg",
-        alt: "Idea 1",
+        alt: "Idea 2",
       },
       galery_row_images: [],
       galery_images: [
@@ -706,6 +706,18 @@ const SingleProject = ({ params }) => {
           width: 1200,
           height: 800,
         },
+        {
+          src: "/idea/idea4.jpg",
+          alt: "8",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/idea/idea2.jpg",
+          alt: "Idea 2",
+          width: 1200,
+          height: 800,
+        },
       ],
       paragraphs: t("sloga_paragrafi"),
       sub_title: t("sloga_podnaslov"),
@@ -726,12 +738,12 @@ const SingleProject = ({ params }) => {
       gallery_layout: [
         {
           layout: "one",
-          indices: { index3: 2 },
+          indices: { index3: 13 },
           spacing: "pb-2",
         },
         {
           layout: "four",
-          indices: { index1: 4, index2: 4 },
+          indices: { index1: 0, index2: 0 },
           spacing: "pb-15",
         },
         {
@@ -746,8 +758,9 @@ const SingleProject = ({ params }) => {
         },
         {
           layout: "four",
-          indices: { index1: 3, index2: 4 },
+          indices: { index1: 12, index2: 4 },
           spacing: "pb-15",
+          customHeight: "lg:h-[85vh]",
         },
         {
           layout: "four",
@@ -758,7 +771,7 @@ const SingleProject = ({ params }) => {
           layout: "four",
           indices: { index1: 8, index2: 9 },
           spacing: "pb-2",
-          customHeight : "lg:h-screen"
+          customHeight: "lg:h-screen",
         },
         {
           layout: "four",
