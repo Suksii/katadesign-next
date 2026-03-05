@@ -621,7 +621,7 @@ const GalleryHover = () => {
     {
       title: "IDEA",
       main_project_img: {
-        src: "/idea/idea1.jpg",
+        src: "/idea/idea0.webp",
         alt: "Idea 1",
       },
       main_banner_img: {
