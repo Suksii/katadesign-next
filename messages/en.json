@@ -184,7 +184,22 @@
       "dizajn_layout": "Design & layout"
     },
     "sloga_paragrafi": "SLOGA’s new identity shifts the company from a traditional engineering and project-development profile to a modern, clearly defined corporate system. Brutalist typography and a retro-futuristic 3D symbol create a structured, precise and visually assertive identity built on geometry, constructive layout and a dominant red tone.",
-    "sloga_opis": "Kata Design Studio enables companies and brands to build identities who clearly communicate their mission and industry role. For SLOGA we've developed corporate system that re-interpretes brutalist aesthetics through modern, technically precise approach. The logotype combines monolyt cyrilic typography with retro-futuristic 3D monogram of letter 'C', aluding on construction, planning and growth. Bright-red colour defines identity&#39;s emotional tone, bringing energy and strong presence across all formats."
+    "sloga_opis": "Kata Design Studio enables companies and brands to build identities who clearly communicate their mission and industry role. For SLOGA we've developed corporate system that re-interpretes brutalist aesthetics through modern, technically precise approach. The logotype combines monolyt cyrilic typography with retro-futuristic 3D monogram of letter 'C', aluding on construction, planning and growth. Bright-red colour defines identity&#39;s emotional tone, bringing energy and strong presence across all formats.",
+    "idea_podnaslov": "Spoj tradicije i moderne estetike",
+    "idea_teaser": "The redesigned <bold>IDEA</bold> store in Kolašin demonstrates how a thoughtfully crafted space can transform everyday routines. Through architectural design solutions, visual elements, and unique design features, this multimedia concept seamlessly blends commercial functionality with an aesthetic that elevates the shopping experience to an artistic level.",
+    "idea_lista": {
+      "idejno_rjesenje": "Concept design for exterior and interior",
+      "kreativna_direkcija": "Creative direction",
+      "art_direkcija": "Art direction",
+      "dizajn_layout": "Design & layout",
+      "dizajn_vizuelnih_elemenata": "Visual element design",
+      "objekti_primijenjene_umjetnosti": "Applied art objects"
+    },
+    "idea_paragrafi": [
+      "As an integral part of Kolašin’s development into a recognized tourist destination, the building strengthens the brand’s presence in the local retail market and serves as an example of how design can transcend its basic function to become a medium of artistic expression. Through creative and art direction, we developed a comprehensive visual-spatial narrative — from carefully selected materials and the rhythm of interior forms, to unique design features that bring character and warmth, and graphic interventions that bring together space with brand identity.",
+      "The exterior redesign emphasizes the building’s distinctiveness within the urban fabric of Kolašin, while the interior creates an intuitive and welcoming environment that clearly differentiates functional zones through aesthetic solutions. The result is a space that raises awareness of the role of design and art in everyday life, including the everyday “ritual” of grocery shopping. With this, IDEA market becomes a place of experience, where visuals, spatial interventions, and artistic elements set a new standard for commercial spaces in tourist centers."
+    ],
+    "idea_opis": "Located in the heart of Kolašin, one of Montenegro’s fastest-growing tourist destinations, we brought an authentic redesign to the IDEA store, giving it a new identity. We’ve succesfully shown that shopping as an everyday social activity can be executed with clearly expressed dose of art and culture. The renovated object harmoniously blends traditional local architecture with modern minimalist aesthetics. By authentically integrating architectural design and visual identity, the commercial space gains new meaning — becoming a visual experience rather than just an ordinary local grocery store."
   },
   "NewsPage": {
     "novosti": "News",

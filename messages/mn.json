@@ -171,21 +171,36 @@
     ],
     "fort_kosmac_lista": {
       "uredjivanje": "Uređivanje",
-      "kreativna_direkcija": "Kreativna direkcija",
-      "art_direkcija": "Art direkcija",
+      "kreativna_direkcija": "Kreativnu direkciju",
+      "art_direkcija": "Art direkciju",
       "dizajn_layout": "Dizajn & layout"
     },
     "sloga_podnaslov": "Sistem vizuelne konstrukcije za savremeni inženjering",
     "sloga_teaser": "Redizajn vizuelnog identiteta kompanije <bold>SLOGA</bold> spaja brutalističku jasnoću i retro-futurističku simboliku. Masivna ćirilična tipografija i iluzionistički 3D simbol – izveden iz ponavljanog slova „С“ – stvaraju prepoznatljiv, tehnički precizan i energičan identitet. Jarka crvena preuzima ulogu nosioca intenziteta i postaje vizuelni potpis kompanije koja djeluje u oblasti project development- a, inženjeringa i gradnje.",
     "sloga_lista": {
       "redizajn_logotipa": "Redizajn logotipa",
-      "art_direkcija": "Art direkcija",
+      "art_direkcija": "Art direkciju",
       "vizuelni_identitet": "Vizuelni identitet",
       "korporativna_tipografija": "Korporativna tipografija",
       "dizajn_layout": "Dizajn & layout"
     },
     "sloga_paragrafi": "Novi identitet kompanije SLOGA predstavlja transformaciju tradicionalne inženjerske i projektantske firme u savremenu korporaciju sa jasnim karakterom i moćnom vizuelnom komunikacijom. Brutalistička tipografija daje osjećaj težine stabilnosti i tehničke ozbiljnosti, dok retro-futuristički 3D simbol unosi dinamiku, napredak i vizuelnu slojevitost.",
-    "sloga_opis": "Kata Design Studio pomaže kompanijama i brendovima da izgrade identitete koji jasnije komuniciraju njihovu misiju i poziciju u određenoj industriji. Za SLOGU smo razvili korporativni sistem koji reinterpretira brutalističku estetiku kroz savremen, tehnički precizan pristup. Logotip kombinuje monolitnu ćiriličnu tipografiju sa retro-futurističkim 3D monogramom ponavljajućeg slova „С“, aludirajući na konstrukciju, planiranje i rast. Jarka crvena definiše emocionalni ton identiteta, donoseći energiju i snažnu vidljivost u svim aplikacijama."
+    "sloga_opis": "Kata Design Studio pomaže kompanijama i brendovima da izgrade identitete koji jasnije komuniciraju njihovu misiju i poziciju u određenoj industriji. Za SLOGU smo razvili korporativni sistem koji reinterpretira brutalističku estetiku kroz savremen, tehnički precizan pristup. Logotip kombinuje monolitnu ćiriličnu tipografiju sa retro-futurističkim 3D monogramom ponavljajućeg slova „С“, aludirajući na konstrukciju, planiranje i rast. Jarka crvena definiše emocionalni ton identiteta, donoseći energiju i snažnu vidljivost u svim aplikacijama.",
+    "idea_podnaslov": "Where tradition meets modern aestethics",
+    "idea_teaser": "Redizajnirani <bold>IDEA</bold> market u Kolašinu pokazuje kako promišljeno oblikovan prostor može transformisati svakodnevne navike. Kroz arhitektonsko rješenje, vizuelne elemente i autorske objekte, ovaj multimedijalni koncept spaja komercijalnu funkciju sa estetikom koja podiže iskustvo kupovine na nivo umjetnosti.",
+    "idea_lista": {
+      "idejno_rjesenje": "Idejno rješenje eksterijera i enterijera",
+      "kreativna_direkcija": "Kreativnu direkciju",
+      "art_direkcija": "Art direkciju",
+      "dizajn_layout": "Dizajn & layout",
+      "dizajn_vizuelnih_elemenata": "Dizajn vizuelnih elemenata",
+      "objekti_primijenjene_umjetnosti": "Objekte primijenjene umjetnosti"
+    },
+    "idea_paragrafi": [
+      "Objekat, kao sastavni dio razvoja Kolašina u prepoznatljivu turističku destinaciju, pojačava prisutnost brenda na lokalnom tržištu i služi kao primjer kako dizajn može nadmašiti svoju osnovnu funkciju i postati medij umjetničkog izražavanja. Kroz kreativnu i art direkciju razvili smo cjeloviti vizuelno-prostorni narativ - od pažljivo odabranih materijala i ritma unutrašnjih formi, preko autorskih objekata primijenjene umjetnosti koji unose karakter i toplinu, do grafičkih intervencija koje prostor povezuju sa identitetom brenda.",
+      "Redizajn eksterijera naglašava prepoznatljivost objekta unutar urbane strukture Kolašina, dok enterijer stvara intuitivno i prijatno okruženje koje jasno diferencira funkcionalne zone kroz estetska rješenja. Rezultat je prostor koji podiže svijest o ulozi dizajna i umjetnosti u svakodnevnom životu, uključujući i uobičajeni “ritual” odlaska u prodavnicu. IDEA market time postaje mjesto iskustva, dok vizuali, prostorne intervencije i umjetnički elementi postavljaju novi standard za komercijalne prostore u turističkim centrima."
+    ],
+    "idea_opis": "U centru Kolašina, jedne od najbrže rastućih turističkih destinacija u Crnoj Gori, realizovali smo autentičan redizajn IDEA marketa kojem smo udahnuli novi identitet. Pokazali smo da kupovina, kao svakodnevna društvena aktivnost, može postojati sa jasno izraženom dozom umjetnosti i kulture. Renovirani objekat predstavlja harmoničan spoj tradicionalne lokalne arhitekture i moderne minimalističke estetike. Povezujući arhitektonsko oblikovanje i vizuelni identitet na autentičan način, komercijalni prostor dobija novu vrijednost - postaje vizuelno iskustvo, a ne samo mjesto kupovine."
   },
   "NewsPage": {
     "novosti": "Novosti",

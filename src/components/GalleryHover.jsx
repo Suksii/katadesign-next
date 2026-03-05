@@ -710,20 +710,20 @@ const GalleryHover = () => {
         },
       ],
       paragraphs: t("sloga_paragrafi"),
-      sub_title: t("sloga_podnaslov"),
-      description: t.rich("sloga_teaser", {
+      sub_title: t("idea_podnaslov"),
+      description: t.rich("idea_teaser", {
         bold: (chunks) => <span className="font-bold">{chunks}</span>,
       }),
       alt: "Slika1",
       category: t("kategorije.digital"),
       slug: "idea",
-      project_desc: t("sloga_opis"),
+      project_desc: t("idea_opis"),
       list: [
-        t("sloga_lista.redizajn_logotipa"),
-        t("sloga_lista.art_direkcija"),
-        t("sloga_lista.vizuelni_identitet"),
-        t("sloga_lista.korporativna_tipografija"),
-        t("sloga_lista.dizajn_layout"),
+        t("idea_lista.redizajn_logotipa"),
+        t("idea_lista.art_direkcija"),
+        t("idea_lista.vizuelni_identitet"),
+        t("idea_lista.korporativna_tipografija"),
+        t("idea_lista.dizajn_layout"),
       ],
       gallery_layout: [
         {
