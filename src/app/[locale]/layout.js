@@ -13,9 +13,13 @@ export const metadata = {
     template: "%s | Kata Design",
     default: "Kata Design",
   },
-  description: "",
+  description: "New generation design agency – we craft identities, brands and inspiring experiences.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    siteName: "Kata Design",
+    images: [{ url: "https://kataagency.com/home-page.png", width: 1200, height: 630, alt: "Kata Design" }],
   },
 };
 
