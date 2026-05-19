@@ -1,8 +1,9 @@
 import GalleryHover from "@/components/GalleryHover";
 import PagesWrapper from "@/components/wrappers/PagesWrapper";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import React from "react";
+import { getCategories, getProjects } from "@/lib/data";
+
+export const revalidate = 3600;
 
 export async function generateMetadata() {
   const t = await getTranslations("Metadata.projects_page");
@@ -12,14 +13,14 @@ export async function generateMetadata() {
   };
 }
 
-const ProjectsPage = () => {
-  const t = useTranslations("ProjectPage");
+export default async function ProjectsPage({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "ProjectPage" });
+  const [projects, categories] = await Promise.all([getProjects(), getCategories()]);
 
   return (
     <PagesWrapper title={t("projekti")}>
-      <GalleryHover />
+      <GalleryHover projects={projects} categories={categories} />
     </PagesWrapper>
   );
-};
-
-export default ProjectsPage;
+}

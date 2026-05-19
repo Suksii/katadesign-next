@@ -1,8 +1,19 @@
 import SingleBlog from "@/components/webpages/SingleBlog";
-import React from "react";
+import { getBlog, getBlogs } from "@/lib/data";
+import { notFound } from "next/navigation";
 
-const SingleBlogPage = ({ params }) => {
-  return <SingleBlog params={params} />;
-};
+export const revalidate = 3600;
 
-export default SingleBlogPage;
+export async function generateStaticParams() {
+  const blogs = await getBlogs();
+  return blogs.map((b) => ({ slug: b.slug }));
+}
+
+export default async function SingleBlogPage({ params }) {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+
+  if (!blog) notFound();
+
+  return <SingleBlog blog={blog} />;
+}

@@ -22,9 +22,10 @@ model Admin {
 }
 
 model Category {
-  id    Int     @id @default(autoincrement())
-  titleMn String
-  titleEn String
+  id       Int       @id @default(autoincrement())
+  titleMn  String
+  titleEn  String
+  projects Project[]
 }
 
 model AboutUs {
@@ -44,6 +45,43 @@ model Services {
   updatedAt DateTime @updatedAt
 }
 
+model Project {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique
+  titleMn        String
+  titleEn        String
+  subTitleMn     String
+  subTitleEn     String
+  descriptionMn  String
+  descriptionEn  String
+  projectDescMn  String
+  projectDescEn  String
+  listMn         Json
+  listEn         Json
+  team           Json
+  paragraphsMn   Json
+  paragraphsEn   Json
+  mainProjectImg String
+  mainBannerImg  String
+  galleryImages  Json
+  sliderImages   Json?
+  galleryLayout  Json?
+  categoryId     Int
+  category       Category @relation(fields: [categoryId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
 model Blog {
-  id    Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  titleMn     String
+  titleEn     String
+  subtitleMn  String
+  subtitleEn  String
+  date        String
+  bannerImage String
+  sections    Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
