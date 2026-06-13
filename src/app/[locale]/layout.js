@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Roboto } from "next/font/google";
 import { AdminProviders } from "@/components/wrappers/Providers";
+import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import Loading from "./loading";
 
@@ -49,6 +50,7 @@ export default async function LocaleLayout({ children, params }) {
             </NextIntlClientProvider>
           </AdminProviders>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
